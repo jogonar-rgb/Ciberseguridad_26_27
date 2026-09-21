@@ -26,19 +26,19 @@ Los diferentes tipos de archivos incluyen:
 
 La estructura de los directorios de Linux, así como su contenido y funciones, viene definida en el denominado Filesystem Hierarchy Standard o FHS por sus siglas en inglés, que en otras palabras viene a ser el estándar de jerarquía para los sistemas de archivos en sistemas Linux y otros derivados de UNIX.
 
-Como podéis ver en la siguiente imagen, todo el árbol de parte de una raíz común denominada root y que se simboliza por una barra inclinada. Aún así, esto no significa que varios de ellos no puedan estar en particiones separadas del resto. De hecho, en muchas distros GNU/Linux es una práctica muy común el hecho ubicar ciertos directorios en particiones separadas del resto.
+Como podéis ver en la siguiente imagen, todo el árbol de parte de una raíz común denominada root y que se simboliza por una barra inclinada. Aun así, esto no significa que varios de ellos no puedan estar en particiones separadas del resto. De hecho, en muchas distros GNU/Linux es una práctica muy común el hecho de ubicar ciertos directorios en particiones separadas del resto.
 
 ![](./img/f_struc.png)
 
 La FHS distingue entre lo que serían directorios estáticos, que son aquellos que contienen binarios, bibliotecas, documentación, etc., de los dinámicos, que son aquellos que requieren de acciones más a menudo, tales como copias de seguridad, etc.
 
-También podemos diferencias claramente lo que son los directorios compartibles, que significa que contienen ficheros que pueden utilizarse desde otros dispositivos, de los no compartibles, que solo pueden utilizarse desde el dispositivo en el que se encuentran.
+También podemos diferenciar claramente lo que son los directorios compartibles, que significa que contienen ficheros que pueden utilizarse desde otros dispositivos, de los no compartibles, que solo pueden utilizarse desde el dispositivo en el que se encuentran.
 
 ### Directorio raíz o *"/"*
 
 Toda la estructura de directorios en los sistemas basados en UNIX parte de un directorio raíz también llamado directorio root y que se simboliza por una barra inclinada o /. De este directorio, es desde donde nacen todo el resto de directorios, independientemente que estén almacenados físicamente en discos o unidades separadas.
 
-Cualquier dirección de archivo o carpeta en Linux empieza por el directorio raíz o /, seguido de todos los directorios y subdirectorios que que lo contienen, separados cada uno de ellos por /.
+Cualquier dirección de archivo o carpeta en Linux empieza por el directorio raíz o /, seguido de todos los directorios y subdirectorios que lo contienen, separados cada uno de ellos por /.
 
 ![](./img/directorios1.webp)
 
@@ -52,6 +52,8 @@ El directorio **/bin** es un directorio estático y es donde se almacenan todos 
 Incluye también los binarios que permiten la ejecución de varias utilidades estándar de la terminal de Linux, concretamente cat, cd, cp, echo, grep, gzip, kill, ls, mv, rm, ping, su, ps, tar y vi.
 
 El directorio /sbin hace lo mismo pero para los binarios relativos tareas propias del sistema operativo, y que solamente pueden ser gestionadas por el usuario root, tales como el arranque, tareas de restauración, reparación, etc.
+
+En muchas distribuciones modernas, los directorios /bin, /sbin, /lib y /lib64 son enlaces simbólicos a sus equivalentes dentro de /usr.
 
 ### Directorio */boot*
 
@@ -77,7 +79,7 @@ Para ver esto en la práctica, si abres una ventana de terminal y ejecutas el co
 
 Estos no son archivos reales como los conocemos, pero aparecen como archivos; por ejemplo, ```/dev/sda``` representa la primera unidad SATA del sistema.
 
-Eso en cuanto a particiones. Si se trata de un dispositivo externo, el volumen estará igualmente dentro de /dev, pero en este caso varía el nombre que el sistema le asigna a dicho volumen. Generalmente la estructura suele ser la siguiente (ejecutando nuevamente el comando sudo fdisk -l con un dispositivo externo conectado puede comprobarse).
+Eso en cuanto a las particiones. Si se trata de un dispositivo externo, el volumen estará igualmente dentro de /dev, pero en este caso varía el nombre que el sistema le asigna a dicho volumen. Generalmente la estructura suele ser la siguiente (ejecutando nuevamente el comando sudo fdisk -l con un dispositivo externo conectado puede comprobarse).
 
 ```sh
 /dev/sdb1
@@ -104,9 +106,9 @@ En los sistemas operativos de 64 bits, además de ```/lib``` existe otro directo
 
 Representa el punto de montaje de todos los volúmenes lógicos que se montan temporalmente. Es decir, El directorio ```/media``` contiene subdirectorios donde se montan los dispositivos de medios extraíbles insertados en el ordenador.
 
-En la mayoría de distribuciones GNU/Linux, desde hace ya algún tiempo, cada vez que se monta una unidad externa, partición, etc., esta se monta dentro del directorio /media y a su vez dentro de un directorio especifico dependiendo del usuario del sistema que monta el volumen.
+En la mayoría de distribuciones GNU/Linux, desde hace ya algún tiempo, cada vez que se monta una unidad externa, partición, etc., esta se monta dentro del directorio /media y a su vez dentro de un directorio específico dependiendo del usuario del sistema que monta el volumen.
 
-De este modo, si en un sistema hay varios usuarios, pongamos User1 y User2, los puntos de montaje de los volúmenes que montan cada uno de ellos se mostraran en directorios separados tal como así:
+De este modo, si en un sistema hay varios usuarios, pongamos User1 y User2, los puntos de montaje de los volúmenes que montan cada uno de ellos se mostrarán en directorios separados tal como así:
 
 ```sh
 /media/User1
@@ -209,7 +211,7 @@ Cada archivo o directorio tiene tres tipos de permisos básicos:
 ![](./img/permisos.webp){: style="height:275px;width:425px"}
 
 !!!Tip 
-    Podemos inspeccionar con detalle los permisos de arhivos y directorios con el comando:
+    Podemos inspeccionar con detalle los permisos de archivos y directorios con el comando:
 
     ```sh
     ls -l
@@ -237,11 +239,11 @@ Para cambiar los permisos de archivos y directorios en GNU/Linux, disponemos de 
 Existen dos formas de cambiar los permisos de archivos y directorios en Linux:
 
 * Modo simbólico: con notación basada en caracteres
-* Modo absoluto: con notación numérica, según el [sistema octal](https://es.wikipedia.org/wiki/Sistema_octal) o en [base 8](https://blogs.ua.es/matesfacil/secundaria-numeros-operaciones/sistemas-de-numeracion/sistema-de-numeracion-octal/), cuyos valores de forma resumida puedne verse en la imagen a continuación:
+* Modo absoluto: con notación numérica, según el [sistema octal](https://es.wikipedia.org/wiki/Sistema_octal) o en [base 8](https://blogs.ua.es/matesfacil/secundaria-numeros-operaciones/sistemas-de-numeracion/sistema-de-numeracion-octal/), cuyos valores de forma resumida pueden verse en la imagen a continuación:
   
   ![](./img/octal.png)
 
-Así pues, una tabla resumen en cuánto a los permisos vistos, sería la siguiente:
+Así pues, una tabla resumen en cuanto a los permisos vistos, sería la siguiente:
 
 | Valor     | Permisos                          | Descripción     |
 | :-----------: | :------------------------------------: |--------------|
@@ -441,7 +443,7 @@ total 4
 drwxr-sr-x 2 root  raul  4096 Feb  3 00:54 nuevo_dir_root/
 -rw-r--r-- 1 root  raul     0 Feb  3 00:54 nuevo_arch_root
 ```
-En la salida anterior, vemos que los dos archivos existentes no han cambiado después de que establecemos el bit setuid en padre.
+En la salida anterior, vemos que los dos archivos existentes no han cambiado después de que establecemos el bit setgid en padre.
 
 Sin embargo, el archivo y el subdirectorio recién creados son propiedad de raul en lugar de  root , aunque root los creó. Esto se debe a que el padre tenía establecido el bit setgid , y los archivos y directorios recién creados bajo él heredaron el grupo del padre.
 
@@ -604,7 +606,6 @@ El campo a la derecha del nombre de usuario indica qué algoritmo se ha utilizad
 |----|----|
 |$1$|MD5|
 |$2a$|Blowfish|
-|$2y$|Blowfish|
 |$5$|SHA-256|
 |$6$|SHA-512|
 
@@ -955,3 +956,12 @@ ls -a .hidden
 ```
 
 Estos archivos normalmente almacenan la configuración personal, y es así como los sistemas Unix siempre han ofrecido la capacidad de tener configuraciones a nivel de sistema (generalmente en /etc) que pueden ser anuladas por usuarios individuales (cortesía de archivos ocultos en su directorio de inicio).
+
+### Procesos y servicios
+
+Un proceso es una instancia de un programa que se está ejecutando en memoria. Cada vez que abrimos una aplicación, ejecutamos un comando o iniciamos un servicio, el sistema operativo crea uno o varios procesos.
+
+La gestión de procesos es una tarea fundamental en administración de sistemas y ciberseguridad, ya que permite identificar aplicaciones en ejecución, detectar comportamientos anómalos, localizar procesos maliciosos y finalizar tareas que consumen recursos excesivos.
+
+Por otro lado, un servicio es un proceso que normalmente se ejecuta en segundo plano, sin interacción directa con el usuario. Algunos ejemplos habituales son los servicios web, servidores SSH, bases de datos o sistemas de monitorización.
+
