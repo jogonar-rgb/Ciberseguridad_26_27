@@ -1016,5 +1016,39 @@ kill -9 PID
 También es posible finalizar procesos por nombre:
 
 ```sh 
-kill firefox
+killall firefox
+```
+
+### Servicios con systemd 
+
+#### Gestión de servicios 
+
+La mayoría de distribuciones modernas utilizan systemd para gestionar servicios. Consultar el estado de un servicio: 
+
+```bash 
+systemctl status ssh
+```
+
+Iniciar un servicio:
+
+```bash 
+systemctl start ssh
+```
+
+Detenerlo:
+
+```bash 
+systemctl top ssh
+```
+
+Reiniciarlo:
+
+```bash 
+systemctl restart ssh
+```
+
+Y configurarlo para que arranque automáticamente con el sistema:
+
+```bash 
+systemctl enable ssh
 ```
