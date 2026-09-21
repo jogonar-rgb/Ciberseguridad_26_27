@@ -972,3 +972,49 @@ Para mostrar los procesos actualmente en ejecución podemos utilizar:
 ```sh
 ps
 ```
+
+Una opción muy habitual es:
+
+```sh
+ps aux
+```
+
+que muestra todos los procesos en ejecución junto con el usuario propietario, consumo de memoria y CPU.
+
+Para visualizar los procesos de forma dinámica:
+
+```sh
+top
+```
+
+o, si está instalado:
+
+```sh
+htop
+```
+
+### Finalizar procesos 
+
+Si un proceso deja de responder o consume demasiados recursos, puede finalizarse mediante el comando kill. En primer lugar debemos identificar el PID (Process ID) del proceso: 
+
+```sh 
+ps aux
+```
+
+Una vez localizado:
+
+```sh 
+kill PID
+```
+
+Si el proceso no responde:
+
+```sh 
+kill -9 PID
+```
+
+También es posible finalizar procesos por nombre:
+
+```sh 
+kill firefox
+```

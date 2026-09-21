@@ -882,6 +882,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#finalizar-procesos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalizar procesos
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1704,6 +1713,29 @@ ls<span class="w"> </span>-a<span class="w"> </span>.hidden
 <h4 id="visualizacion-de-procesos">Visualización de procesos</h4>
 <p>Para mostrar los procesos actualmente en ejecución podemos utilizar:</p>
 <div class="highlight"><pre><span></span><code>ps
+</code></pre></div>
+<p>Una opción muy habitual es:</p>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>aux
+</code></pre></div>
+<p>que muestra todos los procesos en ejecución junto con el usuario propietario, consumo de memoria y CPU.</p>
+<p>Para visualizar los procesos de forma dinámica:</p>
+<div class="highlight"><pre><span></span><code>top
+</code></pre></div>
+<p>o, si está instalado:</p>
+<div class="highlight"><pre><span></span><code>htop
+</code></pre></div>
+<h3 id="finalizar-procesos">Finalizar procesos</h3>
+<p>Si un proceso deja de responder o consume demasiados recursos, puede finalizarse mediante el comando kill. En primer lugar debemos identificar el PID (Process ID) del proceso: </p>
+<div class="highlight"><pre><span></span><code>ps<span class="w"> </span>aux
+</code></pre></div>
+<p>Una vez localizado:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>PID
+</code></pre></div>
+<p>Si el proceso no responde:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>PID
+</code></pre></div>
+<p>También es posible finalizar procesos por nombre:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">kill</span><span class="w"> </span>firefox
 </code></pre></div>
 
 
