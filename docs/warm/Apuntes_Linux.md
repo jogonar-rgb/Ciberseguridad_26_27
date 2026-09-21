@@ -993,7 +993,7 @@ o, si está instalado:
 htop
 ```
 
-### Finalizar procesos 
+#### Finalizar procesos 
 
 Si un proceso deja de responder o consume demasiados recursos, puede finalizarse mediante el comando kill. En primer lugar debemos identificar el PID (Process ID) del proceso: 
 
