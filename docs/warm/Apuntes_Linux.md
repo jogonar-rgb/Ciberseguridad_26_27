@@ -965,3 +965,10 @@ La gestión de procesos es una tarea fundamental en administración de sistemas 
 
 Por otro lado, un servicio es un proceso que normalmente se ejecuta en segundo plano, sin interacción directa con el usuario. Algunos ejemplos habituales son los servicios web, servidores SSH, bases de datos o sistemas de monitorización.
 
+#### Visualización de procesos
+
+Para mostrar los procesos actualmente en ejecución podemos utilizar:
+
+```sh
+ps
+```
