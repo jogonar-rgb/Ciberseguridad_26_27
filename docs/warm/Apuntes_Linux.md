@@ -1023,7 +1023,9 @@ killall firefox
 
 #### Gestión de servicios 
 
-La mayoría de distribuciones modernas utilizan systemd para gestionar servicios. Consultar el estado de un servicio: 
+La mayoría de distribuciones modernas utilizan systemd para gestionar servicios. 
+
+Consultar el estado de un servicio: 
 
 ```bash 
 systemctl status ssh
@@ -1051,4 +1053,181 @@ Y configurarlo para que arranque automáticamente con el sistema:
 
 ```bash 
 systemctl enable ssh
+```
+
+# Redes 
+
+## Introducción 
+
+### Comandos básicos de red 
+
+En ciberseguridad resulta imprescindible comprender la configuración de red de un sistema, las conexiones activas y los servicios expuestos. 
+
+Linux incorpora numerosas herramientas que permiten obtener información sobre interfaces de red, rutas, conexiones establecidas y resolución de nombres.
+
+#### Configuración de red
+
+Para visualizar las interfaces de red del sistema:
+
+```sh
+ip a
+```
+
+Para consultar la tabla de rutas:
+
+```sh
+ip route
+```
+
+La salida mostrará la puerta de enlace predeterminada y las redes a las que tiene acceso el equipo.
+
+### Comprobación de conectividad 
+
+#### Comprobación de conectividad 
+
+El comando ping permite verificar la comunicación con otro equipo: 
+
+```sh 
+ping 8.8.8.8
+```
+
+También puede utilizarse con nombres de dominio:
+
+```sh 
+ping www.google.es
+```
+
+Si responde mediante dirección IP pero no mediante nombre de dominio, probablemente exista un problema de resolución DNS.
+
+### Puertos y conexiones 
+
+#### Puertos y conexiones activas 
+
+Para visualizar las conexiones de red y los puertos abiertos: 
+
+```sh 
+ss -tulpn
+```
+
+Este comando muestra:
+
+Servicios en escucha.
+Puertos abiertos.
+Procesos asociados.
+Protocolos utilizados.
+
+Esta información resulta especialmente útil durante auditorías de seguridad y tareas de hardening.
+
+### Descarga de contenido 
+
+#### Transferencia de información 
+
+Dos herramientas muy utilizadas son curl y wget. 
+
+Obtener el contenido de una página web: 
+
+```sh 
+curl https://www.google.es
+```
+
+Descargar un archivo:
+
+```sh 
+wget https://servidor/fichero.zip
+```
+
+Estas herramientas son habituales tanto en administración de sistemas como en pruebas de seguridad.
+
+# Búsqueda y análisis de información
+
+## Introducción 
+
+### Búsqueda y análisis de información 
+
+Una gran parte del trabajo diario de un administrador o analista de ciberseguridad consiste en localizar información dentro del sistema. 
+
+Linux dispone de herramientas muy potentes para buscar archivos, localizar configuraciones y analizar grandes cantidades de texto.
+
+#### Localización de archivos
+
+El comando find permite buscar archivos y directorios.
+
+Buscar un archivo concreto:
+
+```sh 
+find .. -name "ciber.txt"
+```
+
+Buscar todos los archivos con extensión .conf en la carpeta /etc:
+
+```sh 
+find /etc -name "*.conf"
+```
+
+Buscar archivos mayores de 100 MB en todo el sistema:
+
+```sh 
+find / -size +100M
+```
+
+### grep 
+
+#### Búsqueda de contenido 
+
+grep permite buscar texto dentro de archivos. 
+
+Buscar todas las líneas que contienen la palabra "root": 
+
+```sh 
+grep root /etc/passwd
+```
+
+Buscar recursivamente dentro de un directorio:
+
+```sh 
+grep -r "password" .
+```
+
+Esta herramienta es especialmente útil durante labores de análisis forense y revisión de configuraciones.
+
+### locate 
+
+#### Búsqueda rápida mediante índices 
+
+El comando locate realiza búsquedas utilizando una base de datos previamente indexada. 
+
+```sh 
+locate passwd
+```
+
+Generalmente es mucho más rápido que find, aunque depende de que la base de datos esté actualizada.
+
+### Logs con journalctl 
+
+#### Consulta de registros del sistema
+
+Los sistemas Linux modernos almacenan gran cantidad de información en los registros o logs del sistema. 
+
+Para consultar dichos registros utilizamos: 
+
+```sh 
+journalctl
+```
+
+Mostrar los registros más recientes:
+
+```sh 
+journalctl -n 50
+```
+
+Mostrar únicamente los mensajes de un servicio:
+
+```sh 
+journalctl -u ssh
+```
+
+Consultar eventos ocurridos durante el arranque:
+
+```sh 
+journalctl -b
 ```
