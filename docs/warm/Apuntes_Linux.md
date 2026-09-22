@@ -161,7 +161,7 @@ Podría decirse que el directorio ```/var``` es la contraparte "escriturable" de
 
 ### Directorio *home*
 
-El directorio ```/home``` contiene una carpeta de inicio para cada usuario. Por ejemplo, si el nombre de usuario es raul, habrá una carpeta de inicio ubicada en ```/home/raul```. Esta carpeta de inicio contiene los archivos de datos del usuario y los archivos de configuración específicos del usuario (configuraciones de programas, por ejemplo). 
+El directorio ```/home``` contiene una carpeta de inicio para cada usuario. Por ejemplo, si el nombre de usuario es jose, habrá una carpeta de inicio ubicada en ```/home/jose```. Esta carpeta de inicio contiene los archivos de datos del usuario y los archivos de configuración específicos del usuario (configuraciones de programas, por ejemplo). 
 
 Cada usuario solo tiene acceso de escritura únicamente a su propia carpeta de inicio y debe convertirse en root para poder tener privilegios que le permitan modificar otros archivos en el sistema.
 
@@ -337,16 +337,16 @@ Un ejemplo práctico de cómo configurar este bit setuid en un archivo, de forma
 
 ```sh
 $ ls -l archivo
--rwxr-xr-x 1 raul raul 0 Feb 2 12:22 archivo
+-rwxr-xr-x 1 jose jose 0 Feb 2 12:22 archivo
 $ chmod u+s archivo
 $ ls -l archivo    
--rwsr-xr-x 1 raul raul 0 Feb  2 12:22 archivo
+-rwsr-xr-x 1 jose jose 0 Feb  2 12:22 archivo
 ```
 En el modo absoluto, anteponemos un 4 a los permisos para indicar este bit:
 
 ```sh
 $ chmod 4755 archivo
--rwsr-xr-x 1 raul raul 0 Feb  2 12:22 archivo
+-rwsr-xr-x 1 jose jose 0 Feb  2 12:22 archivo
 ```
 
 Y para quitar este bit, en ambos modos:
@@ -354,14 +354,14 @@ Y para quitar este bit, en ambos modos:
 ```sh
 $ chmod u-s archivo
 $ ls -l archivo
--rwxr-xr-x 1 raul raul 0 Feb  2 12:22 archivo
+-rwxr-xr-x 1 jose jose 0 Feb  2 12:22 archivo
 ```
 y
 
 ```sh
 $ chmod 0755 archivo
 $ ls -l archivo
--rwxr-xr-x 1 raul raul 0 Feb  2 12:22 archivo
+-rwxr-xr-x 1 jose jose 0 Feb  2 12:22 archivo
 ```
 
 
@@ -388,10 +388,10 @@ Para establecer este bit de modo simbólico podemos utilizar:
 
 ```sh
 $ ls -l archivo2 
--rwxr-xr-x 1 raul raul 0 Feb 2 22:35 archivo2
+-rwxr-xr-x 1 jose jose 0 Feb 2 22:35 archivo2
 $ chmod g+s archivo2
 $ ls -l archivo2
--rwxr-sr-x 1 raul raul 0 Feb 2 22:35 archivo2
+-rwxr-sr-x 1 jose jose 0 Feb 2 22:35 archivo2
 ```
 
 Y de modo absoluto, anteponiendo un dos a los permisos:
@@ -410,20 +410,20 @@ Primero, preparamos un directorio padre que contiene dos archivos:
 
 ```sh
 $ ls -ld padre
-drwxrwxrwx 2 root raul 4096 Feb  3 00:33 padre/
+drwxrwxrwx 2 root jose 4096 Feb  3 00:33 padre/
 $ ls -l padre
 total 2
 -rwxr-xr-x 1 invitado invitado    0 Feb  3 00:30 existing_grp_invitado1
 -rwxr-xr-x 1 invitado invitado    0 Feb  3 00:30 existing_grp_invitado2
 ```
-*padre* es propiedad del usuario root y del grupo raul. Contiene dos archivos e *invitado* es dueño de ambos.
+*padre* es propiedad del usuario root y del grupo jose. Contiene dos archivos e *invitado* es dueño de ambos.
 
 A continuación, establezcamos el bit setgid en *padre* usando chmod:
 
 ```sh
 root# chmod g+s padre
 root# ls -ld padre
-drwxrwsrwx 2 root raul 4096 Feb  3 00:33 padre/
+drwxrwsrwx 2 root jose 4096 Feb  3 00:33 padre/
 ```
 
 Ahora, vamos a crear un nuevo archivo y un subdirectorio bajo el padre con root:
@@ -440,12 +440,12 @@ root# ls -l padre
 total 4
 -rwxr-xr-x 1 invitado invitado    0 Feb  3 00:30 grp_exist_invitado1
 -rwxr-xr-x 1 invitado invitado    0 Feb  3 00:30 grp_exist_invitado2
-drwxr-sr-x 2 root  raul  4096 Feb  3 00:54 nuevo_dir_root/
--rw-r--r-- 1 root  raul     0 Feb  3 00:54 nuevo_arch_root
+drwxr-sr-x 2 root  jose  4096 Feb  3 00:54 nuevo_dir_root/
+-rw-r--r-- 1 root  jose     0 Feb  3 00:54 nuevo_arch_root
 ```
 En la salida anterior, vemos que los dos archivos existentes no han cambiado después de que establecemos el bit setgid en padre.
 
-Sin embargo, el archivo y el subdirectorio recién creados son propiedad de raul en lugar de  root , aunque root los creó. Esto se debe a que el padre tenía establecido el bit setgid , y los archivos y directorios recién creados bajo él heredaron el grupo del padre.
+Sin embargo, el archivo y el subdirectorio recién creados son propiedad de jose en lugar de  root , aunque root los creó. Esto se debe a que el padre tenía establecido el bit setgid , y los archivos y directorios recién creados bajo él heredaron el grupo del padre.
 
 #### Sticky bit
 
@@ -503,17 +503,17 @@ A continuación, crearemos algunos archivos en público por diferentes usuarios:
 $ ls -l
 -rw-r--r-- 1 invitado invitado 0 Feb  3 22:28 archivo1_invitado
 -rw-r--r-- 1 invitado invitado 0 Feb  3 22:28 archivo2_invitado
--rw-r--r-- 1 raul  raul  0 Feb  3 22:28 archivo_raul
+-rw-r--r-- 1 jose  jose  0 Feb  3 22:28 archivo_jose
 ```
 
-Hasta ahora, no hemos colocado el sticky bit en ninguna parte. Veamos si el usuario raul puede eliminar un archivo propiedad de un invitado:
+Hasta ahora, no hemos colocado el sticky bit en ninguna parte. Veamos si el usuario jose puede eliminar un archivo propiedad de un invitado:
 
 ```sh
-raul$ rm archivo1_invitado 
+jose$ rm archivo1_invitado 
 rm: remove write-protected regular empty archivo 'archivo1_invitado'? y
-raul$ ls -l
+jose$ ls -l
 -rw-r--r-- 1 invitado invitado 0 Feb  3 22:28 archivo2_invitado
--rw-r--r-- 1 raul  raul  0 Feb  3 22:28 archivo_raul
+-rw-r--r-- 1 jose  jose  0 Feb  3 22:28 archivo_jose
 ```
 Entonces, sin el sticky bit, podemos eliminar archivos propiedad de otros usuarios.
 
@@ -523,13 +523,13 @@ Ahora, configuremos el sticky bit y veamos si hay algún cambio:
 root# chmod +t public
 root# ls -ld public 
 drwxrwxrwt 2 root root 80 Feb  3 22:33 public/
-root# su raul
-raul$ rm archivo2_invitado 
+root# su jose
+jose$ rm archivo2_invitado 
 rm: remove write-protected regular empty archivo 'archivo2_invitado'? y
 rm: cannot remove 'archivo2_invitado': Operation not permitted
-raul$ ls -l 
+jose$ ls -l 
 -rw-r--r-- 1 invitado invitado 0 Feb 3 22:28 archivo2_invitado
--rw-r--r-- 1 raul raul 0 Feb 3 22:28 archivo_raul
+-rw-r--r-- 1 jose jose 0 Feb 3 22:28 archivo_jose
 ```
 Después de configurar el sticky bit, los archivos en público solo pueden ser eliminados por los propietarios del archivo.
 
