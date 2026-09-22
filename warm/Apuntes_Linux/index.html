@@ -1355,7 +1355,7 @@
 <p>Este directorio contiene varios archivos con información del sistema, como archivos de logs, emails de los usuarios del sistema, bases de datos, información almacenada en la caché o información relativa a los paquetes de aplicaciones almacenados en <code>/opt</code>. En cierto modo se podría decir que actúa a modo de registro del sistema.</p>
 <p>Podría decirse que el directorio <code>/var</code> es la contraparte "escriturable" del directorio <code>/usr</code>, que debe ser de solo lectura en el funcionamiento normal. Los archivos de registro y todo lo demás que normalmente se escribiría en <code>/usr</code> durante el funcionamiento normal se escriben en el directorio <code>/var</code>. </p>
 <h3 id="directorio-home">Directorio <em>home</em></h3>
-<p>El directorio <code>/home</code> contiene una carpeta de inicio para cada usuario. Por ejemplo, si el nombre de usuario es raul, habrá una carpeta de inicio ubicada en <code>/home/raul</code>. Esta carpeta de inicio contiene los archivos de datos del usuario y los archivos de configuración específicos del usuario (configuraciones de programas, por ejemplo). </p>
+<p>El directorio <code>/home</code> contiene una carpeta de inicio para cada usuario. Por ejemplo, si el nombre de usuario es jose, habrá una carpeta de inicio ubicada en <code>/home/jose</code>. Esta carpeta de inicio contiene los archivos de datos del usuario y los archivos de configuración específicos del usuario (configuraciones de programas, por ejemplo). </p>
 <p>Cada usuario solo tiene acceso de escritura únicamente a su propia carpeta de inicio y debe convertirse en root para poder tener privilegios que le permitan modificar otros archivos en el sistema.</p>
 <p>Para visualizar los ficheros ocultos dentro del directorio individual de cada usuario, se puede usar la combinación de comandos CTRL + H en modo gráfico. Todos los archivos y carpetas ocultas en Linux empiezan por un punto, seguido del nombre.</p>
 <p>En muchas distribuciones es una práctica recomendada el hecho de ubicar el directorio <code>/home</code> es una partición separada del resto, por tal de facilitar que, en caso de reinstalar el sistema operativo, puedas mantener intacta la partición de la <code>/home</code>, y de este modo mantener todos los archivos personales.</p>
@@ -1566,24 +1566,24 @@ Observamos que el permiso de ejecución para el propietario es una "s" minúscul
 <strong>Sólo el propietario el archivo o el usuario o el usuario <em>root</em> puede establecer el bit *setuid</strong>*</p>
 <p>Un ejemplo práctico de cómo configurar este bit setuid en un archivo, de forma simbólica:</p>
 <p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo
--rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
 $<span class="w"> </span>chmod<span class="w"> </span>u+s<span class="w"> </span>archivo
 $<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo<span class="w">    </span>
--rwsr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
+-rwsr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
 </code></pre></div>
 En el modo absoluto, anteponemos un 4 a los permisos para indicar este bit:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">4755</span><span class="w"> </span>archivo
--rwsr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
+-rwsr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
 </code></pre></div>
 <p>Y para quitar este bit, en ambos modos:</p>
 <p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span>u-s<span class="w"> </span>archivo
 $<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo
--rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
 </code></pre></div>
 y</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">0755</span><span class="w"> </span>archivo
 $<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo
--rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">12</span>:22<span class="w"> </span>archivo
 </code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Riesgo de seguridad</p>
@@ -1600,10 +1600,10 @@ $<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>arc
 Similar al  bit setuid , notamos una "s" minúscula en la salida de ls , excepto que está en la sección de grupo en lugar de en la sección de propietario.</p>
 <p>Para establecer este bit de modo simbólico podemos utilizar:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo2<span class="w"> </span>
--rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">22</span>:35<span class="w"> </span>archivo2
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">22</span>:35<span class="w"> </span>archivo2
 $<span class="w"> </span>chmod<span class="w"> </span>g+s<span class="w"> </span>archivo2
 $<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>archivo2
--rwxr-sr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">22</span>:35<span class="w"> </span>archivo2
+-rwxr-sr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">22</span>:35<span class="w"> </span>archivo2
 </code></pre></div>
 <p>Y de modo absoluto, anteponiendo un dos a los permisos:</p>
 <div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">2755</span><span class="w"> </span>archivo2
@@ -1613,17 +1613,17 @@ $<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>arc
 <p>Veamos un ejemplo para aclarar este comportamiento.</p>
 <p>Primero, preparamos un directorio padre que contiene dos archivos:</p>
 <p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>padre
-drwxrwxrwx<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>raul<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:33<span class="w"> </span>padre/
+drwxrwxrwx<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>jose<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:33<span class="w"> </span>padre/
 $<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>padre
 total<span class="w"> </span><span class="m">2</span>
 -rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w">    </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:30<span class="w"> </span>existing_grp_invitado1
 -rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w">    </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:30<span class="w"> </span>existing_grp_invitado2
 </code></pre></div>
-<em>padre</em> es propiedad del usuario root y del grupo raul. Contiene dos archivos e <em>invitado</em> es dueño de ambos.</p>
+<em>padre</em> es propiedad del usuario root y del grupo jose. Contiene dos archivos e <em>invitado</em> es dueño de ambos.</p>
 <p>A continuación, establezcamos el bit setgid en <em>padre</em> usando chmod:</p>
 <div class="highlight"><pre><span></span><code>root#<span class="w"> </span>chmod<span class="w"> </span>g+s<span class="w"> </span>padre
 root#<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>padre
-drwxrwsrwx<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>raul<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:33<span class="w"> </span>padre/
+drwxrwsrwx<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>jose<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:33<span class="w"> </span>padre/
 </code></pre></div>
 <p>Ahora, vamos a crear un nuevo archivo y un subdirectorio bajo el padre con root:</p>
 <div class="highlight"><pre><span></span><code>root#<span class="w"> </span>touch<span class="w"> </span>padre/nuevo_root
@@ -1634,11 +1634,11 @@ root#<span class="w"> </span>mkdir<span class="w"> </span>padre/nuevo_dir_root<s
 total<span class="w"> </span><span class="m">4</span>
 -rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w">    </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:30<span class="w"> </span>grp_exist_invitado1
 -rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w">    </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:30<span class="w"> </span>grp_exist_invitado2
-drwxr-sr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w">  </span>raul<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:54<span class="w"> </span>nuevo_dir_root/
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w">  </span>raul<span class="w">     </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:54<span class="w"> </span>nuevo_arch_root
+drwxr-sr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w">  </span>jose<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:54<span class="w"> </span>nuevo_dir_root/
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w">  </span>jose<span class="w">     </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">00</span>:54<span class="w"> </span>nuevo_arch_root
 </code></pre></div>
 En la salida anterior, vemos que los dos archivos existentes no han cambiado después de que establecemos el bit setgid en padre.</p>
-<p>Sin embargo, el archivo y el subdirectorio recién creados son propiedad de raul en lugar de  root , aunque root los creó. Esto se debe a que el padre tenía establecido el bit setgid , y los archivos y directorios recién creados bajo él heredaron el grupo del padre.</p>
+<p>Sin embargo, el archivo y el subdirectorio recién creados son propiedad de jose en lugar de  root , aunque root los creó. Esto se debe a que el padre tenía establecido el bit setgid , y los archivos y directorios recién creados bajo él heredaron el grupo del padre.</p>
 <h4 id="sticky-bit">Sticky bit</h4>
 <p>La misión del sticky bit es proteger los archivos dentro de un directorio. Si configuramos el sticky bit en un directorio, un archivo en este directorio solo se puede eliminar mediante una de las siguientes opciones:</p>
 <ul>
@@ -1673,27 +1673,27 @@ drwxrwxrwx<span class="w"> </span><span class="m">2</span><span class="w"> </spa
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>ls<span class="w"> </span>-l
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo1_invitado
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo2_invitado
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w">  </span>raul<span class="w">  </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo_raul
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w">  </span>jose<span class="w">  </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo_jose
 </code></pre></div>
-<p>Hasta ahora, no hemos colocado el sticky bit en ninguna parte. Veamos si el usuario raul puede eliminar un archivo propiedad de un invitado:</p>
-<p><div class="highlight"><pre><span></span><code>raul$<span class="w"> </span>rm<span class="w"> </span>archivo1_invitado<span class="w"> </span>
+<p>Hasta ahora, no hemos colocado el sticky bit en ninguna parte. Veamos si el usuario jose puede eliminar un archivo propiedad de un invitado:</p>
+<p><div class="highlight"><pre><span></span><code>jose$<span class="w"> </span>rm<span class="w"> </span>archivo1_invitado<span class="w"> </span>
 rm:<span class="w"> </span>remove<span class="w"> </span>write-protected<span class="w"> </span>regular<span class="w"> </span>empty<span class="w"> </span>archivo<span class="w"> </span><span class="s1">&#39;archivo1_invitado&#39;</span>?<span class="w"> </span>y
-raul$<span class="w"> </span>ls<span class="w"> </span>-l
+jose$<span class="w"> </span>ls<span class="w"> </span>-l
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo2_invitado
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w">  </span>raul<span class="w">  </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo_raul
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w">  </span>jose<span class="w">  </span><span class="m">0</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo_jose
 </code></pre></div>
 Entonces, sin el sticky bit, podemos eliminar archivos propiedad de otros usuarios.</p>
 <p>Ahora, configuremos el sticky bit y veamos si hay algún cambio:</p>
 <p><div class="highlight"><pre><span></span><code>root#<span class="w"> </span>chmod<span class="w"> </span>+t<span class="w"> </span>public
 root#<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>public<span class="w"> </span>
 drwxrwxrwt<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">80</span><span class="w"> </span>Feb<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:33<span class="w"> </span>public/
-root#<span class="w"> </span>su<span class="w"> </span>raul
-raul$<span class="w"> </span>rm<span class="w"> </span>archivo2_invitado<span class="w"> </span>
+root#<span class="w"> </span>su<span class="w"> </span>jose
+jose$<span class="w"> </span>rm<span class="w"> </span>archivo2_invitado<span class="w"> </span>
 rm:<span class="w"> </span>remove<span class="w"> </span>write-protected<span class="w"> </span>regular<span class="w"> </span>empty<span class="w"> </span>archivo<span class="w"> </span><span class="s1">&#39;archivo2_invitado&#39;</span>?<span class="w"> </span>y
 rm:<span class="w"> </span>cannot<span class="w"> </span>remove<span class="w"> </span><span class="s1">&#39;archivo2_invitado&#39;</span>:<span class="w"> </span>Operation<span class="w"> </span>not<span class="w"> </span>permitted
-raul$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>
+jose$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>
 -rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>invitado<span class="w"> </span>invitado<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo2_invitado
--rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>raul<span class="w"> </span>raul<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo_raul
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>jose<span class="w"> </span>jose<span class="w"> </span><span class="m">0</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">22</span>:28<span class="w"> </span>archivo_jose
 </code></pre></div>
 Después de configurar el sticky bit, los archivos en público solo pueden ser eliminados por los propietarios del archivo.</p>
 <h2 id="contrasenas-en-linux">Contraseñas en Linux</h2>
