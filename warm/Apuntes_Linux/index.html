@@ -869,6 +869,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#procesos-en-primer-plano-y-segundo-plano" class="md-nav__link">
+    <span class="md-ellipsis">
+      Procesos en primer plano y segundo plano
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#visualizacion-de-procesos" class="md-nav__link">
     <span class="md-ellipsis">
       Visualización de procesos
@@ -949,6 +958,24 @@
   
     <nav class="md-nav" aria-label="Comandos básicos de red">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-ip-e-interfaces-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones IP e interfaces de red
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puertos-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puertos de red
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#configuracion-de-red" class="md-nav__link">
@@ -1147,6 +1174,15 @@
   
     <nav class="md-nav" aria-label="Logs con journalctl">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-importancia-de-los-registros" class="md-nav__link">
+    <span class="md-ellipsis">
+      La importancia de los registros
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#consulta-de-registros-del-sistema" class="md-nav__link">
@@ -1981,9 +2017,22 @@ ls<span class="w"> </span>-a<span class="w"> </span>.hidden
 </code></pre></div>
 <p>Estos archivos normalmente almacenan la configuración personal, y es así como los sistemas Unix siempre han ofrecido la capacidad de tener configuraciones a nivel de sistema (generalmente en /etc) que pueden ser anuladas por usuarios individuales (cortesía de archivos ocultos en su directorio de inicio).</p>
 <h3 id="procesos-y-servicios">Procesos y servicios</h3>
-<p>Un proceso es una instancia de un programa que se está ejecutando en memoria. Cada vez que abrimos una aplicación, ejecutamos un comando o iniciamos un servicio, el sistema operativo crea uno o varios procesos.</p>
-<p>La gestión de procesos es una tarea fundamental en administración de sistemas y ciberseguridad, ya que permite identificar aplicaciones en ejecución, detectar comportamientos anómalos, localizar procesos maliciosos y finalizar tareas que consumen recursos excesivos.</p>
-<p>Por otro lado, un servicio es un proceso que normalmente se ejecuta en segundo plano, sin interacción directa con el usuario. Algunos ejemplos habituales son los servicios web, servidores SSH, bases de datos o sistemas de monitorización.</p>
+<p>Todo programa que se ejecuta en un sistema Linux lo hace en forma de proceso. Desde un navegador web hasta un servidor de bases de datos o una herramienta de monitorización, cualquier aplicación necesita que el sistema operativo le asigne memoria, tiempo de CPU y otros recursos para poder funcionar.</p>
+<p>Cada proceso posee un identificador único denominado PID (Process Identifier), que permite al sistema operativo diferenciarlo del resto. Además, cada proceso pertenece a un usuario concreto, lo que permite aplicar los mecanismos de permisos y seguridad vistos anteriormente.</p>
+<p>Uno de los principios fundamentales de los sistemas Unix es que las tareas complejas pueden dividirse en múltiples procesos pequeños especializados, cada uno encargado de una función concreta. Este diseño facilita la estabilidad del sistema y permite aislar mejor posibles errores o vulnerabilidades.</p>
+<p>Desde el punto de vista de la ciberseguridad, el análisis de procesos constituye una de las tareas más habituales durante una investigación. Muchos tipos de malware o herramientas empleadas por atacantes se ejecutan como procesos aparentemente legítimos, por lo que resulta imprescindible conocer cómo identificarlos y analizarlos.</p>
+<h4 id="procesos-en-primer-plano-y-segundo-plano">Procesos en primer plano y segundo plano</h4>
+<p>Cuando ejecutamos un comando desde el terminal, normalmente lo hacemos en primer plano. Esto significa que nuestro terminal queda asociado a dicho proceso hasta que finaliza.</p>
+<p>Sin embargo, muchos servicios del sistema se ejecutan en segundo plano, también llamados procesos daemon. Estos procesos permanecen funcionando de forma continua sin necesidad de interacción por parte del usuario.</p>
+<p>Algunos ejemplos de servicios ejecutándose en segundo plano son:</p>
+<ul>
+<li>Servidores web.</li>
+<li>Servidores SSH.</li>
+<li>Sistemas de monitorización.</li>
+<li>Bases de datos.</li>
+<li>Herramientas de seguridad.</li>
+</ul>
+<p>En sistemas Linux es habitual encontrar decenas o incluso cientos de procesos ejecutándose simultáneamente.</p>
 <h4 id="visualizacion-de-procesos">Visualización de procesos</h4>
 <p>Para mostrar los procesos actualmente en ejecución podemos utilizar:</p>
 <div class="highlight"><pre><span></span><code>ps
@@ -2032,8 +2081,29 @@ ls<span class="w"> </span>-a<span class="w"> </span>.hidden
 <h1 id="redes">Redes</h1>
 <h2 id="introduccion">Introducción</h2>
 <h3 id="comandos-basicos-de-red">Comandos básicos de red</h3>
-<p>En ciberseguridad resulta imprescindible comprender la configuración de red de un sistema, las conexiones activas y los servicios expuestos. </p>
-<p>Linux incorpora numerosas herramientas que permiten obtener información sobre interfaces de red, rutas, conexiones establecidas y resolución de nombres.</p>
+<p>La red es uno de los elementos más importantes de cualquier sistema informático moderno. Prácticamente todos los servicios utilizados actualmente dependen de comunicaciones entre dispositivos.</p>
+<p>Cuando un analista de ciberseguridad comienza una investigación, una de las primeras tareas consiste en comprender cómo está conectado un sistema, qué direcciones IP utiliza, qué servicios ofrece a otros equipos y qué conexiones mantiene activas.</p>
+<p>Linux incorpora numerosas utilidades para obtener esta información de forma rápida. Gracias a estas herramientas es posible identificar configuraciones incorrectas, detectar servicios innecesarios expuestos a la red o incluso descubrir actividad sospechosa.</p>
+<h4 id="direcciones-ip-e-interfaces-de-red">Direcciones IP e interfaces de red</h4>
+<p>Una interfaz de red representa el mecanismo mediante el cual un equipo puede comunicarse con otros dispositivos.
+ 
+Cada interfaz posee normalmente una dirección IP asociada. Esta dirección identifica de forma única al equipo dentro de una red y permite el intercambio de información entre distintos sistemas.
+ 
+En la actualidad es habitual encontrar simultáneamente direcciones IPv4 e IPv6 configuradas sobre una misma máquina.
+ 
+Conocer las direcciones IP configuradas en un sistema es uno de los primeros pasos durante cualquier tarea de administración o auditoría de seguridad.</p>
+<h4 id="puertos-de-red">Puertos de red</h4>
+<p>Cuando un equipo ofrece un servicio a otros dispositivos no basta únicamente con disponer de una dirección IP. También es necesario identificar la aplicación concreta que recibirá las conexiones.</p>
+<p>Para ello se utilizan los puertos de red. Un puerto puede entenderse como una puerta de entrada que permite dirigir una comunicación hacia una determinada aplicación.</p>
+<p>Algunos ejemplos ampliamente utilizados son:</p>
+<ul>
+<li>Puerto 22 para SSH.</li>
+<li>Puerto 80 para HTTP.</li>
+<li>Puerto 443 para HTTPS.</li>
+<li>Puerto 3306 para MySQL.</li>
+<li>Puerto 5432 para PostgreSQL.</li>
+</ul>
+<p>Durante una auditoría de seguridad resulta fundamental identificar qué puertos se encuentran abiertos y qué servicios están asociados a ellos.</p>
 <h4 id="configuracion-de-red">Configuración de red</h4>
 <p>Para visualizar las interfaces de red del sistema:</p>
 <div class="highlight"><pre><span></span><code>ip<span class="w"> </span>a
@@ -2075,8 +2145,9 @@ Protocolos utilizados.</p>
 <h1 id="busqueda-y-analisis-de-informacion">Búsqueda y análisis de información</h1>
 <h2 id="introduccion_1">Introducción</h2>
 <h3 id="busqueda-y-analisis-de-informacion_1">Búsqueda y análisis de información</h3>
-<p>Una gran parte del trabajo diario de un administrador o analista de ciberseguridad consiste en localizar información dentro del sistema. </p>
-<p>Linux dispone de herramientas muy potentes para buscar archivos, localizar configuraciones y analizar grandes cantidades de texto.</p>
+<p>Los sistemas Linux generan y almacenan enormes cantidades de información. Archivos de configuración, registros de actividad, bases de datos, scripts y aplicaciones conviven simultáneamente dentro del sistema de archivos.</p>
+<p>Por este motivo, una de las habilidades más importantes para cualquier administrador o profesional de ciberseguridad consiste en ser capaz de localizar rápidamente información relevante.</p>
+<p>La búsqueda eficiente de archivos y contenidos permite reducir enormemente el tiempo necesario para detectar errores de configuración, analizar incidentes de seguridad o comprender el funcionamiento de un sistema desconocido.</p>
 <h4 id="localizacion-de-archivos">Localización de archivos</h4>
 <p>El comando find permite buscar archivos y directorios.</p>
 <p>Buscar un archivo concreto:</p>
@@ -2105,6 +2176,19 @@ Protocolos utilizados.</p>
 </code></pre></div>
 <p>Generalmente es mucho más rápido que find, aunque depende de que la base de datos esté actualizada.</p>
 <h3 id="logs-con-journalctl">Logs con journalctl</h3>
+<h4 id="la-importancia-de-los-registros">La importancia de los registros</h4>
+<p>Los registros o logs constituyen una de las principales fuentes de información durante una investigación forense o un proceso de respuesta ante incidentes.</p>
+<p>Prácticamente cualquier acción relevante realizada por el sistema operativo o por las aplicaciones deja algún tipo de rastro en los registros.</p>
+<p>Entre otros muchos eventos, los logs pueden contener:</p>
+<ul>
+<li>Inicios y cierres de sesión.</li>
+<li>Errores de aplicaciones.</li>
+<li>Conexiones remotas.</li>
+<li>Reinicios del sistema.</li>
+<li>Instalación de software.</li>
+<li>Eventos relacionados con la seguridad.</li>
+</ul>
+<p>Por este motivo, el análisis de registros suele ser el punto de partida para reconstruir la cronología de un incidente y comprender qué ha ocurrido realmente en un sistema.</p>
 <h4 id="consulta-de-registros-del-sistema">Consulta de registros del sistema</h4>
 <p>Los sistemas Linux modernos almacenan gran cantidad de información en los registros o logs del sistema. </p>
 <p>Para consultar dichos registros utilizamos: </p>
