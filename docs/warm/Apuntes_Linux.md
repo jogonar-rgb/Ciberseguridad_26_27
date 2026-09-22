@@ -959,11 +959,29 @@ Estos archivos normalmente almacenan la configuración personal, y es así como 
 
 ### Procesos y servicios
 
-Un proceso es una instancia de un programa que se está ejecutando en memoria. Cada vez que abrimos una aplicación, ejecutamos un comando o iniciamos un servicio, el sistema operativo crea uno o varios procesos.
+Todo programa que se ejecuta en un sistema Linux lo hace en forma de proceso. Desde un navegador web hasta un servidor de bases de datos o una herramienta de monitorización, cualquier aplicación necesita que el sistema operativo le asigne memoria, tiempo de CPU y otros recursos para poder funcionar.
 
-La gestión de procesos es una tarea fundamental en administración de sistemas y ciberseguridad, ya que permite identificar aplicaciones en ejecución, detectar comportamientos anómalos, localizar procesos maliciosos y finalizar tareas que consumen recursos excesivos.
+Cada proceso posee un identificador único denominado PID (Process Identifier), que permite al sistema operativo diferenciarlo del resto. Además, cada proceso pertenece a un usuario concreto, lo que permite aplicar los mecanismos de permisos y seguridad vistos anteriormente.
 
-Por otro lado, un servicio es un proceso que normalmente se ejecuta en segundo plano, sin interacción directa con el usuario. Algunos ejemplos habituales son los servicios web, servidores SSH, bases de datos o sistemas de monitorización.
+Uno de los principios fundamentales de los sistemas Unix es que las tareas complejas pueden dividirse en múltiples procesos pequeños especializados, cada uno encargado de una función concreta. Este diseño facilita la estabilidad del sistema y permite aislar mejor posibles errores o vulnerabilidades.
+
+Desde el punto de vista de la ciberseguridad, el análisis de procesos constituye una de las tareas más habituales durante una investigación. Muchos tipos de malware o herramientas empleadas por atacantes se ejecutan como procesos aparentemente legítimos, por lo que resulta imprescindible conocer cómo identificarlos y analizarlos.
+
+#### Procesos en primer plano y segundo plano
+
+Cuando ejecutamos un comando desde el terminal, normalmente lo hacemos en primer plano. Esto significa que nuestro terminal queda asociado a dicho proceso hasta que finaliza.
+
+Sin embargo, muchos servicios del sistema se ejecutan en segundo plano, también llamados procesos daemon. Estos procesos permanecen funcionando de forma continua sin necesidad de interacción por parte del usuario.
+
+Algunos ejemplos de servicios ejecutándose en segundo plano son:
+
+- Servidores web.
+- Servidores SSH.
+- Sistemas de monitorización.
+- Bases de datos.
+- Herramientas de seguridad.
+
+En sistemas Linux es habitual encontrar decenas o incluso cientos de procesos ejecutándose simultáneamente.
 
 #### Visualización de procesos
 
@@ -1061,9 +1079,37 @@ systemctl enable ssh
 
 ### Comandos básicos de red 
 
-En ciberseguridad resulta imprescindible comprender la configuración de red de un sistema, las conexiones activas y los servicios expuestos. 
+La red es uno de los elementos más importantes de cualquier sistema informático moderno. Prácticamente todos los servicios utilizados actualmente dependen de comunicaciones entre dispositivos.
 
-Linux incorpora numerosas herramientas que permiten obtener información sobre interfaces de red, rutas, conexiones establecidas y resolución de nombres.
+Cuando un analista de ciberseguridad comienza una investigación, una de las primeras tareas consiste en comprender cómo está conectado un sistema, qué direcciones IP utiliza, qué servicios ofrece a otros equipos y qué conexiones mantiene activas.
+
+Linux incorpora numerosas utilidades para obtener esta información de forma rápida. Gracias a estas herramientas es posible identificar configuraciones incorrectas, detectar servicios innecesarios expuestos a la red o incluso descubrir actividad sospechosa.
+
+#### Direcciones IP e interfaces de red
+ 
+Una interfaz de red representa el mecanismo mediante el cual un equipo puede comunicarse con otros dispositivos.
+ 
+Cada interfaz posee normalmente una dirección IP asociada. Esta dirección identifica de forma única al equipo dentro de una red y permite el intercambio de información entre distintos sistemas.
+ 
+En la actualidad es habitual encontrar simultáneamente direcciones IPv4 e IPv6 configuradas sobre una misma máquina.
+ 
+Conocer las direcciones IP configuradas en un sistema es uno de los primeros pasos durante cualquier tarea de administración o auditoría de seguridad.
+
+#### Puertos de red
+
+Cuando un equipo ofrece un servicio a otros dispositivos no basta únicamente con disponer de una dirección IP. También es necesario identificar la aplicación concreta que recibirá las conexiones.
+
+Para ello se utilizan los puertos de red. Un puerto puede entenderse como una puerta de entrada que permite dirigir una comunicación hacia una determinada aplicación.
+
+Algunos ejemplos ampliamente utilizados son:
+
+- Puerto 22 para SSH.
+- Puerto 80 para HTTP.
+- Puerto 443 para HTTPS.
+- Puerto 3306 para MySQL.
+- Puerto 5432 para PostgreSQL.
+
+Durante una auditoría de seguridad resulta fundamental identificar qué puertos se encuentran abiertos y qué servicios están asociados a ellos.
 
 #### Configuración de red
 
@@ -1142,11 +1188,13 @@ Estas herramientas son habituales tanto en administración de sistemas como en p
 
 ## Introducción 
 
-### Búsqueda y análisis de información 
+### Búsqueda y análisis de información
 
-Una gran parte del trabajo diario de un administrador o analista de ciberseguridad consiste en localizar información dentro del sistema. 
+Los sistemas Linux generan y almacenan enormes cantidades de información. Archivos de configuración, registros de actividad, bases de datos, scripts y aplicaciones conviven simultáneamente dentro del sistema de archivos.
 
-Linux dispone de herramientas muy potentes para buscar archivos, localizar configuraciones y analizar grandes cantidades de texto.
+Por este motivo, una de las habilidades más importantes para cualquier administrador o profesional de ciberseguridad consiste en ser capaz de localizar rápidamente información relevante.
+
+La búsqueda eficiente de archivos y contenidos permite reducir enormemente el tiempo necesario para detectar errores de configuración, analizar incidentes de seguridad o comprender el funcionamiento de un sistema desconocido.
 
 #### Localización de archivos
 
@@ -1203,6 +1251,23 @@ locate passwd
 Generalmente es mucho más rápido que find, aunque depende de que la base de datos esté actualizada.
 
 ### Logs con journalctl 
+
+#### La importancia de los registros
+
+Los registros o logs constituyen una de las principales fuentes de información durante una investigación forense o un proceso de respuesta ante incidentes.
+
+Prácticamente cualquier acción relevante realizada por el sistema operativo o por las aplicaciones deja algún tipo de rastro en los registros.
+
+Entre otros muchos eventos, los logs pueden contener:
+
+- Inicios y cierres de sesión.
+- Errores de aplicaciones.
+- Conexiones remotas.
+- Reinicios del sistema.
+- Instalación de software.
+- Eventos relacionados con la seguridad.
+
+Por este motivo, el análisis de registros suele ser el punto de partida para reconstruir la cronología de un incidente y comprender qué ha ocurrido realmente en un sistema.
 
 #### Consulta de registros del sistema
 
