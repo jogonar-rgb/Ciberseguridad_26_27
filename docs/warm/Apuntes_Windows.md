@@ -264,6 +264,9 @@ Por este motivo, es recomendable seguir un procedimiento que incluya:
 
 Este enfoque permite reducir el riesgo de interrupciones en el servicio y garantizar que las medidas de seguridad no afecten negativamente a la operativa de la organización.
 
+!!!Note "Equilibrio entre seguridad y disponibilidad"
+    Instalar una actualización sin comprobar previamente su impacto puede provocar fallos en aplicaciones empresariales, impresoras, controladores o servicios críticos. Sin embargo, retrasar excesivamente las actualizaciones de seguridad puede dejar el sistema expuesto a vulnerabilidades conocidas. Por ello, las organizaciones deben buscar un equilibrio entre la protección frente a amenazas y la continuidad del servicio.
+
 ## Manejo de credenciales
 
 Las credenciales son el conjunto de datos que permiten identificar y autenticar a un usuario dentro de un sistema informático. Constituyen uno de los principales mecanismos de control de acceso y son uno de los objetivos más habituales de los ciberdelincuentes.
