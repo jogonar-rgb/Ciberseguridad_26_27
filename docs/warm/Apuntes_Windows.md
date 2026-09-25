@@ -362,4 +362,20 @@ Para reducir el riesgo de escalada de privilegios es recomendable:
 !!!Warning "Principio de mínimo privilegio"
     Los usuarios deben disponer únicamente de los permisos necesarios para realizar su trabajo. Cuantos más privilegios tiene una cuenta, mayor es el impacto que puede tener una vulnerabilidad, una mala configuración o el robo de credenciales.
 
-<!-- ## EDR -->
+### Detección y respuesta ante amenazas (EDR)
+
+Las medidas preventivas, como las actualizaciones de seguridad, el uso de contraseñas robustas o la autenticación multifactor, reducen significativamente el riesgo de sufrir un incidente de seguridad. Sin embargo, ningún sistema puede considerarse completamente seguro.
+
+Por este motivo, las organizaciones utilizan soluciones EDR (Endpoint Detection and Response), herramientas diseñadas para monitorizar de forma continua la actividad de los equipos con el objetivo de detectar comportamientos anómalos o potencialmente maliciosos.
+
+Un EDR puede identificar acciones sospechosas como:
+
+- La ejecución de software malicioso.
+- Intentos de escalada de privilegios.
+- Movimientos laterales dentro de una red.
+- Modificaciones no autorizadas del sistema.
+- Accesos inusuales a archivos o recursos.
+
+Además de detectar amenazas, estas soluciones permiten responder rápidamente a los incidentes, por ejemplo aislando un equipo comprometido o bloqueando procesos maliciosos antes de que causen daños mayores.
+
+Los EDR constituyen una capa adicional de protección que complementa las medidas preventivas tradicionales.
