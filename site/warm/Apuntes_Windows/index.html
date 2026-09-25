@@ -685,6 +685,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#escalada-de-privilegios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalada de privilegios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escalada de privilegios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escalada-de-privilegios-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalada de privilegios horizontal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalada-de-privilegios-vertical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalada de privilegios vertical
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medidas-de-proteccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medidas de protección
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1002,8 +1044,43 @@ AD RMS se utiliza para proteger la propiedad intelectual y datos sensibles en ar
 <p>La aparición de herramientas basadas en inteligencia artificial ha incrementado la sofisticación de los ataques dirigidos al robo de credenciales. Los ciberdelincuentes pueden utilizar estas tecnologías para crear correos electrónicos de phishing más creíbles, personalizar mensajes de ingeniería social o incluso simular conversaciones y llamadas telefónicas mediante técnicas de suplantación de voz.</p>
 <p>Por este motivo, ya no es suficiente confiar únicamente en una contraseña robusta. Los usuarios deben verificar cuidadosamente cualquier solicitud relacionada con credenciales, desconfiar de mensajes inesperados y utilizar mecanismos adicionales de protección como el MFA.</p>
 <p>Al mismo tiempo, la inteligencia artificial también se utiliza con fines defensivos para detectar comportamientos anómalos, accesos sospechosos o intentos de compromiso de cuentas, ayudando a mejorar la seguridad de las organizaciones.</p>
-<!-- ## Escalada de privilegios
-## EDR -->
+<div class="admonition warning">
+<p class="admonition-title">La contraseña ya no es suficiente</p>
+<p>Las contraseñas continúan siendo un elemento fundamental de seguridad, pero pueden verse comprometidas mediante filtraciones de datos, ataques de phishing o técnicas de ingeniería social apoyadas por inteligencia artificial. Por ello, la autenticación multifactor (MFA) se ha convertido en una medida imprescindible para proteger la identidad digital.</p>
+</div>
+<h2 id="escalada-de-privilegios">Escalada de privilegios</h2>
+<p>La escalada de privilegios es una técnica mediante la cual un usuario o atacante consigue obtener permisos superiores a los que tiene asignados inicialmente dentro de un sistema.</p>
+<p>El objetivo de este tipo de ataque es acceder a recursos restringidos, modificar configuraciones, instalar software o controlar completamente el sistema.</p>
+<p>La escalada de privilegios puede producirse por diversas causas:</p>
+<ul>
+<li>Vulnerabilidades sin corregir en el sistema operativo o en las aplicaciones.</li>
+<li>Configuraciones incorrectas de permisos.</li>
+<li>Uso de contraseñas débiles o comprometidas.</li>
+<li>Errores de programación en aplicaciones.</li>
+<li>Credenciales administrativas almacenadas de forma insegura.</li>
+</ul>
+<p>Existen dos tipos principales:</p>
+<h3 id="escalada-de-privilegios-horizontal">Escalada de privilegios horizontal</h3>
+<p>Se produce cuando un usuario obtiene acceso a los recursos de otro usuario con el mismo nivel de permisos.</p>
+<p>Por ejemplo, un empleado accede a documentos pertenecientes a otro compañero sin estar autorizado para ello.</p>
+<h3 id="escalada-de-privilegios-vertical">Escalada de privilegios vertical</h3>
+<p>Se produce cuando un usuario consigue permisos superiores a los que le corresponden, llegando incluso a obtener privilegios de administrador.</p>
+<p>Por ejemplo, una vulnerabilidad permite que un usuario estándar ejecute acciones reservadas a los administradores del sistema.</p>
+<h3 id="medidas-de-proteccion">Medidas de protección</h3>
+<p>Para reducir el riesgo de escalada de privilegios es recomendable:</p>
+<ul>
+<li>Mantener el sistema operativo y las aplicaciones actualizadas.</li>
+<li>Aplicar el principio de mínimo privilegio.</li>
+<li>Utilizar cuentas de usuario sin permisos administrativos para las tareas habituales.</li>
+<li>Revisar periódicamente los permisos asignados a usuarios y grupos.</li>
+<li>Implementar autenticación multifactor para las cuentas privilegiadas.</li>
+<li>Monitorizar actividades sospechosas y cambios en los permisos.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Principio de mínimo privilegio</p>
+<p>Los usuarios deben disponer únicamente de los permisos necesarios para realizar su trabajo. Cuantos más privilegios tiene una cuenta, mayor es el impacto que puede tener una vulnerabilidad, una mala configuración o el robo de credenciales.</p>
+</div>
+<!-- ## EDR -->
 
 
 

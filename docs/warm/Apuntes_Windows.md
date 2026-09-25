@@ -317,5 +317,49 @@ Por este motivo, ya no es suficiente confiar únicamente en una contraseña robu
 
 Al mismo tiempo, la inteligencia artificial también se utiliza con fines defensivos para detectar comportamientos anómalos, accesos sospechosos o intentos de compromiso de cuentas, ayudando a mejorar la seguridad de las organizaciones.
 
-<!-- ## Escalada de privilegios
-## EDR -->
+!!!Warning "La contraseña ya no es suficiente"
+    Las contraseñas continúan siendo un elemento fundamental de seguridad, pero pueden verse comprometidas mediante filtraciones de datos, ataques de phishing o técnicas de ingeniería social apoyadas por inteligencia artificial. Por ello, la autenticación multifactor (MFA) se ha convertido en una medida imprescindible para proteger la identidad digital.
+
+## Escalada de privilegios
+
+La escalada de privilegios es una técnica mediante la cual un usuario o atacante consigue obtener permisos superiores a los que tiene asignados inicialmente dentro de un sistema.
+
+El objetivo de este tipo de ataque es acceder a recursos restringidos, modificar configuraciones, instalar software o controlar completamente el sistema.
+
+La escalada de privilegios puede producirse por diversas causas:
+
+- Vulnerabilidades sin corregir en el sistema operativo o en las aplicaciones.
+- Configuraciones incorrectas de permisos.
+- Uso de contraseñas débiles o comprometidas.
+- Errores de programación en aplicaciones.
+- Credenciales administrativas almacenadas de forma insegura.
+
+Existen dos tipos principales:
+
+### Escalada de privilegios horizontal
+
+Se produce cuando un usuario obtiene acceso a los recursos de otro usuario con el mismo nivel de permisos.
+
+Por ejemplo, un empleado accede a documentos pertenecientes a otro compañero sin estar autorizado para ello.
+
+### Escalada de privilegios vertical
+
+Se produce cuando un usuario consigue permisos superiores a los que le corresponden, llegando incluso a obtener privilegios de administrador.
+
+Por ejemplo, una vulnerabilidad permite que un usuario estándar ejecute acciones reservadas a los administradores del sistema.
+
+### Medidas de protección
+
+Para reducir el riesgo de escalada de privilegios es recomendable:
+
+- Mantener el sistema operativo y las aplicaciones actualizadas.
+- Aplicar el principio de mínimo privilegio.
+- Utilizar cuentas de usuario sin permisos administrativos para las tareas habituales.
+- Revisar periódicamente los permisos asignados a usuarios y grupos.
+- Implementar autenticación multifactor para las cuentas privilegiadas.
+- Monitorizar actividades sospechosas y cambios en los permisos.
+
+!!!Warning "Principio de mínimo privilegio"
+    Los usuarios deben disponer únicamente de los permisos necesarios para realizar su trabajo. Cuantos más privilegios tiene una cuenta, mayor es el impacto que puede tener una vulnerabilidad, una mala configuración o el robo de credenciales.
+
+<!-- ## EDR -->
