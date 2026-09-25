@@ -619,6 +619,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#actualizaciones-del-sistema-operativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizaciones del sistema operativo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actualizaciones del sistema operativo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buenas-practicas-en-la-gestion-de-actualizaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buenas prácticas en la gestión de actualizaciones
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manejo-de-credenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manejo de credenciales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manejo de credenciales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buenas-practicas-para-la-gestion-de-credenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buenas prácticas para la gestión de credenciales
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autenticacion-multifactor-mfa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autenticación multifactor (MFA)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inteligencia-artificial-y-proteccion-de-credenciales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inteligencia artificial y protección de credenciales
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -866,9 +932,74 @@ AD RMS se utiliza para proteger la propiedad intelectual y datos sensibles en ar
 <p>En primer lugar, el editor de GPO no es la consola más fácil de usar, más bien es un tanto adusto. Un conocimiento profundo de PowerShell ayudará a que sea más fácil realizar todas las actualizaciones de GPO, lo cual complica más la cosa si cabe.</p>
 <p>Las actualizaciones de GPO se realizan aleatoriamente cada 90 a 120 minutos cada vez que se reinicia el equipo. Puede especificarse una tasa de actualización desde 0 minutos hasta 45 días. Sin embargo, si se especifican 0 minutos, entonces, de forma predeterminada, las GPO intentarán actualizarse cada 7 segundos, lo que probablemente inunde la red de tráfico.</p>
 <p>Los GPO tampoco son inmunes a los ciberataques. Si un atacante quisiera cambiar las GPO locales en un equipo para moverse lateralmente a través de la red, sería muy difícil detectarlo sin una solución de auditoría y monitoreo de políticas de grupo implementada.</p>
-<!-- ## Actualizaciones del SO
-## Manejo de credenciales
-## Escalada de privilegios
+<h2 id="actualizaciones-del-sistema-operativo">Actualizaciones del sistema operativo</h2>
+<p>Mantener actualizado un sistema operativo es una de las medidas de seguridad más importantes en cualquier entorno informático. Los fabricantes publican periódicamente actualizaciones que corrigen errores, mejoran el rendimiento e incorporan nuevas funcionalidades, pero también solucionan vulnerabilidades que podrían ser aprovechadas por atacantes.</p>
+<p>Una vulnerabilidad es un fallo de seguridad que puede permitir acciones no autorizadas sobre un sistema, como el acceso a información sensible, la ejecución de código malicioso o la elevación de privilegios. Para corregir estas vulnerabilidades, los fabricantes distribuyen parches de seguridad que deben instalarse lo antes posible.</p>
+<p>Entre las ventajas de mantener un sistema actualizado destacan:</p>
+<ul>
+<li>Corrección de vulnerabilidades conocidas.</li>
+<li>Mejora de la estabilidad del sistema.</li>
+<li>Compatibilidad con nuevas aplicaciones y dispositivos.</li>
+<li>Incremento de la fiabilidad y el rendimiento.</li>
+<li>Reducción de la superficie de ataque.</li>
+</ul>
+<p>En entornos empresariales, la gestión de actualizaciones suele realizarse de forma centralizada mediante herramientas de administración que permiten controlar qué actualizaciones se instalan y en qué momento.</p>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+</div>
+<p>No aplicar las actualizaciones de seguridad puede dejar expuestos sistemas y servicios frente a vulnerabilidades conocidas para las cuales ya existen herramientas de explotación públicas.</p>
+<h3 id="buenas-practicas-en-la-gestion-de-actualizaciones">Buenas prácticas en la gestión de actualizaciones</h3>
+<p>Aunque las actualizaciones son fundamentales para mantener la seguridad de los sistemas, en entornos empresariales deben gestionarse de forma planificada. Una actualización puede introducir cambios que afecten a la compatibilidad de determinadas aplicaciones, servicios o dispositivos.
+ 
+Por este motivo, es recomendable seguir un procedimiento que incluya:
+ 
+- Evaluar la criticidad de la actualización.
+- Probar previamente los cambios en un entorno de pruebas o laboratorio.
+- Verificar la compatibilidad con las aplicaciones corporativas.
+- Realizar copias de seguridad antes de la instalación.
+- Implantar las actualizaciones de forma escalonada.
+- Disponer de un procedimiento de reversión en caso de incidencia.
+ 
+Este enfoque permite reducir el riesgo de interrupciones en el servicio y garantizar que las medidas de seguridad no afecten negativamente a la operativa de la organización.</p>
+<h2 id="manejo-de-credenciales">Manejo de credenciales</h2>
+<p>Las credenciales son el conjunto de datos que permiten identificar y autenticar a un usuario dentro de un sistema informático. Constituyen uno de los principales mecanismos de control de acceso y son uno de los objetivos más habituales de los ciberdelincuentes.</p>
+<p>Las credenciales pueden estar formadas por:</p>
+<ul>
+<li>Nombre de usuario y contraseña.</li>
+<li>Certificados digitales.</li>
+<li>Tarjetas inteligentes.</li>
+<li>Factores biométricos.</li>
+<li>Códigos de un solo uso (OTP).</li>
+</ul>
+<p>Cuando un usuario introduce sus credenciales, el sistema verifica su identidad antes de conceder acceso a los recursos autorizados.</p>
+<p>La protección de las credenciales resulta fundamental, ya que un atacante que consiga obtenerlas podrá actuar con los mismos permisos que el usuario legítimo.</p>
+<h3 id="buenas-practicas-para-la-gestion-de-credenciales">Buenas prácticas para la gestión de credenciales</h3>
+<ul>
+<li>Utilizar contraseñas robustas y difíciles de adivinar.</li>
+<li>No reutilizar la misma contraseña en distintos servicios.</li>
+<li>No compartir credenciales con otros usuarios.</li>
+<li>Emplear gestores de contraseñas para almacenarlas de forma segura.</li>
+<li>Activar la autenticación multifactor (MFA) siempre que sea posible.</li>
+<li>Cambiar las contraseñas comprometidas inmediatamente.</li>
+<li>Bloquear la sesión al abandonar el puesto de trabajo.</li>
+<li>Evitar almacenar contraseñas en documentos o notas visibles.</li>
+<li>Revisar periódicamente los accesos y dispositivos asociados a las cuentas.</li>
+</ul>
+<h3 id="autenticacion-multifactor-mfa">Autenticación multifactor (MFA)</h3>
+<p>La autenticación multifactor consiste en utilizar dos o más mecanismos de autenticación diferentes para verificar la identidad de un usuario.</p>
+<p>Generalmente se combina:</p>
+<ul>
+<li>Algo que el usuario sabe (contraseña).</li>
+<li>Algo que el usuario posee (teléfono móvil o token).</li>
+<li>Algo que el usuario es (huella dactilar o reconocimiento facial).</li>
+</ul>
+<p>El uso de MFA reduce significativamente el riesgo asociado al robo de credenciales, ya que un atacante necesitaría comprometer varios factores de autenticación para acceder a la cuenta.</p>
+<p>Actualmente, el MFA es una de las medidas de seguridad más eficaces para proteger servicios en la nube, cuentas corporativas y accesos remotos.</p>
+<h3 id="inteligencia-artificial-y-proteccion-de-credenciales">Inteligencia artificial y protección de credenciales</h3>
+<p>La aparición de herramientas basadas en inteligencia artificial ha incrementado la sofisticación de los ataques dirigidos al robo de credenciales. Los ciberdelincuentes pueden utilizar estas tecnologías para crear correos electrónicos de phishing más creíbles, personalizar mensajes de ingeniería social o incluso simular conversaciones y llamadas telefónicas mediante técnicas de suplantación de voz.</p>
+<p>Por este motivo, ya no es suficiente confiar únicamente en una contraseña robusta. Los usuarios deben verificar cuidadosamente cualquier solicitud relacionada con credenciales, desconfiar de mensajes inesperados y utilizar mecanismos adicionales de protección como el MFA.</p>
+<p>Al mismo tiempo, la inteligencia artificial también se utiliza con fines defensivos para detectar comportamientos anómalos, accesos sospechosos o intentos de compromiso de cuentas, ayudando a mejorar la seguridad de las organizaciones.</p>
+<!-- ## Escalada de privilegios
 ## EDR -->
 
 
