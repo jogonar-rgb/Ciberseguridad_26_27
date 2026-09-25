@@ -13,7 +13,7 @@ Empresas de todos los tamaños en todo el mundo utilizan Active Directory para a
 
 Active Directory (AD) es un servicio de directorio que se ejecuta en Microsoft Windows Server. Un directorio es una estructura jerárquica que almacena información sobre los objetos en la red. 
 
-La función principal de Active Directory (AD) es proporcionar un servicio de directorio centralizado para la administración y autenticación de usuarios y recursos en una red. Desarrollado por Microsoft, Active Directory permite gestionar información y controlar el acceso a recursos dentro de una red empresarial
+La función principal de Active Directory (AD) es proporcionar un servicio de directorio centralizado para la administración y autenticación de usuarios y recursos en una red. Desarrollado por Microsoft, Active Directory permite gestionar la información y controlar el acceso a recursos dentro de una red empresarial
 
 Active Directory usa un almacén de datos estructurado como base para una organización jerárquica lógica de la información del directorio.
 
@@ -41,9 +41,9 @@ Además, los archivos se almacenan en un repositorio central donde se pueden com
 
 ### Antes de nada, ¿qué es un dominio?
 
-Un dominio representa una agrupación lógica de un conjunto ordenadores, usuarios y servicios conectados en una red los cuales comparten una base de datos de Active Directory. La base de base de datos es probablemente el elemento más importante en un AD (Active Directory) y es gestionada por los servidores centrales del dominio, también conocidos como Domain Controllers. 
+Un dominio representa una agrupación lógica de un conjunto de ordenadores, usuarios y servicios conectados en una red los cuales comparten una base de datos de Active Directory. La base de datos es probablemente el elemento más importante en un AD (Active Directory) y es gestionada por los servidores centrales del dominio, también conocidos como Domain Controllers. 
 
-Un dominio básicamente es una etiqueta que típicamente representa un nombre DNS, el cual en algunas organizaciones es el mismo que su sitio web, pero no tiene porque ser así en todos los casos y es posible que la organización prefiera utilizar otro nombre de dominio que será al que se unirán las estaciones de trabajo.
+Un dominio básicamente es una etiqueta que típicamente representa un nombre DNS, el cual en algunas organizaciones es el mismo que su sitio web, pero no tiene por qué ser así en todos los casos y es posible que la organización prefiera utilizar otro nombre de dominio que será al que se unirán las estaciones de trabajo.
 
 ### ¿Qué son los Domain Services (sevicios de dominio) de Active Directory?
 
@@ -58,7 +58,7 @@ AD DS también proporciona características adicionales como inicio de sesión �
 
 ### La estructura jerárquica de los servicios de dominio de Active Directory
 
-Los dominios en AD son muy flexibles y permiten crear una infraestructura completa y bien organizada. Partiendo de un dominio raíz, es posible crear subdominios que representen la disposición física y/o lógica de las estaciones de trabajo. Esto significa que se puede crear un subdominio para el departamento de ventas, IT, marketing, etc. También se podría crear subdominios para las oficinas que se encuentran distribuidas en diferentes ubicaciones geográficas. Evidentemente, se trata de decisiones de diseño a la hora de configurar la red.
+Los dominios en AD son muy flexibles y permiten crear una infraestructura completa y bien organizada. Partiendo de un dominio raíz, es posible crear subdominios que representen la disposición física y/o lógica de las estaciones de trabajo. Esto significa que se puede crear un subdominio para el departamento de ventas, IT, marketing, etc. También se podrían crear subdominios para las oficinas que se encuentran distribuidas en diferentes ubicaciones geográficas. Evidentemente, se trata de decisiones de diseño a la hora de configurar la red.
 
 AD DS organiza los datos en una estructura jerárquica que consta de dominios, árboles y bosques, como se detalla a continuación.
 
@@ -127,7 +127,7 @@ El servidor que aloja AD DS se denomina **controlador de dominio (DC)**. Tambié
 
 Entre otras cosas, Active Directory gestiona los usuarios del entorno tratándolos como un tipo de objeto especial que se almacena en la base de datos central. A continuación se listan algunas cuestiones importantes a tener en cuenta sobre los usuarios de un dominio.
 
-+ Aunque el nombre de usuario sirve para identificarle, el SID (Security Identifier) también puede ser utilizado para dicho fin. El SID es la combinación del Domain SID y el RID (Relative Identifier). Algunas herramientas enseñan el SID en lugar del nombre de usuario, por ese motivo es importante saber esto. 
++ Aunque el nombre de usuario sirve para identificarle, el SID (Security Identifier) también puede utilizarse para dicho fin. El SID es la combinación del Domain SID y el RID (Relative Identifier). Algunas herramientas enseñan el SID en lugar del nombre de usuario, por ese motivo es importante saber esto. 
   
     El SID asegura la correcta aplicación de permisos y controles de acceso en entornos Windows. Es fundamental para la administración de la seguridad y la gestión de identidades en redes corporativas.
 
@@ -148,7 +148,7 @@ La base de datos de un AD contiene todos los objetos que se encuentran disponibl
 + Es una base de datos distribuida.
 + Cuenta con una estructura basada en objetos y jerarquías de clases.
 
-El archivo NTDS.dit es una base de datos que almacena datos de Active Directory, incluida información sobre objetos de usuario, grupos y pertenencia a grupos. Incluye los hashes NTLM  de las contraseñas para todos los usuarios y computadores.
+El archivo NTDS.dit es una base de datos que almacena datos de Active Directory, incluida información sobre objetos de usuario, grupos y pertenencia a grupos. Incluye los hashes NTLM de las contraseñas para todos los usuarios y computadores.
 
 En entornos con múltiples controladores de dominio, NTDS.dit permite la replicación de datos entre estos controladores, asegurando que todos tengan copias actualizadas de la base de datos de Active Directory.
 
@@ -212,7 +212,7 @@ El orden en que se procesan los GPO se conoce como LSDOU, que significa local, s
 
 Los beneficios de la política de grupo no se limitan únicamente a la seguridad, hay una serie de otras ventajas que vale la pena mencionar.
 
-* ^^**Política de contraseñas:**^^ muchas empresas tienen políticas de contraseñas demasiado laxas, y muchos usuarios a menudo tienen contraseñas configuradas para que nunca caduquen. 
+* ^^**Política de contraseñas:**^^ muchas organizaciones tienen políticas de contraseñas demasiado laxas, y muchos usuarios a menudo tienen contraseñas configuradas para que nunca caduquen. 
     
     Las contraseñas que no se rotan regularmente, son demasiado simples o usan palabras comunes corren el riesgo de ser vulneradas por fuerza bruta. Los GPO se pueden utilizar para establecer la longitud, la complejidad y otros requisitos de la contraseña.
 
@@ -222,11 +222,11 @@ Los beneficios de la política de grupo no se limitan únicamente a la seguridad
 
 ### Limitaciones de las GPOs
 
-Estaríamos faltando a la verdad si dijeramos que los GPO son la fórmula mágica para mantener los datos seguros. Hay una serie de limitaciones que se deben conocer.
+Estaríamos faltando a la verdad si dijéramos que los GPO son la fórmula mágica para mantener los datos seguros. Hay una serie de limitaciones que se deben conocer.
 
 En primer lugar, el editor de GPO no es la consola más fácil de usar, más bien es un tanto adusto. Un conocimiento profundo de PowerShell ayudará a que sea más fácil realizar todas las actualizaciones de GPO, lo cual complica más la cosa si cabe.
 
-Las actualizaciones de GPO, se realizan aleatoriamente cada 90 a 120 minutos cada vez que se reinicia la computadora.Puede específicarse una tasa de actualización desde 0 minutos hasta 45 días. Sin embargo, si se especifican 0 minutos, entonces, de forma predeterminada, las GPO intentarán actualizarse cada 7 segundos, lo que probablemente inunde la red de tráfico.
+Las actualizaciones de GPO se realizan aleatoriamente cada 90 a 120 minutos cada vez que se reinicia la computadora. Puede especificarse una tasa de actualización desde 0 minutos hasta 45 días. Sin embargo, si se especifican 0 minutos, entonces, de forma predeterminada, las GPO intentarán actualizarse cada 7 segundos, lo que probablemente inunde la red de tráfico.
 
 Los GPO tampoco son inmunes a los ciberataques. Si un atacante quisiera cambiar las GPO locales en una computadora para moverse lateralmente a través de la red, sería muy difícil detectarlo sin una solución de auditoría y monitoreo de políticas de grupo implementada.
 
