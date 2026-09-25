@@ -230,9 +230,89 @@ Las actualizaciones de GPO se realizan aleatoriamente cada 90 a 120 minutos cada
 
 Los GPO tampoco son inmunes a los ciberataques. Si un atacante quisiera cambiar las GPO locales en un equipo para moverse lateralmente a través de la red, sería muy difícil detectarlo sin una solución de auditoría y monitoreo de políticas de grupo implementada.
 
+## Actualizaciones del sistema operativo
 
+Mantener actualizado un sistema operativo es una de las medidas de seguridad más importantes en cualquier entorno informático. Los fabricantes publican periódicamente actualizaciones que corrigen errores, mejoran el rendimiento e incorporan nuevas funcionalidades, pero también solucionan vulnerabilidades que podrían ser aprovechadas por atacantes.
 
-<!-- ## Actualizaciones del SO
+Una vulnerabilidad es un fallo de seguridad que puede permitir acciones no autorizadas sobre un sistema, como el acceso a información sensible, la ejecución de código malicioso o la elevación de privilegios. Para corregir estas vulnerabilidades, los fabricantes distribuyen parches de seguridad que deben instalarse lo antes posible.
+
+Entre las ventajas de mantener un sistema actualizado destacan:
+
+- Corrección de vulnerabilidades conocidas.
+- Mejora de la estabilidad del sistema.
+- Compatibilidad con nuevas aplicaciones y dispositivos.
+- Incremento de la fiabilidad y el rendimiento.
+- Reducción de la superficie de ataque.
+
+En entornos empresariales, la gestión de actualizaciones suele realizarse de forma centralizada mediante herramientas de administración que permiten controlar qué actualizaciones se instalan y en qué momento.
+
+!!!Warning "Importante"
+No aplicar las actualizaciones de seguridad puede dejar expuestos sistemas y servicios frente a vulnerabilidades conocidas para las cuales ya existen herramientas de explotación públicas.
+
+### Buenas prácticas en la gestión de actualizaciones
+ 
+Aunque las actualizaciones son fundamentales para mantener la seguridad de los sistemas, en entornos empresariales deben gestionarse de forma planificada. Una actualización puede introducir cambios que afecten a la compatibilidad de determinadas aplicaciones, servicios o dispositivos.
+ 
+Por este motivo, es recomendable seguir un procedimiento que incluya:
+ 
+- Evaluar la criticidad de la actualización.
+- Probar previamente los cambios en un entorno de pruebas o laboratorio.
+- Verificar la compatibilidad con las aplicaciones corporativas.
+- Realizar copias de seguridad antes de la instalación.
+- Implantar las actualizaciones de forma escalonada.
+- Disponer de un procedimiento de reversión en caso de incidencia.
+ 
+Este enfoque permite reducir el riesgo de interrupciones en el servicio y garantizar que las medidas de seguridad no afecten negativamente a la operativa de la organización.
+
 ## Manejo de credenciales
-## Escalada de privilegios
+
+Las credenciales son el conjunto de datos que permiten identificar y autenticar a un usuario dentro de un sistema informático. Constituyen uno de los principales mecanismos de control de acceso y son uno de los objetivos más habituales de los ciberdelincuentes.
+
+Las credenciales pueden estar formadas por:
+
+- Nombre de usuario y contraseña.
+- Certificados digitales.
+- Tarjetas inteligentes.
+- Factores biométricos.
+- Códigos de un solo uso (OTP).
+
+Cuando un usuario introduce sus credenciales, el sistema verifica su identidad antes de conceder acceso a los recursos autorizados.
+
+La protección de las credenciales resulta fundamental, ya que un atacante que consiga obtenerlas podrá actuar con los mismos permisos que el usuario legítimo.
+
+### Buenas prácticas para la gestión de credenciales
+
+- Utilizar contraseñas robustas y difíciles de adivinar.
+- No reutilizar la misma contraseña en distintos servicios.
+- No compartir credenciales con otros usuarios.
+- Emplear gestores de contraseñas para almacenarlas de forma segura.
+- Activar la autenticación multifactor (MFA) siempre que sea posible.
+- Cambiar las contraseñas comprometidas inmediatamente.
+- Bloquear la sesión al abandonar el puesto de trabajo.
+- Evitar almacenar contraseñas en documentos o notas visibles.
+- Revisar periódicamente los accesos y dispositivos asociados a las cuentas.
+
+### Autenticación multifactor (MFA)
+
+La autenticación multifactor consiste en utilizar dos o más mecanismos de autenticación diferentes para verificar la identidad de un usuario.
+
+Generalmente se combina:
+
+- Algo que el usuario sabe (contraseña).
+- Algo que el usuario posee (teléfono móvil o token).
+- Algo que el usuario es (huella dactilar o reconocimiento facial).
+
+El uso de MFA reduce significativamente el riesgo asociado al robo de credenciales, ya que un atacante necesitaría comprometer varios factores de autenticación para acceder a la cuenta.
+
+Actualmente, el MFA es una de las medidas de seguridad más eficaces para proteger servicios en la nube, cuentas corporativas y accesos remotos.
+
+### Inteligencia artificial y protección de credenciales
+
+La aparición de herramientas basadas en inteligencia artificial ha incrementado la sofisticación de los ataques dirigidos al robo de credenciales. Los ciberdelincuentes pueden utilizar estas tecnologías para crear correos electrónicos de phishing más creíbles, personalizar mensajes de ingeniería social o incluso simular conversaciones y llamadas telefónicas mediante técnicas de suplantación de voz.
+
+Por este motivo, ya no es suficiente confiar únicamente en una contraseña robusta. Los usuarios deben verificar cuidadosamente cualquier solicitud relacionada con credenciales, desconfiar de mensajes inesperados y utilizar mecanismos adicionales de protección como el MFA.
+
+Al mismo tiempo, la inteligencia artificial también se utiliza con fines defensivos para detectar comportamientos anómalos, accesos sospechosos o intentos de compromiso de cuentas, ayudando a mejorar la seguridad de las organizaciones.
+
+<!-- ## Escalada de privilegios
 ## EDR -->
