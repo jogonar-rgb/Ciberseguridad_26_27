@@ -454,10 +454,10 @@
 
 <ol>
 <li>
-<p>El ejercicio propuesto para esta parte es muy sencillo:</p>
+<p>Despliegue y administración básica de un dominio Windows. El objetivo de esta práctica es desplegar una infraestructura básica basada en Active Directory y realizar tareas habituales de administración.</p>
 <ol>
 <li>
-<p>Debéis instalar un Windows Server 2022 ( o 2019 en su defecto) y un cliente Windows 11 (Windows 10 en su defecto) en sendas máquinas virtuales en VirtualBox</p>
+<p>Debéis instalar un Windows Server 2022 ( o 2019 en su defecto), un cliente Windows 11 en sendas máquinas virtuales en VirtualBox y configura ambas máquinas para que puedan comunicarse entre sí.</p>
 </li>
 <li>
 <p>Debéis crearos un usuario con vuestro nombre en el cliente</p>
@@ -469,10 +469,39 @@
 <p>Debéis añadir al usuario del cliente en el dominio</p>
 </li>
 <li>
-<p>Deberéis configurar una GPO que impida a los usuarios acceder al panel de control</p>
+<p>Crea los siguientes usuarios de dominio: "Alumno1" "Alumno2" "Profesor"</p>
 </li>
 <li>
-<p>Tras forzar la aplicación de la GPO, debéis comprobar en el cliente que vuestro usuario, efectivamente, no tiene permitido el acceso al panel de control</p>
+<p>Crea los grupos: "Alumnos", "Profesores" y añade los usuarios al grupo correspondiente.</p>
+</li>
+<li>
+<p>Crea una carpeta compartida denominada: "C:\Compartida" y</p>
+<div class="highlight"><pre><span></span><code>- Comparte la carpeta en red. 
+- Asigna permisos de lectura al grupo Alumnos. 
+- Asigna permisos de control total al grupo Profesores. 
+- Comprueba desde el cliente que los permisos funcionan correctamente.
+</code></pre></div>
+</li>
+<li>
+<p>Deberéis configurar una GPO que impida a los usuarios acceder al panel de control, obligue a utilizar contraseñas complejas y que establezca una longitud mínima de 12 caracteres.</p>
+</li>
+<li>
+<p>Tras forzar la aplicación de la GPO, debéis comprobar en el cliente que vuestro que esas politicas se han asignado correctamente.</p>
+</li>
+<li>
+<p>PowerShell es una de las herramientas más utilizadas por administradores de sistemas y analistas de ciberseguridad para obtener información, automatizar tareas y realizar auditorías. Responde a las siguientes preguntas y cual es el comando que has utilizado</p>
+<div class="highlight"><pre><span></span><code>- ¿Cuántos usuarios hay en el dominio?
+- ¿Qué usuarios tienen privilegios de administrador?
+- Busca el servicio de Windows Update. ¿Está iniciado o detenido?
+- ¿Qué dirección IP tiene tu equipo?
+- ¿Qué proceso está utilizando más memoria?
+</code></pre></div>
+</li>
+<li>
+<p>Abre el Visor de eventos e identifica:
+        - Un inicio de sesión correcto.
+        - Un apagado o reinicio del sistema.
+        - Un intento de acceso incorrecto (si existe).</p>
 </li>
 </ol>
 </li>
