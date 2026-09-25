@@ -250,18 +250,18 @@ En entornos empresariales, la gestión de actualizaciones suele realizarse de fo
 No aplicar las actualizaciones de seguridad puede dejar expuestos sistemas y servicios frente a vulnerabilidades conocidas para las cuales ya existen herramientas de explotación públicas.
 
 ### Buenas prácticas en la gestión de actualizaciones
- 
+
 Aunque las actualizaciones son fundamentales para mantener la seguridad de los sistemas, en entornos empresariales deben gestionarse de forma planificada. Una actualización puede introducir cambios que afecten a la compatibilidad de determinadas aplicaciones, servicios o dispositivos.
- 
+
 Por este motivo, es recomendable seguir un procedimiento que incluya:
- 
+
 - Evaluar la criticidad de la actualización.
 - Probar previamente los cambios en un entorno de pruebas o laboratorio.
 - Verificar la compatibilidad con las aplicaciones corporativas.
 - Realizar copias de seguridad antes de la instalación.
 - Implantar las actualizaciones de forma escalonada.
 - Disponer de un procedimiento de reversión en caso de incidencia.
- 
+
 Este enfoque permite reducir el riesgo de interrupciones en el servicio y garantizar que las medidas de seguridad no afecten negativamente a la operativa de la organización.
 
 ## Manejo de credenciales
