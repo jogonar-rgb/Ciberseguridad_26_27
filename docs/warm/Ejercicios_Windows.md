@@ -43,4 +43,3 @@ description: Apuntes, prácticas, ejercicio del curso de especialización de cib
             - Un intento de acceso incorrecto (si existe).
 
 
-2. El segundo ejercicio propuesto se trata de realizar la [siguiente sala](https://tryhackme.com/r/room/winadbasics) de TryHackMe y adjuntar una captura donde se va que se ha completado el 100% de la misma.
