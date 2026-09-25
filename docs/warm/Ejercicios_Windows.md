@@ -19,10 +19,10 @@ description: Apuntes, prácticas, ejercicio del curso de especialización de cib
 
       7. Crea una carpeta compartida denominada: "C:\Compartida" y
 
-            1. Comparte la carpeta en red. 
-            2. Asigna permisos de lectura al grupo Alumnos. 
-            3. Asigna permisos de control total al grupo Profesores. 
-            4. Comprueba desde el cliente que los permisos funcionan correctamente.
+            - Comparte la carpeta en red. 
+            - Asigna permisos de lectura al grupo Alumnos. 
+            - Asigna permisos de control total al grupo Profesores. 
+            - Comprueba desde el cliente que los permisos funcionan correctamente.
          
       8. Deberéis configurar una GPO que impida a los usuarios acceder al panel de control, obligue a utilizar contraseñas complejas y que establezca una longitud mínima de 12 caracteres.
 
@@ -30,17 +30,17 @@ description: Apuntes, prácticas, ejercicio del curso de especialización de cib
 
       10. PowerShell es una de las herramientas más utilizadas por administradores de sistemas y analistas de ciberseguridad para obtener información, automatizar tareas y realizar auditorías. Responde a las siguientes preguntas y cual es el comando que has utilizado
 
-            1. ¿Cuántos usuarios hay en el dominio?
-            2. ¿Qué usuarios tienen privilegios de administrador?
-            3. Busca el servicio de Windows Update. ¿Está iniciado o detenido?
-            4. ¿Qué dirección IP tiene tu equipo?
-            5. ¿Qué proceso está utilizando más memoria?
+            - ¿Cuántos usuarios hay en el dominio?
+            - ¿Qué usuarios tienen privilegios de administrador?
+            - Busca el servicio de Windows Update. ¿Está iniciado o detenido?
+            - ¿Qué dirección IP tiene tu equipo?
+            - ¿Qué proceso está utilizando más memoria?
 
       10. Abre el Visor de eventos e identifica:
 
-            1. Un inicio de sesión correcto.
-            2. Un apagado o reinicio del sistema.
-            3. Un intento de acceso incorrecto (si existe).
+            - Un inicio de sesión correcto.
+            - Un apagado o reinicio del sistema.
+            - Un intento de acceso incorrecto (si existe).
 
 
 2. El segundo ejercicio propuesto se trata de realizar la [siguiente sala](https://tryhackme.com/r/room/winadbasics) de TryHackMe y adjuntar una captura donde se va que se ha completado el 100% de la misma.
