@@ -172,7 +172,7 @@ En muchas distribuciones es una práctica recomendada el hecho de ubicar el dire
 
 ## Usuarios y grupos
 
-Un usuario es cualquiera que use un ordenador. En este caso, estamos describiendo los nombres que representan a esos usuarios. Puede ser Pol o Martí, y pueden usar los nombres superc0der o Pirate en lugar de su nombre real. Lo único que importa es que la computadora tenga un nombre para cada cuenta que cree, y es este nombre por el que una persona obtiene acceso para usar la computadora. Algunos servicios del sistema también se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
+Un usuario es cualquiera que use un ordenador. En este caso, estamos describiendo los nombres que representan a esos usuarios. Puede ser Pol o Martí, y pueden usar los nombres superc0der o Pirate en lugar de su nombre real. Lo único que importa es que el equipo tenga un nombre para cada cuenta que cree, y es este nombre por el que una persona obtiene acceso para usar el equipo. Algunos servicios del sistema también se ejecutan utilizando cuentas de usuario restringidas o privilegiadas.
 
 La administración de los usuarios se realiza con fines de seguridad al limitar el acceso de ciertas maneras específicas. El superusuario (root) tiene acceso completo al sistema operativo y su configuración; está destinado solo para uso administrativo. Los usuarios sin privilegios pueden usar los programas su y sudo para la escalada de privilegios controlada.
 

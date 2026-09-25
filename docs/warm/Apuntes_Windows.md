@@ -22,7 +22,7 @@ Sus funciones principales son:
 1. **Gestión de identidades y autenticación:** Active Directory almacena información sobre los usuarios, como nombres, contraseñas y permisos, facilitando la autenticación de los usuarios cuando inician sesión en una red. Utiliza el protocolo Kerberos para garantizar una autenticación segura.
 2. **Control de acceso:** Permite a los administradores definir quién tiene acceso a recursos específicos, como archivos, impresoras, o aplicaciones. Las políticas de grupo (Group Policy) en AD permiten administrar configuraciones de seguridad y restricciones a nivel de usuario o de equipo.
 3. **Centralización:** AD permite una administración centralizada de toda la red. Desde un solo punto (el Controlador de Dominio), los administradores pueden gestionar cuentas de usuarios, permisos, y políticas de seguridad en todos los dispositivos conectados al dominio.
-4. **Organización jerárquica de objetos:** Active Directory organiza los recursos de la red, como usuarios, grupos, computadoras y dispositivos, en una estructura jerárquica. Esta estructura incluye dominios, árboles y bosques, lo que facilita el acceso y la gestión de los recursos.
+4. **Organización jerárquica de objetos:** Active Directory organiza los recursos de la red, como usuarios, grupos, equipos y dispositivos, en una estructura jerárquica. Esta estructura incluye dominios, árboles y bosques, lo que facilita el acceso y la gestión de los recursos.
 5. **Escalabilidad:** Es adecuado tanto para pequeñas redes como para grandes entornos empresariales con múltiples sitios y miles de usuarios. La replicación de AD permite mantener sincronizados los controladores de dominio en diferentes ubicaciones.
 6. **Autorización y seguridad:** Además de la autenticación, AD también controla la autorización para determinar qué recursos pueden usar los usuarios una vez autenticados. AD refuerza la seguridad mediante políticas de contraseñas y otros métodos de autenticación avanzada.
 
@@ -165,7 +165,7 @@ Lo primero es lo primero, ¿qué es una directiva de grupo? La directiva de grup
 
 **Básicamente, proporciona un lugar centralizado para que los administradores administren y configuren los sistemas operativos, las aplicaciones y los ajustes de los usuarios.**
 
-Las políticas de grupo, cuando se usan correctamente, permiten aumentar la seguridad de las computadoras de los usuarios y ayudarlo a defenderse tanto de las amenazas internas como de los ataques externos.
+Las políticas de grupo, cuando se usan correctamente, permiten aumentar la seguridad de los equiposs de los usuarios y ayudarlo a defenderse tanto de las amenazas internas como de los ataques externos.
 
 ### ¿Qué es un objeto de directiva de grupo o *Group Policy Object* (GPO)?
 
@@ -203,7 +203,7 @@ Los Objetos de directiva de grupo o GPO se pueden usar de varias formas para que
 
 El orden en el que se procesan los GPO afecta la configuración que se aplica al equipo y al usuario. 
 
-El orden en que se procesan los GPO se conoce como LSDOU, que significa local, sitio(una especie de subred en nuestro dominio), dominio, unidad organizativa. La política de la computadora local es la primera en ser procesada, seguida del nivel del sitio a las políticas de AD de dominio, y finalmente en las unidades de la organización. Si hay políticas en conflicto en LSDOU, las últimas políticas aplicadas ganan.
+El orden en que se procesan los GPO se conoce como LSDOU, que significa local, sitio(una especie de subred en nuestro dominio), dominio, unidad organizativa. La política del equipo local es la primera en ser procesada, seguida del nivel del sitio a las políticas de AD de dominio, y finalmente en las unidades de la organización. Si hay políticas en conflicto en LSDOU, las últimas políticas aplicadas ganan.
 
 ![](./img/LSDOU.png){: style="height:300px;width:400px"}
 
@@ -226,9 +226,9 @@ Estaríamos faltando a la verdad si dijéramos que los GPO son la fórmula mági
 
 En primer lugar, el editor de GPO no es la consola más fácil de usar, más bien es un tanto adusto. Un conocimiento profundo de PowerShell ayudará a que sea más fácil realizar todas las actualizaciones de GPO, lo cual complica más la cosa si cabe.
 
-Las actualizaciones de GPO se realizan aleatoriamente cada 90 a 120 minutos cada vez que se reinicia la computadora. Puede especificarse una tasa de actualización desde 0 minutos hasta 45 días. Sin embargo, si se especifican 0 minutos, entonces, de forma predeterminada, las GPO intentarán actualizarse cada 7 segundos, lo que probablemente inunde la red de tráfico.
+Las actualizaciones de GPO se realizan aleatoriamente cada 90 a 120 minutos cada vez que se reinicia el equipo. Puede especificarse una tasa de actualización desde 0 minutos hasta 45 días. Sin embargo, si se especifican 0 minutos, entonces, de forma predeterminada, las GPO intentarán actualizarse cada 7 segundos, lo que probablemente inunde la red de tráfico.
 
-Los GPO tampoco son inmunes a los ciberataques. Si un atacante quisiera cambiar las GPO locales en una computadora para moverse lateralmente a través de la red, sería muy difícil detectarlo sin una solución de auditoría y monitoreo de políticas de grupo implementada.
+Los GPO tampoco son inmunes a los ciberataques. Si un atacante quisiera cambiar las GPO locales en un equipo para moverse lateralmente a través de la red, sería muy difícil detectarlo sin una solución de auditoría y monitoreo de políticas de grupo implementada.
 
 
 
