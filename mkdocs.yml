@@ -57,7 +57,7 @@ nav:
     - Entornos Linux: warm/Apuntes_Linux.md
     - Ejercicios propuestos Linux: warm/Ejercicios_Linux.md
     - Entornos Windows: warm/Apuntes_Windows.md
-    #- Ejercicios propuestos Windows: warm/Ejercicios_Windows.md
+    - Ejercicios propuestos Windows: warm/Ejercicios_Windows.md
     #- Webgrafía: warm/webgrafia.md
   #- Seguridad ofensiva:
     #- Seguridad_ofensiva/index.md
