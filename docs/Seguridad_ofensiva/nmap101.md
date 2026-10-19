@@ -18,7 +18,7 @@ Dado que la configuración del puerto puede suponer un riesgo para la seguridad,
 
 Esta es una herramienta que se utiliza para descubrir y auditar redes, escanear y verificar vulnerabilidades en direcciones y puertos de Protocolo de Internet (IP) para una red determinada.
 
-Es usado por el administrador de red, gerente de TI o simplemente un profesional de seguridad de la empresa. Uno de los desafíos críticos que enfrentarán estos perfiles es batallar para saber qué se está ejecutando en su red y el tipo de problemas/desafíos de seguridad que plantean.
+Es utilizado por administradores de red, responsables de TI y profesionales de la seguridad informática. Uno de los desafíos críticos que enfrentarán estos perfiles es batallar para saber qué se está ejecutando en su redidentificar qué servicios y sistemas se están ejecutando en su red y el tipo de problemas/desafíos de seguridad que plantean.
 
 Hay varias herramientas (incluido Nmap) disponibles para que los administradores de red las usen para monitorear su red y obtener actividades en tiempo real en su red:
 
@@ -36,7 +36,7 @@ Nmap puede escuchar las respuestas de los sistemas y así determinar si un puert
 Es una herramienta flexible y versátil, lo que significa que puede adaptarse a diferentes actividades y funciones.
 
 !!!Note "Nota"
-    El escaneo de puertos también se puede denominar enumeración o descubrimiento de puertos. Usaremos estos términos indistintamente, que significan lo mismo.
+    El escaneo de puertos también se puede denominarse enumeración o descubrimiento de puertos. Usaremos estos términos indistintamente, que significan lo mismo.
 
 Tal y como podemos leer en el propio site de [Nmap](https://nmap.org/book/intro.html):
 
@@ -51,7 +51,7 @@ Nmap se desarrolló inicialmente para ejecutarse solo en sistemas basados en Uni
 
 + No se pueden realizar escaneos tan en profundidad como en un sistema Unix (por ejemplo puede haber problemas con clientes VPN)
 + No se puede escanear la propia máquina 
-+ Los escaneos en Windows, por la manera que tiene de formar los paquetes, puede resultar un poco más lenta en algunos casos
++ Los escaneos en Windows, debido a la forma en que genera los paquetes, puede resultar un poco más lenta en algunos casos
 
 !!!Info "Info"
     Por lo tanto, se recomienda el uso de Nmap en Linux por una mayor rapidez, eficiencia y experiencia de uso.
@@ -89,7 +89,7 @@ El **3-way handshake** (o **apretón de manos de tres vías**) es el proceso uti
    
    **Propósito**: El cliente confirma que ha recibido el SYN del servidor, y la conexión se establece.
 
-Una vez que el **3-way handshake** se ha completado, la conexión está completamente establecida y se pueden intercambiar datos de manera confiable.
+Una vez que el **3-way handshake** se ha completado, la conexión está completamente establecida y se pueden intercambiar datos de manera fiable.
 
 ### Explicación gráfica
 
@@ -148,9 +148,9 @@ Podemos ver la infinidad de opciones que nos ofrece Nmap simplemente escribiendo
 
 ![](./img/nmap_opciones.png){: style="height:600px;width:500px"}
 
-Existen un [sinfín de técnicas y algoritmos de escaneo en Nmap](https://nmap.org/book/scan-methods.html), así como otras tantas opciones a aplicar a estos escaneos. Es imposible cubrirlo todo en este curso por lo que sólo nombraremos los aspectos más importantes y queda a discrección del alumno profundizar más.
+Existen un [sinfín de técnicas y algoritmos de escaneo en Nmap](https://nmap.org/book/scan-methods.html), así como otras tantas opciones a aplicar a estos escaneos. Es imposible cubrirlo todo en este curso por lo que sólo nombraremos los aspectos más importantes y queda a discreción del alumno profundizar más.
 
-Output completo:
+Salida completa de ayuda:
 
 ```sh
 map 7.94SVN ( https://nmap.org )
@@ -276,7 +276,7 @@ SEE THE MAN PAGE (https://nmap.org/book/man.html) FOR MORE OPTIONS AND EXAMPLES
 
 Primero, un poco de antecedentes. Durante la comunicación con un servicio TCP, se establece una única conexión con el protocolo de enlace de 3 vías de TCP. Esto implica un ```SYN``` enviado a un puerto abierto TCP que tiene un servicio vinculado a él, ejemplos típicos son HTTP (puerto 80), SMTP (puerto 25), POP3 (puerto 110) o SSH (puerto 22).
 
-En el lado del servidor ser verá un ```SYN``` y se responderá con ```SYN ACK```, y el cliente responderá ```SYN ACK``` con un ```ACK```. Esto completa la configuración y ahora se puede realizar el intercambio de datos.
+En el lado del servidor se verá un ```SYN``` y se responderá con ```SYN_ACK```, y el cliente responderá ```SYN ACK``` con un ```ACK```. Esto completa la configuración y ahora se puede realizar el intercambio de datos.
 
 ![](./img/3way.png)
 
@@ -318,7 +318,7 @@ Características:
 
 Si bien los servicios más populares en Internet se ejecutan sobre el protocolo TCP, los servicios UDP se implementan ampliamente. DNS, SNMP y DHCP (puertos registrados 53, 161/162 y 67/68) son tres de los más comunes. 
 
-Debido a que el escaneo UDP es generalmente más lento y más difícil que TCP, algunos auditores de seguridad ignoran estos puertos. Esto es un error, ya que los servicios UDP explotables son bastante comunes y los atacantes ciertamente no ignoran todo el protocolo.
+Debido a que el escaneo UDP suele ser más lento y más difícil que TCP, algunos auditores de seguridad ignoran estos puertos. Esto es un error, ya que los servicios UDP explotables son bastante comunes y los atacantes ciertamente no ignoran todo el protocolo.
 
 ```sh
 $nmap -sU objetivo
@@ -366,7 +366,7 @@ Tras realizar el escaneo de puertos, se nos pueden reportar cuatro posibles esta
 
 + **open | filtered**: cuando no se recibe respuesta, el puerto se clasifica así porque "ninguna respuesta" puede significar sólo dos cosas:
     
-    + El puerto esta abierto (en algunos tipos de escaneos no se recibe respuesta al SYN)
+    + El puerto está abierto (en algunos tipos de escaneos no se recibe respuesta al SYN)
     + El puerto está protegido detrás de un firewall, por lo que se filtra
 
 + **filtered**: cuando el puerto está protegido detrás de un firewall que envía un ping ICMP de vuelta 
@@ -401,7 +401,7 @@ Un detalle interesante a notar es el ```RST```  enviado después de aceptar el `
 
 #### Opciones para los escaneos (switches de Nmap)
 
-Es imposible comentar todas las opciones que se pueden usar con Nmap, pero algunas de las más notorias serían:
+Es imposible comentar todas las opciones que se pueden usar con Nmap, pero algunas de las más ulizadas serían:
 
 
 * ```-T(0-5)```:  Esta es una opción para establecer la velocidad del escaneo. Los números van de 0 a 5, donde 5 es el más rápido y 0 es el más lento.
@@ -544,7 +544,7 @@ Por ejemplo:
 nmap --script http-title scanme.nmap.org
 ```
 
-Se ejecucuta el script http-title contra el objetivo scanme.nmap.org (es posible indicar varios scripts separandolos por comas).
+Se ejecuta el script http-title contra el objetivo scanme.nmap.org (es posible indicar varios scripts separándolos por comas).
 
 
 #### Actualizar la base de datos de scripts
@@ -553,7 +553,7 @@ Se ejecucuta el script http-title contra el objetivo scanme.nmap.org (es posible
 sudo nmap --script-updatedb
 ```
 
-Se actualizarán los script contra la base de datos de Nmap y los script nuevos se guardaran en la ruta por defecto de nuestra instalación.
+Se actualizarán los script contra la base de datos de Nmap y los script nuevos se guardarán en la ruta por defecto de nuestra instalación.
 
 #### Demostración de algunos scripts
 
@@ -574,7 +574,7 @@ Se actualizarán los script contra la base de datos de Nmap y los script nuevos 
 
     ![](./img/scripts4.png)
 
-5. Utilizando los scripts de la categoría ```vuln``` para descubrir la vlnerabilidad [MS17-010 (Eternalblue)](https://www.csirt-epn.edu.ec/servicios/vulnerabilidades/58-ms17-010), la que utilizó *Wannacry* en su día.
+5. Utilizando los scripts de la categoría ```vuln``` para descubrir la vulnerabilidad [MS17-010 (Eternalblue)](https://www.csirt-epn.edu.ec/servicios/vulnerabilidades/58-ms17-010), la que utilizó *Wannacry* en su día.
 
     ![](./img/scripts5.jpg)
 
@@ -604,7 +604,7 @@ Comprueba si los paquetes de red individuales se pasan, se ignoran o se bloquean
 potencialmente peligrosas.
 
 #### Determinar los cortafuegos y sus reglas
-Ya sabemos que cuando un puerto aparece como filtrado, puede deberse a varias razones. En la mayoría de los casos, los cortafuegos tienen ciertas reglas establecidas para manejar conexiones específicas. Los paquetes pueden ser descartados o rechazados. Los paquetes rechazados son ignorados y no se devuelve ninguna respuesta desde el host.
+Ya sabemos que cuando un puerto aparece como filtrado, puede deberse a varias razones. En la mayoría de los casos, los cortafuegos tienen ciertas reglas establecidas para manejar conexiones específicas. Los paquetes pueden ser descartados o rechazados. Los paquetes rechazados son ignorados y no se generan respuesta desde el host.
 
 Esto es diferente para los paquetes rechazados que se devuelven con una bandera RST. Estos paquetes contienen diferentes tipos de códigos de error ICMP o no contienen nada en absoluto.
 

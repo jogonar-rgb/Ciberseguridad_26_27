@@ -514,7 +514,7 @@
 <p>Dado que la configuración del puerto puede suponer un riesgo para la seguridad, es fundamental saber qué puertos están abiertos y cuáles están bloqueados.</p>
 <h2 id="que-es-un-escaner-de-puertos">¿Qué es un escáner de puertos?</h2>
 <p>Esta es una herramienta que se utiliza para descubrir y auditar redes, escanear y verificar vulnerabilidades en direcciones y puertos de Protocolo de Internet (IP) para una red determinada.</p>
-<p>Es usado por el administrador de red, gerente de TI o simplemente un profesional de seguridad de la empresa. Uno de los desafíos críticos que enfrentarán estos perfiles es batallar para saber qué se está ejecutando en su red y el tipo de problemas/desafíos de seguridad que plantean.</p>
+<p>Es utilizado por administradores de red, responsables de TI y profesionales de la seguridad informática. Uno de los desafíos críticos que enfrentarán estos perfiles es batallar para saber qué se está ejecutando en su redidentificar qué servicios y sistemas se están ejecutando en su red y el tipo de problemas/desafíos de seguridad que plantean.</p>
 <p>Hay varias herramientas (incluido Nmap) disponibles para que los administradores de red las usen para monitorear su red y obtener actividades en tiempo real en su red:</p>
 <p>Con Nmap:</p>
 <ul>
@@ -528,7 +528,7 @@
 <p>Es una herramienta flexible y versátil, lo que significa que puede adaptarse a diferentes actividades y funciones.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>El escaneo de puertos también se puede denominar enumeración o descubrimiento de puertos. Usaremos estos términos indistintamente, que significan lo mismo.</p>
+<p>El escaneo de puertos también se puede denominarse enumeración o descubrimiento de puertos. Usaremos estos términos indistintamente, que significan lo mismo.</p>
 </div>
 <p>Tal y como podemos leer en el propio site de <a href="https://nmap.org/book/intro.html">Nmap</a>:</p>
 <div class="admonition quote">
@@ -541,7 +541,7 @@
 <ul>
 <li>No se pueden realizar escaneos tan en profundidad como en un sistema Unix (por ejemplo puede haber problemas con clientes VPN)</li>
 <li>No se puede escanear la propia máquina </li>
-<li>Los escaneos en Windows, por la manera que tiene de formar los paquetes, puede resultar un poco más lenta en algunos casos</li>
+<li>Los escaneos en Windows, debido a la forma en que genera los paquetes, puede resultar un poco más lenta en algunos casos</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -579,7 +579,7 @@
 </li>
 </ol>
 <p><strong>Propósito</strong>: El cliente confirma que ha recibido el SYN del servidor, y la conexión se establece.</p>
-<p>Una vez que el <strong>3-way handshake</strong> se ha completado, la conexión está completamente establecida y se pueden intercambiar datos de manera confiable.</p>
+<p>Una vez que el <strong>3-way handshake</strong> se ha completado, la conexión está completamente establecida y se pueden intercambiar datos de manera fiable.</p>
 <h3 id="explicacion-grafica">Explicación gráfica</h3>
 <p>A continuación te describo cómo se verían las tres fases del 3-way handshake. Aunque no puedo insertar imágenes directamente, te puedo describir cómo podrías visualizarlo:</p>
 <h4 id="paso-1-cliente-envia-syn">Paso 1: Cliente envía SYN</h4>
@@ -624,8 +624,8 @@
 <h2 id="uso-de-nmap">Uso de Nmap</h2>
 <p>Podemos ver la infinidad de opciones que nos ofrece Nmap simplemente escribiendo <code>$ nmap</code> en el terminal:</p>
 <p><img alt="" src="../img/nmap_opciones.png" style="height:600px;width:500px" /></p>
-<p>Existen un <a href="https://nmap.org/book/scan-methods.html">sinfín de técnicas y algoritmos de escaneo en Nmap</a>, así como otras tantas opciones a aplicar a estos escaneos. Es imposible cubrirlo todo en este curso por lo que sólo nombraremos los aspectos más importantes y queda a discrección del alumno profundizar más.</p>
-<p>Output completo:</p>
+<p>Existen un <a href="https://nmap.org/book/scan-methods.html">sinfín de técnicas y algoritmos de escaneo en Nmap</a>, así como otras tantas opciones a aplicar a estos escaneos. Es imposible cubrirlo todo en este curso por lo que sólo nombraremos los aspectos más importantes y queda a discreción del alumno profundizar más.</p>
+<p>Salida completa de ayuda:</p>
 <div class="highlight"><pre><span></span><code>map<span class="w"> </span><span class="m">7</span>.94SVN<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span>
 Usage:<span class="w"> </span>nmap<span class="w"> </span><span class="o">[</span>Scan<span class="w"> </span>Type<span class="o">(</span>s<span class="o">)]</span><span class="w"> </span><span class="o">[</span>Options<span class="o">]</span><span class="w"> </span><span class="o">{</span>target<span class="w"> </span>specification<span class="o">}</span>
 TARGET<span class="w"> </span>SPECIFICATION:
@@ -745,7 +745,7 @@ SEE<span class="w"> </span>THE<span class="w"> </span>MAN<span class="w"> </span
 <h3 id="tipos-de-escaneos">Tipos de escaneos</h3>
 <h4 id="antes-de-nada-recordatorio-del-3-way-handshake">Antes de nada: recordatorio del 3-way-handshake</h4>
 <p>Primero, un poco de antecedentes. Durante la comunicación con un servicio TCP, se establece una única conexión con el protocolo de enlace de 3 vías de TCP. Esto implica un <code>SYN</code> enviado a un puerto abierto TCP que tiene un servicio vinculado a él, ejemplos típicos son HTTP (puerto 80), SMTP (puerto 25), POP3 (puerto 110) o SSH (puerto 22).</p>
-<p>En el lado del servidor ser verá un <code>SYN</code> y se responderá con <code>SYN ACK</code>, y el cliente responderá <code>SYN ACK</code> con un <code>ACK</code>. Esto completa la configuración y ahora se puede realizar el intercambio de datos.</p>
+<p>En el lado del servidor se verá un <code>SYN</code> y se responderá con <code>SYN_ACK</code>, y el cliente responderá <code>SYN ACK</code> con un <code>ACK</code>. Esto completa la configuración y ahora se puede realizar el intercambio de datos.</p>
 <p><img alt="" src="../img/3way.png" /></p>
 <p>En este ejemplo, el firewall pasa el tráfico al servidor web (HTTP -&gt; 80) y el servidor web responde con el acuse de recibo.</p>
 <p>En todos estos ejemplos, un firewall podría ser un dispositivo de hardware independiente o podría ser un firewall de software local en la computadora host.</p>
@@ -772,7 +772,7 @@ Características: </p>
 </ul>
 <h4 id="escaneos-udp-su">Escaneos UDP (-sU)</h4>
 <p>Si bien los servicios más populares en Internet se ejecutan sobre el protocolo TCP, los servicios UDP se implementan ampliamente. DNS, SNMP y DHCP (puertos registrados 53, 161/162 y 67/68) son tres de los más comunes. </p>
-<p>Debido a que el escaneo UDP es generalmente más lento y más difícil que TCP, algunos auditores de seguridad ignoran estos puertos. Esto es un error, ya que los servicios UDP explotables son bastante comunes y los atacantes ciertamente no ignoran todo el protocolo.</p>
+<p>Debido a que el escaneo UDP suele ser más lento y más difícil que TCP, algunos auditores de seguridad ignoran estos puertos. Esto es un error, ya que los servicios UDP explotables son bastante comunes y los atacantes ciertamente no ignoran todo el protocolo.</p>
 <p><div class="highlight"><pre><span></span><code><span class="nv">$nmap</span><span class="w"> </span>-sU<span class="w"> </span>objetivo
 </code></pre></div>
 Características:</p>
@@ -804,7 +804,7 @@ Características:</p>
 <li>
 <p><strong>open | filtered</strong>: cuando no se recibe respuesta, el puerto se clasifica así porque "ninguna respuesta" puede significar sólo dos cosas:</p>
 <ul>
-<li>El puerto esta abierto (en algunos tipos de escaneos no se recibe respuesta al SYN)</li>
+<li>El puerto está abierto (en algunos tipos de escaneos no se recibe respuesta al SYN)</li>
 <li>El puerto está protegido detrás de un firewall, por lo que se filtra</li>
 </ul>
 </li>
@@ -829,7 +829,7 @@ Características:</p>
 <p>Un detalle interesante a notar es el <code>RST</code>  enviado después de aceptar el <code>SYN ACK</code> desde el servidor web. El <code>RST</code> es enviado por Nmap ya que el estado del puerto (abierto) ha sido determinado por el <code>SYN ACK</code>. Si estuviéramos buscando más información como la versión del servicio HTTP o para obtener la página, el RST no se enviaría. Se establecería una conexión completa.</p>
 <p><img alt="" src="../img/syn_open.gif" /></p>
 <h4 id="opciones-para-los-escaneos-switches-de-nmap">Opciones para los escaneos (switches de Nmap)</h4>
-<p>Es imposible comentar todas las opciones que se pueden usar con Nmap, pero algunas de las más notorias serían:</p>
+<p>Es imposible comentar todas las opciones que se pueden usar con Nmap, pero algunas de las más ulizadas serían:</p>
 <ul>
 <li><code>-T(0-5)</code>:  Esta es una opción para establecer la velocidad del escaneo. Los números van de 0 a 5, donde 5 es el más rápido y 0 es el más lento.</li>
 </ul>
@@ -964,11 +964,11 @@ Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span>
 <p>Por ejemplo:</p>
 <div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>--script<span class="w"> </span>http-title<span class="w"> </span>scanme.nmap.org
 </code></pre></div>
-<p>Se ejecucuta el script http-title contra el objetivo scanme.nmap.org (es posible indicar varios scripts separandolos por comas).</p>
+<p>Se ejecuta el script http-title contra el objetivo scanme.nmap.org (es posible indicar varios scripts separándolos por comas).</p>
 <h4 id="actualizar-la-base-de-datos-de-scripts">Actualizar la base de datos de scripts</h4>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>nmap<span class="w"> </span>--script-updatedb
 </code></pre></div>
-<p>Se actualizarán los script contra la base de datos de Nmap y los script nuevos se guardaran en la ruta por defecto de nuestra instalación.</p>
+<p>Se actualizarán los script contra la base de datos de Nmap y los script nuevos se guardarán en la ruta por defecto de nuestra instalación.</p>
 <h4 id="demostracion-de-algunos-scripts">Demostración de algunos scripts</h4>
 <ol>
 <li>
@@ -988,7 +988,7 @@ Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span>
 <p><img alt="" src="../img/scripts4.png" /></p>
 </li>
 <li>
-<p>Utilizando los scripts de la categoría <code>vuln</code> para descubrir la vlnerabilidad <a href="https://www.csirt-epn.edu.ec/servicios/vulnerabilidades/58-ms17-010">MS17-010 (Eternalblue)</a>, la que utilizó <em>Wannacry</em> en su día.</p>
+<p>Utilizando los scripts de la categoría <code>vuln</code> para descubrir la vulnerabilidad <a href="https://www.csirt-epn.edu.ec/servicios/vulnerabilidades/58-ms17-010">MS17-010 (Eternalblue)</a>, la que utilizó <em>Wannacry</em> en su día.</p>
 <p><img alt="" src="../img/scripts5.jpg" /></p>
 <p>Para haber buscado vulnerabilidad específicas de SMB, podíamos haber utilizado también:</p>
 <div class="highlight"><pre><span></span><code>nmap<span class="w"> </span>-sV<span class="w"> </span>--script<span class="w"> </span>smb*<span class="w"> </span>&lt;Objetivo&gt;
@@ -1044,7 +1044,7 @@ Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span>
 <p>Comprueba si los paquetes de red individuales se pasan, se ignoran o se bloquean. Este mecanismo está diseñado para evitar conexiones no deseadas que podrían ser 
 potencialmente peligrosas.</p>
 <h4 id="determinar-los-cortafuegos-y-sus-reglas">Determinar los cortafuegos y sus reglas</h4>
-<p>Ya sabemos que cuando un puerto aparece como filtrado, puede deberse a varias razones. En la mayoría de los casos, los cortafuegos tienen ciertas reglas establecidas para manejar conexiones específicas. Los paquetes pueden ser descartados o rechazados. Los paquetes rechazados son ignorados y no se devuelve ninguna respuesta desde el host.</p>
+<p>Ya sabemos que cuando un puerto aparece como filtrado, puede deberse a varias razones. En la mayoría de los casos, los cortafuegos tienen ciertas reglas establecidas para manejar conexiones específicas. Los paquetes pueden ser descartados o rechazados. Los paquetes rechazados son ignorados y no se generan respuesta desde el host.</p>
 <p>Esto es diferente para los paquetes rechazados que se devuelven con una bandera RST. Estos paquetes contienen diferentes tipos de códigos de error ICMP o no contienen nada en absoluto.</p>
 <p>Tales errores pueden ser:</p>
 <ul>
