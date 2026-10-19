@@ -59,10 +59,10 @@ nav:
     - Entornos Windows: warm/Apuntes_Windows.md
     - Ejercicios propuestos Windows: warm/Ejercicios_Windows.md
     - Webgrafía: warm/webgrafia.md
-  - Seguridad ofensiva:
-    - Seguridad_ofensiva/index.md
-    - Introducción: Seguridad_ofensiva/Intro.md
-    - Introducción a Nmap: Seguridad_ofensiva/nmap101.md
+  #- Seguridad ofensiva:
+    #- Seguridad_ofensiva/index.md
+    #- Introducción: Seguridad_ofensiva/Intro.md
+    #- Introducción a Nmap: Seguridad_ofensiva/nmap101.md
     #- Enumeración de servicios: Seguridad_ofensiva/enumeracion.md
     #- Causas de vulnerabilidades en sistemas: Seguridad_ofensiva/servicios_desact.md
     #- Explotación de vulnerabilidades: Seguridad_ofensiva/exploit.md
