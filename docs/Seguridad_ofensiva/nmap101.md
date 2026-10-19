@@ -152,7 +152,7 @@ Existen un [sinfín de técnicas y algoritmos de escaneo en Nmap](https://nmap.o
 
 Salida completa de ayuda:
 
-```sh
+```text
 map 7.94SVN ( https://nmap.org )
 Usage: nmap [Scan Type(s)] [Options] {target specification}
 TARGET SPECIFICATION:
@@ -442,7 +442,7 @@ $ nmap -sC scanme.nmap.org
 ```
 En este caso le estamos indicando que habilite el uso de scripts de la categoría predeterminada y Nmap selecciona los script a usar teniendo en cuenta los puertos que encuentra. En este caso se ejecutan los scripts ```ssh-hostkey``` y ```http-title``` como podemos ver en los resultados reportados:
 
-```sh
+```text
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-10-08 16:07 CEST
 Nmap scan report for scanme.nmap.org (45.33.32.156)
 Host is up (0.21s latency).
