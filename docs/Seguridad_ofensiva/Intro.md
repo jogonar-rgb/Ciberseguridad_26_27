@@ -6,7 +6,7 @@ description: Fases de un pentest, test de intrusión, test de penetración. Apun
 
 ## Conceptos básicos
 
-Un pentesti o prueba de intrusión puede ser definido como una forma legal y autorizada de localizar y "explotar" satisfactoriamente sistemas informáticos con el propósito de hacerlos más seguros.
+Un pentest o prueba de intrusión puede ser definido como una forma legal y autorizada de localizar y "explotar" satisfactoriamente sistemas informáticos con el propósito de hacerlos más seguros.
 
 El proceso incluye un sondeo en busca de vulnerabilidades así como proporcionar una serie de pruebas de concepto de los ataques para así demostrar que las vulnerabilidades son reales.
 
