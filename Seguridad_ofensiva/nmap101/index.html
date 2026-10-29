@@ -1673,7 +1673,7 @@ potencialmente peligrosas.</p>
 <span class="w">    </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;PermitRootLogin yes&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/ssh/sshd_config
 
-<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>/var/run/sshd
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/run/sshd
 
 
 <span class="k">RUN</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;root:root&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>chpasswd
