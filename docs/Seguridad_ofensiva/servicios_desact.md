@@ -4,13 +4,13 @@ title: Servicios desactualizados
 description: Update, upgrade, servicio, parche, patch. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES severo ochoa Elche. Hacking ético. incidentes de seguridad, puesta en producción segura.
 ---
 
-A día de hoy se podría decir que el incidente de seguridad más sufrido por las empresas es sin duda la infección de ransomware, normalmente mediante algún ataque previo exitoso de phising.
+A día de hoy se podría decir que el incidente de seguridad más sufrido por las empresas es sin duda la infección de ransomware, normalmente mediante algún ataque previo exitoso de phishing.
 
 Sin embargo, otro vector de ataque muy importante viene dado por los sistemas desactualizados. 
 
 Algunas cosas se han fabricado para durar para siempre. El software no es una de ellas.
 
-De hecho, el software se parece más a la comida: caduca. Puede que esté bien un poco después de su fecha de caducidad, pero luego se pudre, se enmohece. Y cuanto más lo dejas, peor se pone. Pero no es un desgradable caso de intoxicación alimentaria a lo que nos arriesgaremos, precisamente. El software obsoleto corre el riesgo de envenenar los sistemas del negocio y causar estragos en la seguridad.
+De hecho, el software se parece más a la comida: caduca. Puede que esté bien un poco después de su fecha de caducidad, pero luego se pudre, se enmohece. Y cuanto más lo dejas, peor se pone. Pero no es un desagradable caso de intoxicación alimentaria a lo que nos arriesgaremos, precisamente. El software obsoleto corre el riesgo de envenenar los sistemas del negocio y causar estragos en la seguridad.
 
 De hecho, el software obsoleto posee una serie de vulnerabilidades de seguridad. Si está presente en alguno de los sistemas, se está poniendo en riesgo los datos y su negocio.
 
@@ -48,7 +48,7 @@ Un software obsoleto es aquel que ya no tiene soporte por parte del proveedor. E
 
 En el mejor de los casos, esto puede dar lugar a interrupciones en el servicio. 
 
-En el peor de los casos, se puede sufrir una falla total del sistema. Esto puede suceder, por ejemplo, si el software obsoleto es fundamental para el funcionamiento 
+En el peor de los casos, se puede sufrir un fallo total del sistema. Esto puede suceder, por ejemplo, si el software obsoleto es fundamental para el funcionamiento de un servicio crítico de la organización.
 
 ### Manteniendo el software "saludable"
 
@@ -59,6 +59,15 @@ Las actualizaciones (updates) a menudo ocurren automáticamente en segundo plano
 De vez en cuando, necesitará un *upgrade* para mantener su software en buen estado. Este es un cambio mayor que necesitará algo de atención. Los *upgrades* no siempre son necesarios de inmediato. Sin embargo, los proveedores a menudo dejan de brindar soporte (léase: proporcionar actualizaciones) a sus programas más antiguos. Cuando esto suceda, se deberá actualizar para evitar el uso de software obsoleto.
 
 Cuando sea el momento de un *upgrade*, debemos asegurarnos de hacer una copia de seguridad de los datos previamente. También se debe verificar la compatibilidad para la integración del sistema y discutir cualquier inquietud con el proveedor. Esto reduce los riesgos de pérdida de datos, interrupción del negocio y una experiencia de actualización no adecuada. 
+
+| Concepto | Descripción |
+|-----------|-------------|
+| Update | Actualización menor que corrige errores o vulnerabilidades. |
+| Upgrade | Cambio de versión importante con nuevas funcionalidades. |
+| Patch | Parche destinado principalmente a corregir vulnerabilidades o errores. |
+| Hotfix | Corrección urgente para resolver un problema crítico. |
+| End of Support (EoS) | Fin del soporte oficial por parte del fabricante. |
+| End of Life (EoL) | Fin de vida del producto. |
 
 ### Software o sistemas desactualizados: un eslabón débil
 
@@ -236,7 +245,7 @@ Gracias a EternalBlue y al desafortunado éxito de WannaCry, el ransomware Petya
 
 La diferencia clave entre la primera y la segunda versión de Petya fue que NotPetya (Petya V2) tenía como objetivo desactivar completamente un sistema. Rescate pagado o no, no había cura. El ciberataque cifró permanentemente la tabla de archivos maestra de una computadora (MFT) y el registro de inicio maestro (MBR).
 
-## Casos recientes: Log4Shell, MOVEit Transfer y Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability
+## Casos recientes: Log4Shell, MOVEit Transfer y Windows Cloud Files Driver
 
 ### Log4Shell (CVE-2021-44228)
 
@@ -295,7 +304,7 @@ La campaña de explotación de MOVEit Transfer llevada a cabo por el grupo crimi
 
 El número de personas afectadas se estimó en decenas de millones debido a la gran cantidad de información personal y corporativa almacenada en los sistemas comprometidos. Este caso puso de manifiesto cómo una única vulnerabilidad en un producto ampliamente desplegado puede desencadenar una filtración masiva de datos a escala global.
 
-### Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability (CVE-2025-62221)
+### Windows Cloud Files Driver (CVE-2025-62221)
 
 A finales de 2025, Microsoft corrigió la vulnerabilidad CVE-2025-62221, que afectaba al componente Windows Cloud Files Mini Filter Driver, utilizado por funcionalidades de sincronización de archivos como las empleadas por servicios en la nube.
 
@@ -340,3 +349,7 @@ La experiencia demuestra que, en muchas ocasiones, los incidentes de seguridad m
 | 2021 | Log4Shell (CVE-2021-44228) | Compromiso masivo de aplicaciones Java |
 | 2023 | MOVEit Transfer (CVE-2023-34362) | Robo masivo de datos por el grupo Cl0p |
 | 2025 | CVE-2025-62221 | Explotación activa de sistemas Windows antes de su actualización |
+
+La inmensa mayoría de los grandes incidentes de seguridad de las últimas décadas tienen un elemento común: existía una corrección disponible antes de que se produjera el ataque. Por ello, una adecuada gestión de vulnerabilidades y parches sigue siendo una de las medidas de seguridad más eficaces y rentables para cualquier organización.
+
+La creciente adopción de herramientas de inteligencia artificial para el desarrollo de software está acelerando la creación de aplicaciones y servicios. Sin embargo, diversos estudios han mostrado que el código generado automáticamente puede introducir errores de diseño y vulnerabilidades de seguridad si no es revisado adecuadamente. Esto incrementa la necesidad de disponer de procesos eficaces de gestión de vulnerabilidades y actualización de sistemas, ya que el volumen de fallos descubiertos podría aumentar en los próximos años.
