@@ -14,7 +14,7 @@ De hecho, el software se parece más a la comida: caduca. Puede que esté bien u
 
 De hecho, el software obsoleto posee una serie de vulnerabilidades de seguridad. Si está presente en alguno de los sistemas, se está poniendo en riesgo los datos y su negocio.
 
-Ya vimos con anterioridad como podían existir exploits 0-day que, en un principio, al ser desconocida la vulnerabilidad que aprovechan, nos hacen imposible tener el sistema actualizado o parcheado. No obstante, en cuánto surgen parches de seguridad dirigidos a solucionar estos problemas, deben ser aplicados, con mayor celeridad si cabe si hablamos de vulnerabilidades graves.
+Ya vimos con anterioridad cómo podían existir exploits 0-day que, en un principio, al ser desconocida la vulnerabilidad que aprovechan, nos hacen imposible tener el sistema actualizado o parcheado. No obstante, en cuanto surgen parches de seguridad dirigidos a solucionar estos problemas, deben ser aplicados, con mayor celeridad si cabe si hablamos de vulnerabilidades graves.
 
 Un buen ejemplo actual de la importancia de mantenerse al día con los parches de seguridad es la reciente vulnerabilidad crítica en log4j, con varios parches consecutivos en tiempo récord a medida que se iban descubriendo nuevas vulnerabilidades: [log4j](https://www.csoonline.com/article/3645431/the-apache-log4j-vulnerabilities-a-timeline.html)
 
@@ -38,7 +38,7 @@ Como resultado, es posible que el software obsoleto no pueda resistir un ciberat
 
 Por lo tanto, si ese software obsoleto incluye el uso, almacenamiento o aplicación de datos, esos datos se ponen en claro riesgo. Los sistemas serán más vulnerables a los ataques de ransomware, malware y filtraciones. El software desactualizado puede por tanto darle a los atacantes una puerta de entrada al resto de sistemas.
 
-Los fallos de seguridad plantean problemas de *compliance* (cumplimiento normativo) posteriores. En términos de GDPR, no tener un software actualizado podría verse como una forma de negligencia. Esto significa que si se tiene un software desactualizado y se sufre una brecha de seguridad relacionada, no solo se pierde la confianza de los clientes, sino que además podríamos enfrentarnos a una fuerte multa.
+Los fallos de seguridad plantean problemas de *compliance* (cumplimiento normativo) posteriores. Mantener sistemas actualizados es una obligación habitual en marcos como ENS, ISO 27001 o RGPD, no tener un software actualizado podría verse como una forma de negligencia. Esto significa que si se tiene un software desactualizado y se sufre una brecha de seguridad relacionada, no solo se pierde la confianza de los clientes, sino que además podríamos enfrentarnos a una fuerte multa.
 
 #### Fallo del sistema
 
@@ -62,7 +62,7 @@ Cuando sea el momento de un *upgrade*, debemos asegurarnos de hacer una copia de
 
 ### Software o sistemas desactualizados: un eslabón débil
 
-Cuando se tiene un software obsoleto, no sólo se está perdiendo algunas funciones nuevas o un programa un poco ligero o con mayor *performance*. También está exponiendo su empresa a vulnerabilidades y riesgos de seguridad.
+Cuando se tiene un software obsoleto, no sólo se están perdiendo algunas funciones nuevas o un programa un poco ligero o con mayor *performance*. También está exponiendo a su empresa a vulnerabilidades y riesgos de seguridad.
 
 Se debe concebir de esta manera: no dejaríamos fruta pasada en el frutero, porque corre el riesgo de que la fruta fresca también se eche a perder. Con el software ocurre algo parecido. Por lo tanto, no se debe dejar que el software *caduque*, se ha de mantener actualizado, seguro y saludable.
 
@@ -97,7 +97,7 @@ Ya hemos nombrado los problemas que podríamos sufrir debido a la presencia de s
 
 No es una buena estrategia instalar nuevos parches en el mismo momento en que estén disponibles y para todos los activos en el inventario de la organización sin considerar el impacto. En cambio, debería adoptarse un enfoque más estratégico. La gestión de parches debe implementarse mediante un proceso organizativo detallado que sea rentable y centrado en la seguridad.  
 
-Los pasos clave para esta proceso de gestión de parches o actualizaciones incluyen:
+Los pasos clave para este proceso de gestión de parches o actualizaciones incluyen:
 
 1. ^^Desarrollar un inventario actualizado de todos los sistemas de producción:^^ ya sea trimestral o mensualmente, esta es la única forma de monitorizar verdaderamente los activos que existen en su ecosistema. A través de una gestión de activos exhaustiva, se tendrá una visión exacta de los sistemas operativos, los tipos de versión y las direcciones IP que existen, junto con sus ubicaciones geográficas y sus "propietarios" en la organización. Como regla general, cuanto mayor sea la frecuencia con la que se actualiza el inventario de activos, más informado se estará.
 
@@ -111,7 +111,7 @@ Los pasos clave para esta proceso de gestión de parches o actualizaciones inclu
 
 6. ^^¡REALIZAR PRUEBAS!^^ Se deben aplicar los parches a una muestra representativa de activos en un entorno de test. Se han de realizar igualmente pruebas de estrés en las máquinas para asegurarse de que los parches no causen problemas en el entorno de producción.
 
-7. ^^Aplicar los parches:^^ una vez se haya priorizado lo que debe solucionarse primero, se comienzan a aplicar parches para reducir realmente el riesgo en nuestro entorno. Las herramientas de administración de vulnerabilidades más avanzadas también ofrecen la capacidad de automatizar las partes del proceso de parcheo que requieren mucho tiempo.
+7. ^^Aplicar los parches:^^ una vez se haya priorizado lo que debe solucionarse primero, se comienzan a aplicar parches para reducir realmente el riesgo en nuestro entorno. Las herramientas de administración de vulnerabilidades más avanzadas también ofrecen la capacidad de automatizar las partes del proceso de parcheo que requiere mucho tiempo.
     Se puede considerar implementar los parches en lotes de activos; aunque ya se habrán probado en el entorno de test, es posible que todavía haya resultados inesperados en producción. 
 
 8.  ^^Realizar un seguimiento de su progreso:^^ vigilar los activos para asegurarse de que el parcheo se haya realizado correctamente. 
@@ -125,7 +125,7 @@ Una serie de pautas muy básicas que podríamos dar en cuanto a la gestión de p
 
 1. **Mantenerse actualizado**
 
-    Los proveedores de software lanzan actualizaciones de software con regularidad, y muchas de ellas se enfocan a problemas de seguridad importantes. Debe haber un responsable para que se encargue de estar al tanto de las actualizaciones de software y de consultar los sitios web de esos proveedores con regularidad. Esa persona también debe estar atento a las amenazas emergentes, como nuevos tipos de ransomware u otro tipo de malware.
+    Los proveedores de software lanzan actualizaciones de software con regularidad, y muchas de ellas se enfocan a problemas de seguridad importantes. Debe haber un responsable para que se encargue de estar al tanto de las actualizaciones de software y de consultar los sitios web de esos proveedores con regularidad. Esa persona también debe estar atenta a las amenazas emergentes, como nuevos tipos de ransomware u otro tipo de malware.
 
 2. **Conocer el programa de actualizaciones de Microsoft**
 
@@ -156,7 +156,7 @@ No obstante, dependiendo de la fuente que se consulte, aparecerán unas u otras 
 ![](./img/Top-10-PM-Best-Practices-2020.jpg)
 
 
-Un ejemplo real de una política de atualizaciones la podemos consultar para la [universidad de Berkeley](https://security.berkeley.edu/MSSND/patching-and-updates-guidelines)
+Un ejemplo real de una política de actualizaciones la podemos consultar para la [universidad de Berkeley](https://security.berkeley.edu/MSSND/patching-and-updates-guidelines)
 
 ## Un caso real: Eternalblue (MS17-010), SMBv1 y Wannacry
 
@@ -164,7 +164,7 @@ Un ejemplo real de una política de atualizaciones la podemos consultar para la 
 
 **EternalBlue** es tanto el nombre de una serie de vulnerabilidades de software de Microsoft como el exploit creado por la NSA a modo de herramienta de ciberataque. Aunque el exploit EternalBlue, oficialmente nombrado **MS17-010** por Microsoft, afecta solo a los sistemas operativos Windows, cualquier cosa que use el protocolo de intercambio de archivos SMBv1 (Server Message Block versión 1), está técnicamente en riesgo de ser blanco de ransomware y otros ciberataques debido a una vulnerabilidad de tipo RCE (Ejecución Remota de Código).
 
-EternalBlue fue creado por la Agencia de Seguridad Nacional de los Estados Unidos (NSA) como parte de una iniciativa más que cuestionable de almacenar y convertir en armas para uso propio las vulnerabilidades del software en lugar de reportarlas al proveedor pertinente, según se condena los comentarios hechos por Microsoft.
+EternalBlue fue creado por la Agencia de Seguridad Nacional de los Estados Unidos (NSA) como parte de una iniciativa más que cuestionable de almacenar y convertir en armas para uso propio las vulnerabilidades del software en lugar de reportarlas al proveedor pertinente, según se desprende de los comentarios hechos por Microsoft.
 
 La NSA supuestamente pasó casi un año buscando un error en el software de Microsoft y una vez que lo encontraron, desarrolló EternalBlue para explotar la vulnerabilidad. La NSA estuvo usando EternalBlue durante cinco años antes de alertar a Microsoft de su existencia.
 
@@ -207,7 +207,7 @@ Todo lo expuesto hasta ahora pone de relieve varios de los asuntos clave que nos
    
 2. Es importante tener una correcta gestión de los parches de seguridad y aplicarlos con la mayor celeridad, máxime si son casos tan graves como estos
 
-3. Es muy importante no utilizar software desactualizado. El servicio SMBv1 tiene casi 30 años de vida, fue diseñado para un contexto distinto, con apenas amenazas, ya que 30 años en informática pueden representan un mundo. Se deberían haber realizado los mayores esfuerzos posibles para dejar de usarse en el entorno empresarial.
+3. Es muy importante no utilizar software desactualizado. El servicio SMBv1 tiene casi 30 años de vida, fue diseñado para un contexto distinto, con apenas amenazas, ya que 30 años en informática representan un mundo. Se deberían haber realizado los mayores esfuerzos posibles para dejar de usarse en el entorno empresarial.
 
 4. Entroncando con el punto anterior, Windows XP recibió el correspondiente parche de seguridad debido a la gravedad del asunto, a pesar de ser un Sistema Operativo fuera de soporte. Esto no es más que la excepción que confirma la regla y lo más probable en cualquier otro caso hubiera sido no recibir parche alguno.
     Así las cosas, resulta esencial el uso de software con el soporte apropiado.
@@ -228,10 +228,115 @@ El ciberataque de WannaCry comenzó el 12 de mayo de 2017 e inmediatamente tuvo 
 
 Petya es otro ciberataque de ransomware que utilizó el exploit EternalBlue para causar estragos
 
-Petya se lanzó técnicamente a principios de 2016, antes de WannaCry, pero con poca fanfarria y daños. La primera versión de Petya se propagó a través de un archivo adjunto de correo electrónico malicioso y era una forma bastante sencilla de ransomware: su computadora se infecta y sus archivos se cifran (o se retienen como rescate) hasta que paga $ 300 en Bitcoin para comprar una clave de descifrado
+Petya se lanzó a principios de 2016, antes de WannaCry, pero inicialmente tuvo una repercusión limitada. La primera versión de Petya se propagó a través de un archivo adjunto de correo electrónico malicioso y era una forma bastante sencilla de ransomware: su equipo se infecta y sus archivos se cifran (o se retienen como rescate) hasta que paga $ 300 en Bitcoin para comprar una clave de descifrado
 
 *Petya* es otra variedad de ransomware que utilizó el exploit EternalBlue para cifrar los archivos y exigir un rescate en Bitcoin para liberarlos.
 
 Gracias a EternalBlue y al desafortunado éxito de WannaCry, el ransomware Petya tuvo una segunda oportunidad de destrucción. En junio de 2017, NotPetya se implementó utilizando el exploit EternalBlue.
 
 La diferencia clave entre la primera y la segunda versión de Petya fue que NotPetya (Petya V2) tenía como objetivo desactivar completamente un sistema. Rescate pagado o no, no había cura. El ciberataque cifró permanentemente la tabla de archivos maestra de una computadora (MFT) y el registro de inicio maestro (MBR).
+
+## Casos recientes: Log4Shell, MOVEit Transfer y Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability
+
+### Log4Shell (CVE-2021-44228)
+
+En diciembre de 2021 se descubrió una de las vulnerabilidades más graves de los últimos años: Log4Shell (CVE-2021-44228), que afectaba a Apache Log4j, una biblioteca Java utilizada por miles de aplicaciones y servicios en todo el mundo.
+
+La vulnerabilidad permitía la ejecución remota de código (RCE) sin necesidad de autenticación. Un atacante podía enviar una cadena especialmente diseñada que era procesada por Log4j, provocando que el servidor descargara y ejecutara código malicioso.
+
+Lo que convirtió a Log4Shell en una amenaza de gran magnitud fue que Log4j estaba integrado en multitud de productos comerciales, servidores web, aplicaciones corporativas y servicios en la nube. Muchas organizaciones desconocían incluso que utilizaban esta biblioteca debido a las dependencias de terceros presentes en sus aplicaciones.
+
+Entre los principales riesgos asociados a la vulnerabilidad se encontraban:
+
+* Ejecución remota de código.
+* Instalación de malware o ransomware.
+* Robo de credenciales.
+* Movimiento lateral dentro de la red corporativa.
+* Compromiso completo de servidores.
+
+La respuesta de la industria fue inmediata y se publicaron varias actualizaciones consecutivas en apenas unos días, ya que se fueron descubriendo nuevas formas de explotación y mecanismos de evasión.
+
+Este incidente puso de manifiesto dos aspectos fundamentales:
+
+* La importancia de mantener un inventario actualizado de activos y aplicaciones.
+* La necesidad de aplicar parches críticos en cuestión de horas o días, en lugar de semanas o meses.
+
+En muchas organizaciones los atacantes comenzaron a explotar la vulnerabilidad apenas unas horas después de hacerse pública.
+
+#### Impacto del incidente
+
+Aunque resulta difícil calcular con precisión el número total de sistemas afectados, diversos estudios estimaron que millones de aplicaciones y servicios utilizaban la biblioteca Apache Log4j en el momento del descubrimiento de la vulnerabilidad. Numerosas organizaciones públicas y privadas tuvieron que realizar revisiones urgentes de sus infraestructuras para identificar sistemas vulnerables.
+
+Entre las organizaciones potencialmente afectadas se encontraban proveedores de servicios en la nube, plataformas de comercio electrónico, aplicaciones empresariales y servicios gubernamentales. Debido a la enorme difusión de la biblioteca, este incidente fue considerado por muchos especialistas como una de las vulnerabilidades más graves de la última década
+
+### MOVEit Transfer (CVE-2023-34362)
+
+En 2023 se produjo otro incidente que afectó a miles de organizaciones en todo el mundo. La vulnerabilidad crítica CVE-2023-34362 impactaba a MOVEit Transfer, una plataforma empresarial utilizada para el intercambio seguro de archivos.
+
+La vulnerabilidad permitía a un atacante no autenticado acceder al sistema y ejecutar acciones sobre el servidor, comprometiendo la confidencialidad de los datos almacenados.
+
+El grupo criminal Cl0p aprovechó activamente esta vulnerabilidad para realizar campañas masivas de robo de información. A diferencia de otros incidentes centrados en el cifrado de archivos, la estrategia principal consistió en la exfiltración de datos sensibles para posteriormente exigir pagos a las organizaciones afectadas.
+
+Las consecuencias incluyeron:
+
+* Robo de información personal.
+* Filtración de datos de clientes.
+* Exposición de información financiera.
+* Incumplimientos regulatorios.
+* Daño reputacional.
+
+Muchas empresas disponían de actualizaciones proporcionadas por el fabricante, pero no las habían aplicado todavía cuando comenzaron los ataques.
+
+El caso de MOVEit demuestra que la ventana temporal entre la publicación de una vulnerabilidad y su explotación activa es cada vez menor. En numerosos casos los atacantes automatizan la búsqueda de sistemas vulnerables y lanzan ataques a gran escala en cuestión de horas.
+
+#### Impacto del incidente
+
+La campaña de explotación de MOVEit Transfer llevada a cabo por el grupo criminal Cl0p afectó a miles de organizaciones de todo el mundo. Las investigaciones posteriores identificaron centenares de empresas, universidades, organismos públicos y proveedores de servicios cuyos datos fueron exfiltrados.
+
+El número de personas afectadas se estimó en decenas de millones debido a la gran cantidad de información personal y corporativa almacenada en los sistemas comprometidos. Este caso puso de manifiesto cómo una única vulnerabilidad en un producto ampliamente desplegado puede desencadenar una filtración masiva de datos a escala global.
+
+### Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability (CVE-2025-62221)
+
+A finales de 2025, Microsoft corrigió la vulnerabilidad CVE-2025-62221, que afectaba al componente Windows Cloud Files Mini Filter Driver, utilizado por funcionalidades de sincronización de archivos como las empleadas por servicios en la nube.
+
+La vulnerabilidad permitía a un atacante que ya hubiera obtenido acceso limitado a un sistema elevar sus privilegios hasta el nivel SYSTEM, el máximo nivel de privilegio disponible en sistemas Windows. Esto significaba que un compromiso inicialmente reducido podía convertirse rápidamente en un control completo del equipo afectado.
+
+Lo más relevante de este caso fue que la vulnerabilidad estaba siendo explotada activamente antes de que muchas organizaciones aplicaran las actualizaciones correspondientes. Debido a ello, fue incluida por organismos de ciberseguridad en los catálogos de vulnerabilidades conocidas y explotadas, recomendando una remediación inmediata.
+
+Este incidente demuestra una tendencia cada vez más frecuente en ciberseguridad: la reducción del tiempo existente entre la publicación de una vulnerabilidad y su explotación a gran escala. En muchos casos, los atacantes automatizan la búsqueda de sistemas vulnerables pocas horas después de la publicación de un aviso de seguridad.
+
+Las organizaciones que disponen de procedimientos maduros de gestión de parches son capaces de minimizar esta ventana de exposición, mientras que aquellas que retrasan la aplicación de las actualizaciones aumentan significativamente la probabilidad de sufrir una intrusión.
+
+#### Impacto del incidente
+
+A diferencia de los casos anteriores, la vulnerabilidad CVE-2025-62221 fue detectada y corregida relativamente rápido, por lo que no llegó a provocar una crisis global comparable a WannaCry o MOVEit Transfer. Sin embargo, su relevancia radica en que se encontraba entre las vulnerabilidades que estaban siendo explotadas activamente cuando se publicó la actualización de seguridad.
+
+Este caso evidencia una tendencia preocupante: los atacantes son capaces de desarrollar y desplegar exploits en plazos cada vez más reducidos. Como consecuencia, las organizaciones disponen de menos tiempo para evaluar, probar e instalar las actualizaciones antes de que comiencen los ataques reales.
+
+## Lecciones aprendidas
+
+Los casos de EternalBlue, Log4Shell, MOVEit Transfer y Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability comparten varios elementos comunes:
+
+* Existía una vulnerabilidad crítica conocida.
+* Se publicaron avisos de seguridad y actualizaciones.
+* Muchas organizaciones tardaron demasiado en aplicar los parches.
+* Los atacantes aprovecharon esta demora para realizar ataques masivos.
+
+Por ello, una política eficaz de gestión de parches debe contemplar:
+
+* Inventario actualizado de activos.
+* Monitorización de avisos de seguridad.
+* Evaluación del riesgo asociado a cada vulnerabilidad.
+* Priorización basada en criticidad.
+* Pruebas controladas.
+* Despliegue rápido de actualizaciones.
+* Verificación posterior del parcheo.
+
+La experiencia demuestra que, en muchas ocasiones, los incidentes de seguridad más graves no se producen por vulnerabilidades desconocidas, sino por vulnerabilidades conocidas para las que existía una corrección disponible que no fue aplicada a tiempo.
+
+| Año | Vulnerabilidad | Impacto |
+|-----|----------------|----------|
+| 2017 | EternalBlue (MS17-010) | WannaCry y NotPetya |
+| 2021 | Log4Shell (CVE-2021-44228) | Compromiso masivo de aplicaciones Java |
+| 2023 | MOVEit Transfer (CVE-2023-34362) | Robo masivo de datos por el grupo Cl0p |
+| 2025 | CVE-2025-62221 | Explotación activa de sistemas Windows antes de su actualización |
