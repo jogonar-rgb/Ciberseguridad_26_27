@@ -4,7 +4,7 @@ title: Enumeración de servicios
 description: FTP,SMB,NFS,DNS,SMTP,IMAP/POP3. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES severo ochoa Elche. Hacking ético. incidentes de seguridad, puesta en producción segura.
 ---
 
-Para esta sesión, vamos a ver una serie de mecanimos a la hora de enumerar los servicios más comunes que nos podemos encontrar en nuestro proceso de pentesting.
+Para esta sesión, vamos a ver una serie de mecanismos a la hora de enumerar los servicios más comunes que nos podemos encontrar en nuestro proceso de pentesting.
 
 ## FTP
 *FTP (File Transfer Protocol)* es un protocolo de red estándar utilizado para la transferencia de archivos entre un cliente y un servidor en una red TCP/IP, como Internet.
@@ -27,7 +27,7 @@ Es adecuado para transferencias grandes, pero, dado que no es seguro de forma pr
 
 ## TFTP
 
-*TFTP (Trivial File Transfer Protocol)* es un protocolo de red simple diseñado para la transferencia de archivos en redes TCP/IP. A diferencia de FTP, TFTP es muy básico y no tiene autenticación ni encriptación, lo que lo hace menos seguro pero adecuado para situaciones donde la simplicidad y rapidez son prioritarias.
+*TFTP (Trivial File Transfer Protocol)* es un protocolo de red simple diseñado para la transferencia de archivos en redes TCP/IP. A diferencia de FTP, TFTP es muy básico y no tiene autenticación ni cifrado, lo que lo hace menos seguro pero adecuado para situaciones donde la simplicidad y rapidez son prioritarias.
 Características principales de TFTP:
 
 + **Protocolo ligero**: TFTP está diseñado para realizar transferencias de archivos de forma muy sencilla, con un conjunto mínimo de comandos.
@@ -60,7 +60,7 @@ Haciendo uso del script *banner* de nmap:
 nmap -sV -p21,2121 -sC banner 192.168.100.129
 ```
 
-O incluso, intentando conectarnos directamente via Telnet;
+O incluso, intentando conectarnos directamente vía Telnet;
 
 ```bash
 telnet 192.168.100.129 21
@@ -109,7 +109,7 @@ Existen múltiples herramientas para llevar a cabo la enumeración de este servi
 Algunas de las herramientas más conocidas y utilizadas son:
 
 + **nbtscan**: permite escanear servicios NetBIOS, entre ellos SMB.
-+ **smbap**: es una herramienta de código abierto diseñada para facilitar la enumeración y el acceso a recursos compartidos en redes que utilizan el protocolo SMB (Server Message Block). Es especialmente útil para realizar auditorías de seguridad y pruebas de penetración en entornos de Windows. SMBMap permite a los usuarios explorar y verificar los permisos de acceso a los recursos compartidos en dispositivos que utilizan SMB, lo que puede ayudar a identificar vulnerabilidades o configuraciones inseguras.
++ **SMBMap**: es una herramienta de código abierto diseñada para facilitar la enumeración y el acceso a recursos compartidos en redes que utilizan el protocolo SMB (Server Message Block). Es especialmente útil para realizar auditorías de seguridad y pruebas de penetración en entornos de Windows. SMBMap permite a los usuarios explorar y verificar los permisos de acceso a los recursos compartidos en dispositivos que utilizan SMB, lo que puede ayudar a identificar vulnerabilidades o configuraciones inseguras.
 + **nmap**: también posee scripts específicos para SMB
 + **smbclient**: es una herramienta de línea de comandos utilizada para interactuar con servidores que implementan el protocolo SMB (Server Message Block). Forma parte del paquete de software Samba, que permite a sistemas operativos basados en Unix y Linux comunicarse con redes de Windows y acceder a recursos compartidos, como archivos e impresoras. smbclient actúa como un cliente FTP para recursos compartidos de SMB, permitiendo la navegación, el acceso y la manipulación de archivos.
 + **rpcclient**: es una herramienta de línea de comandos que forma parte del paquete Samba, diseñada para interactuar con el servicio Remote Procedure Call (RPC) de sistemas que utilizan el protocolo SMB (Server Message Block). Esta herramienta permite a los usuarios realizar una variedad de tareas administrativas y de gestión de red en servidores que implementan el servicio RPC, que es común en sistemas Windows.
@@ -120,7 +120,7 @@ Si queremos comenzar a enumerar con una herramienta ya conocida, como es **nmap*
 ```bash
 nmap -sC -p 139,445 -sV 192.168.100.129
 ```
-Y obtendremos información como la versión de samba y veremos como la ngeociación de Samba versión 2 (SMBv2) ha resultado fallida, por lo que extraemos que quizás se esté utilizando el inseguro SMBv1.
+Y obtendremos información como la versión de samba y veremos como la negociación de Samba versión 2 (SMBv2) ha resultado fallida, por lo que extraemos que quizás se esté utilizando el inseguro SMBv1.
 
 Otros scripts que se pueden utilizar con nmap para SMB son:
 + smb-protocols: descubrir que versiones maneja la víctima (<SMBv3 sería vulnerable)
@@ -160,24 +160,24 @@ Y si quisiéramos acceder al servidor y movernos por los directorios:
 smbclient //192.168.100.129/tmp
 ```
 
-También con la herramiento **rpclient** podemos ejecutar diversas peticiones para obtener información sobre SMB tras conectarnos al servidor:
+También con la herramienta **rpcclient** podemos ejecutar diversas peticiones para obtener información sobre SMB tras conectarnos al servidor:
 
 ```bash
 rpcclient -U "" 192.168.100.129
 ```
 Algunas de las peticiones que podemos hacer;
 
-|          Petción          |                             Descripción                            |
+|          Petición          |                             Descripción                            |
 |:-----------------------:|:------------------------------------------------------------------:|
 | srvinfo                 | Información del servidor                                                |
 | enumdomains             | Enumerar todos los dominios desplegados en la red            |
-| querydominfo            | Proporciona dominio, servidor e información de usuario de los dominios existentes domains. |
+| querydominfo            | Proporciona información sobre el dominio, servidor y los usuarios de los dominios existentes. |
 | netshareenumall         | Enumera los shares disponibles                                  |
 | netsharegetinfo <share> | Información acerca de algún share específico                       |
 | enumdomusers            | Enumera usuarios del dominio                                       |
 | queryuser <RID>         | Proporciona información sobre un usuario concreto                       |
 
-Y, como ya comnentábamos, podríamos obtener una salida combinada con **enum4linux**:
+Y, como ya comentábamos, podríamos obtener una salida combinada con **enum4linux**:
 
 ```bash
 enum4linux 192.168.100.129 -A
@@ -208,9 +208,9 @@ NFS es una solución eficiente y robusta para compartir archivos en redes intern
 
 ### ¿Cómo funciona NFS?
 
-Primero, el cliente solicitará montar un directorio de un host remoto en un directorio local de la misma manera que puede montar un dispositivo físico. El servicio de montaje actuará  entonces para conectarse al demonio de montaje correspondiente mediante RPC. 
+Primero, el cliente solicitará montar un directorio de un host remoto en un directorio local de la misma manera que puede montar un dispositivo físico. El servicio de montaje actuará entonces conectandose al demonio de montaje correspondiente mediante RPC. 
 
-El servidor comprueba si el usuario tiene permiso para montar el directorio solicitado. A continuación devolverá un manejador de fichero que identifica unívocamente cada fichero y directorio  que está en el servidor.
+El servidor comprueba si el usuario tiene permiso para montar el directorio solicitado. A continuación devolverá un identicador de archivo (file handle) que identifica unívocamente cada fichero y directorio  que está en el servidor.
 
 Si alguien quiere acceder a un archivo utilizando NFS, se realiza una llamada RPC a NFSD (el demonio NFS) en el servidor. Esta llamada toma parámetros como:
 
@@ -260,13 +260,13 @@ SMTP es uno de los protocolos de red más antiguos y sigue siendo el estándar p
 
 ### Enumeración SMTP
 
-Iniciamos, como casi siempre, la enumeración con un escaneo con nmap
+Iniciamos, como casi siempre, la enumeración con un escaneo con Nmap:
 
 ```bash
 nmap -p- -sT -T5 10.10.192.87   
 ```
 
-Si descubrimos un servidor SMTP (puerto 25 por defecto), podemos por ejemplo enumerar usuarios con algú nombre o lista que hayamos recolectado previamente:
+Si descubrimos un servidor SMTP (puerto 25 por defecto), podemos por ejemplo enumerar usuarios con algún nombre o lista que hayamos recolectado previamente:
 
 ```bash
 smtp-user-enum -M VRFY -u admin -t 10.10.192.87
@@ -274,7 +274,7 @@ smtp-user-enum -M VRFY -u admin -t 10.10.192.87
 smtp-user-enum -M VRFY -U lista_usuarios.txt -t 10.10.192.87
 ```
 
-Podemos intentar ver qué [comandos](https://mailtrap.io/es/blog/smtp-commands-and-responses/) se nos permiten para interactuar con el servidor de correo o descubrir si es un [open-relay](https://es.wikipedia.org/wiki/Open_relay):
+Podemos intentar ver qué [comandos](https://mailtrap.io/es/blog/smtp-commands-and-responses/) tenemos permitidos para interactuar con el servidor de correo o descubrir si es un [open-relay](https://es.wikipedia.org/wiki/Open_relay):
 
 ```bash
 nmap -p25 --script smtp-commands 10.10.192.87
