@@ -139,15 +139,17 @@ Según la ayuda de smbmap, textualmente:
 !!!quote
     Main arguments:
     
-        -H HOST               IP of host
-        --host-file FILE      File containing a list of hosts
-        -u USERNAME           Username, if omitted null session assumed
-        -p PASSWORD           Password or NTLM hash
-        -s SHARE              Specify a share (default C$), ex 'C$'
-        -d DOMAIN             Domain name (default WORKGROUP)
-        -P PORT               SMB port (default 445)
-        -v                    Return the OS version of the remote host
-        --admin               Just report if the user is an admin
+        -H HOST                         IP or FQDN
+        --host-file FILE                File containing a list of hosts
+        -u, --username  USERNAME        Username, if omitted null session assumed
+        -p, --password PASSWORD         Password or NTLM hash, format is LMHASH:NTHASH
+        --prompt                        Prompt for a password
+        -s SHARE                        Specify a share (default C$), ex 'C$'
+        -d DOMAIN                       Domain name (default WORKGROUP)
+        -P PORT                         SMB port (default 445)
+        -v, --version                   Return the OS version of the remote host
+        --signing                       Check if host has SMB signing disabled, enabled, or required
+        --admin                         Just report if the user is an admin
 
 Y si quisiéramos conectarnos directamente al servidor, podríamos usar **smbclient**. Para listar los *shares* usando una sesión nula (sin credenciales):
 
