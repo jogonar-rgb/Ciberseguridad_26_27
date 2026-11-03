@@ -324,7 +324,7 @@ Este caso evidencia una tendencia preocupante: los atacantes son capaces de desa
 
 ## Lecciones aprendidas
 
-Los casos de EternalBlue, Log4Shell, MOVEit Transfer y Windows Cloud Files Mini Filter Driver Elevation of Privilege Vulnerability comparten varios elementos comunes:
+Los casos de EternalBlue, Log4Shell, MOVEit Transfer y Windows Cloud Files Driver comparten varios elementos comunes:
 
 * Existía una vulnerabilidad crítica conocida.
 * Se publicaron avisos de seguridad y actualizaciones.
@@ -348,8 +348,8 @@ La experiencia demuestra que, en muchas ocasiones, los incidentes de seguridad m
 | 2017 | EternalBlue (MS17-010) | WannaCry y NotPetya |
 | 2021 | Log4Shell (CVE-2021-44228) | Compromiso masivo de aplicaciones Java |
 | 2023 | MOVEit Transfer (CVE-2023-34362) | Robo masivo de datos por el grupo Cl0p |
-| 2025 | CVE-2025-62221 | Explotación activa de sistemas Windows antes de su actualización |
+| 2025 | Windows Cloud Files Driver (CVE-2025-62221) | Explotación activa de sistemas Windows antes de su actualización |
 
 La inmensa mayoría de los grandes incidentes de seguridad de las últimas décadas tienen un elemento común: existía una corrección disponible antes de que se produjera el ataque. Por ello, una adecuada gestión de vulnerabilidades y parches sigue siendo una de las medidas de seguridad más eficaces y rentables para cualquier organización.
 
-La creciente adopción de herramientas de inteligencia artificial para el desarrollo de software está acelerando la creación de aplicaciones y servicios. Sin embargo, diversos estudios han mostrado que el código generado automáticamente puede introducir errores de diseño y vulnerabilidades de seguridad si no es revisado adecuadamente. Esto incrementa la necesidad de disponer de procesos eficaces de gestión de vulnerabilidades y actualización de sistemas, ya que el volumen de fallos descubiertos podría aumentar en los próximos años.
+La creciente adopción de herramientas de inteligencia artificial para el desarrollo de software está acelerando la creación de aplicaciones y servicios. Sin embargo, diversos estudios y evaluaciones de seguridad han mostrado que el código generado automáticamente puede introducir errores de diseño y vulnerabilidades de seguridad si no es revisado adecuadamente. Esto incrementa la necesidad de disponer de procesos eficaces de gestión de vulnerabilidades y actualización de sistemas, ya que el volumen de fallos descubiertos podría aumentar en los próximos años.
