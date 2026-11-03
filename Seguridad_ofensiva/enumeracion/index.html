@@ -1025,15 +1025,17 @@ Según la ayuda de smbmap, textualmente:</p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>Main arguments:</p>
-<div class="highlight"><pre><span></span><code>-H HOST               IP of host
---host-file FILE      File containing a list of hosts
--u USERNAME           Username, if omitted null session assumed
--p PASSWORD           Password or NTLM hash
--s SHARE              Specify a share (default C$), ex &#39;C$&#39;
--d DOMAIN             Domain name (default WORKGROUP)
--P PORT               SMB port (default 445)
--v                    Return the OS version of the remote host
---admin               Just report if the user is an admin
+<div class="highlight"><pre><span></span><code>-H HOST                         IP or FQDN
+--host-file FILE                File containing a list of hosts
+-u, --username  USERNAME        Username, if omitted null session assumed
+-p, --password PASSWORD         Password or NTLM hash, format is LMHASH:NTHASH
+--prompt                        Prompt for a password
+-s SHARE                        Specify a share (default C$), ex &#39;C$&#39;
+-d DOMAIN                       Domain name (default WORKGROUP)
+-P PORT                         SMB port (default 445)
+-v, --version                   Return the OS version of the remote host
+--signing                       Check if host has SMB signing disabled, enabled, or required
+--admin                         Just report if the user is an admin
 </code></pre></div>
 </div>
 <p>Y si quisiéramos conectarnos directamente al servidor, podríamos usar <strong>smbclient</strong>. Para listar los <em>shares</em> usando una sesión nula (sin credenciales):</p>
