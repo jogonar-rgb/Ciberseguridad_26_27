@@ -1,7 +1,7 @@
 ---
 title: Metasploit
 
-description: Metasploit, teoría, exploits. Pentesting, hacking, AD. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES severo ochoa Elche. Hacking ético. incidentes de seguridad, puesta en producción segura.
+description: Metasploit, teoría, exploits. Pentesting, hacking, AD. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES Severo Ochoa Elche. Hacking ético. Incidentes de seguridad, puesta en producción segura.
 ---
 
 ## ¿Qué es Metasploit?
@@ -20,9 +20,9 @@ Red Team es el equipo ofensivo o encargado del hacking ético, que hace pruebas 
 
 #### Características principales
 
-Es una herramienta muy completa que tiene muchísimos exploits, que son vulnerabilidades conocidas, en las cuales tienen también unos módulos, llamados payloads, que son los códigos que explotan estas vulnerabilidades.
+Es una herramienta muy completa que incorpora numerosos exploits, es decir, que son vulnerabilidades conocidas, en las cuales tienen también unos módulos, llamados payloads, que son los códigos que explotan estas vulnerabilidades.
 
-También dispone de otros tipo de módulos, por ejemplo, los encoders, que son una especie de códigos de cifrado para evasión de antivirus o sistemas de seguridad perimetral.
+También dispone de otros tipos de módulos, por ejemplo, los encoders, que son una especie de códigos de cifrado para evasión de antivirus o sistemas de seguridad perimetral.
 
 Otra de las ventajas de este framework es que nos permite interactuar también con herramientas externas, como Nmap o Nessus.
 
@@ -32,7 +32,7 @@ Destacar también que es multiplataforma y gratuita, aunque tiene una versión d
 
 ### Arquitectura de MSF
 
-Metasploit está formado por varios componentes como bibliotecas, módulos, complementos y herramientas importantes. Una pequeño esquema de la estructura de Metasploit podría ser el siguiente:
+Metasploit está formado por varios componentes como bibliotecas, módulos, complementos y herramientas importantes. Un pequeño esquema de la estructura de Metasploit podría ser el siguiente:
 
 ![](./img/msf-1.png){: style="height:300px;width:500px" }
 
@@ -65,9 +65,9 @@ MSF-Core es el núcleo de Metasploit Framework, una colección de bibliotecas y 
 
 + **Compatibilidad con múltiples plataformas**: Facilita la portabilidad de Metasploit, permitiendo que funcione en distintos sistemas operativos (Linux, Windows, macOS) sin problemas de compatibilidad.
 
-+ **Conexión con nibliotecas**: MSF-Core se comunica con otras bibliotecas como Rex y MSF-Lib para manejar la lógica de bajo nivel (manejo de sockets, encriptación, etc.), permitiendo que los desarrolladores de módulos se enfoquen en el desarrollo de exploits sin preocuparse de estos aspectos técnicos.
++ **Conexión con bibliotecas**: MSF-Core se comunica con otras bibliotecas como Rex y MSF-Lib para manejar la lógica de bajo nivel (manejo de sockets, encriptación, etc.), permitiendo que los desarrolladores de módulos se enfoquen en el desarrollo de exploits sin preocuparse de estos aspectos técnicos.
 
-+ **Control de de sesiones y gestión de estado**: Ayuda a manejar sesiones, como las generadas por payloads como Meterpreter, permitiendo la interacción con sistemas comprometidos y la ejecución de comandos remotos.
++ **Control de sesiones y gestión de estado**: Ayuda a manejar sesiones, como las generadas por payloads como Meterpreter, permitiendo la interacción con sistemas comprometidos y la ejecución de comandos remotos.
 
 + **Soporte para plugins y extensibilidad**: MSF-Core permite la inclusión de plugins que amplían sus funcionalidades, como integraciones con bases de datos y herramientas de gestión de vulnerabilidades, facilitando la extensibilidad de Metasploit.
 
@@ -76,17 +76,17 @@ En pocas palabras, MSF-Core es el esqueleto de Metasploit, sobre el cual se cons
 
 #### Exploits
 
-Este modulo contiene programas y scripts diseñados para explotar vulnerabilidades.
+Este módulo contiene programas y scripts diseñados para explotar vulnerabilidades.
 
 #### Payloads
 
 Los payloads se proporcionan aquí, estos pueden ser usados tras una intrusión exitosa (explotación) en el sistema objetivo.
 
-Un exploit es una vulnerabilidad, y el payload es la carga que se ejecuta en esa vulnerabilidad, es decir, la carga que activamos a la hora de aprovechar dicha vulnerabilidad.
+Una vulnerabilidad es el fallo de seguridad existente en el sistema, mientras que un exploit es el código que aprovecha dicho fallo. El payload es la carga útil que se ejecuta tras la explotación satisfactoria de la vulnerabilidad.
 
 #### Codificadores y NOPs
 
-Con el fin de hacer más difícil la detección del payload por de los sistemas IDS/IPS o programas antivirus, estos módulos ofrecen funciones para ofuscar el payload en redes.
+Con el fin de hacer más difícil la detección del payload por parte de los sistemas IDS/IPS o programas antivirus, estos módulos ofrecen funciones para ofuscar el payload en redes.
 
 #### Auxiliar
 
@@ -96,7 +96,7 @@ El módulo auxiliar proporciona varios programas de escaneo para la recuperació
 
 Metasploit viene instalado por defecto en las principales distribuciones Linux enfocadas a la seguridad.
 
-Para iniciar Metasploit, en primera instancia iniciaremos el servicio `postgresql` e iniciaremos la autoconfiguración de la base de datos de este tipo que utilizará Metasploit para persistir algunos de sus datos. Tras ello, basta con iniciarl `msfcli`. Estas acciones las debemos llevar a cabo como *root* o, si el usuario está habilitado, utilizando *sudo*.
+Para iniciar Metasploit, en primera instancia iniciaremos el servicio `postgresql` e iniciaremos la autoconfiguración de la base de datos de este tipo que utilizará Metasploit para persistir algunos de sus datos. Tras ello, basta con iniciar `msfcli`. Estas acciones las debemos llevar a cabo como *root* o, si el usuario está habilitado, utilizando *sudo*.
 
 Traducido a la línea de comandos sería así.
 
@@ -112,7 +112,7 @@ Comprobación de que ambas cosas están funcionando correctamente:
 
 ![](./img/msf-6.png)
 
-Finalmente, inciciamos **msfcli**.:
+Finalmente, iniciamos **msfcli**.:
 
 ![](./img/msf-3.png)
 
@@ -140,7 +140,7 @@ Como curiosidad el ranking que se utiliza, de acuerdo con la documentación ofic
 
 ![](./img/msf-ranking.png)
 
-Dado que Metasploit abarca un gran abanico de posibilidades y conocimientos, escapa por completo al propósito de este curso el impartir una formación detallada del framework. Es por ello que símplemente veremos unas ínfimas pinceladas de sus posibilidades, relacionadas con el uso de exploits.
+Dado que Metasploit abarca un gran abanico de posibilidades y conocimientos, escapa por completo al propósito de este curso el impartir una formación detallada del framework. Es por ello que simplemente veremos unas ínfimas pinceladas de sus posibilidades, relacionadas con el uso de exploits.
 
 !!!Note "Nota del autor"
     Si bien es cierto que Metasploit es una herramienta de gran utilidad y que permite automatizar un gran número de tareas, ahorrando de esta manera en ocasiones un tiempo valioso, se recomienda no ceñirse ni abusar de ella.
@@ -169,7 +169,7 @@ Una vez seleccionado el exploit a utilizar, debemos investigar que parámetros y
 
 ![](./img/msf-exploit-2-options.png)
 
-Hay unas opciones comunes que aparecen en la práctica totalidad de exploits puesto que casi siempre irán dirigidos a conseguir una shell inversa. Si lo consigue, nos devolverá un terminal de Meterpreter. Estas opciones son:
+Hay unas opciones comunes que aparecen en la práctica totalidad de exploits puesto que casi siempre irán dirigidos a conseguir una shell inversa. Si la explotación tiene éxito y el payload seleccionado es Meterpreter, obtendremos una sesión Meterpreter sobre el sistema comprometido. Estas opciones son:
 
 + **RHOSTS:** Hace referencia a la IP del host remoto, víctima u objetivo
 + **RPORT:** Hace referencia al puerto que atacaremos del objetivo
