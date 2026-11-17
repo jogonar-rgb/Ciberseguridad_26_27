@@ -66,7 +66,7 @@ nav:
     - Enumeración de servicios: Seguridad_ofensiva/enumeracion.md
     - Causas de vulnerabilidades en sistemas: Seguridad_ofensiva/servicios_desact.md
     - Explotación de vulnerabilidades: Seguridad_ofensiva/exploit.md
-    #- Metasploit: Seguridad_ofensiva/metasploit.md
+    - Metasploit: Seguridad_ofensiva/metasploit.md
     #- Ejercicio práctico - Explotación de EternalBlue: Seguridad_ofensiva/EternalBlue.md
     #- Shells: Seguridad_ofensiva/rev_shell.md
     #- Escalada de privilegios: Seguridad_ofensiva/privesc.md

@@ -132,7 +132,7 @@ Por ejemplo, en la imagen de abajo se realiza una búsqueda de la vulnerabilidad
 
 ![](./img/msf-busqueda.png)
 
-Recuadrado en rojo ya nos informa sobre cómo utilizar el módulo que escojamos.
+Ya nos informa sobre cómo utilizar el módulo que escojamos.
 
 Además, se nos ofrece una información acerca de los módulos, como por ejemplo la fecha de aparición del módulo (disclosure date), si permite comprobar si la víctima u objetivo es vulnerable a ese exploit (check) o qué ranking tiene, entendiendo como ranking el nivel de fiabilidad del exploit o módulo del que se trate. 
 
