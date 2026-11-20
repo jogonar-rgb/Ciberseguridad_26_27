@@ -1,7 +1,7 @@
 ---
 title: Una revisión de las shells
 
-description: Explicación teórica reverse shell, bind shell, paylods, webshells. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES severo ochoa Elche. Hacking ético. incidentes de seguridad, puesta en producción segura.
+description: Explicación teórica reverse shell, bind shell, paylods, webshells. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES Severo Ochoa Elche. Hacking ético. incidentes de seguridad, puesta en producción segura.
 ---
 
 ## ¿Qué es una shell?
