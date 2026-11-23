@@ -187,7 +187,7 @@ Metasploit proporciona payloads preconstruidos que pueden utilizarse para genera
 1. Realizar la máquina [**Vulnversity** en TryHackMe](https://tryhackme.com/r/room/vulnversity). Se trata de una máquina guiada donde repasamos fases que ya hemos visto: escaneo, enumeración y explotación mediante vulnerabilidad. Finalmente veremos una forma de obtener una shell inversa utilizando PHP. **NO HACER LA PARTE DE ESCALADA DE PRIVILEGIOS**.
 
 2. Realizar la máquina [**Thomson** en TryHackMe](https://tryhackme.com/r/room/bsidesgtthompson). Se trata de una máquina no guiada donde tras la fase de escaneo y enumeración debéis conseguir acceso a un famoso servidor de aplicaciones y tras ello crear con *msfvenom* una shell inversa en formato *.war*, que se desplegará en dicho servidor.
-    Al acceder al *.war* desplegado, se establecerá nuestra conexión inversa. Esta página os puede resultar de inmensa ayuda: [https://book.hacktricks.xyz/generic-methodologies-and-resources/reverse-shells/msfvenom](https://hacktricks.wiki/en/generic-hacking/reverse-shells/msfvenom.html)
+    Al acceder al *.war* desplegado, se establecerá nuestra conexión inversa. Esta página os puede resultar de inmensa ayuda: [https://hacktricks.wiki/en/generic-hacking/reverse-shells/msfvenom.html](https://hacktricks.wiki/en/generic-hacking/reverse-shells/msfvenom.html)
 
 3. Realizar las fases que os marco en la imagen de abajo de la máquina [**RootMe** en TryHackMe](https://tryhackme.com/r/room/rrootme). 
 
