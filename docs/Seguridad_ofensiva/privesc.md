@@ -275,6 +275,7 @@ Potencial callejón sin salida: si se puede cambiar la configuración de un serv
 !!!Question "Task 3 de THM"
 
 
+
 ### Rutas de servicios sin comillado
 
 Los ejecutables en Windows se pueden ejecutar sin usar su extensión (por ejemplo, "whoami.exe" se puede ejecutar con solo escribir "whoami").
