@@ -1,15 +1,15 @@
 ---
-title: Escalada privilegios en Linux y en Windows
-description: Apuntes, prácticas, ejercicio del curso de especialización de ciberseguridad. 
+title: Escalada privilegios en Linux y Windows
+description: Apuntes, prácticas y ejercicios del curso de especialización de ciberseguridad. 
 ---
 
-## Qué es una escalada de privilegios?
+## ¿Qué es una escalada de privilegios?
 
 La escalada de privilegios ocurre cuando un usuario malicioso o malintencionado aprovecha una vulnerabilidad, un defecto de diseño o un error de configuración en una aplicación o sistema operativo para obtener un acceso elevado a los recursos que normalmente no deberían estar disponibles para ellos.
 
-El atacante puede usar los privilegios recién obtenidos para robar datos confidenciales, ejecutar comandos administrativos o implementar malware, y potencialmente causar daños graves a su sistema operativo, aplicaciones de servidor, organización y reputación
+El atacante puede usar los privilegios recién obtenidos para robar datos confidenciales, ejecutar comandos administrativos o implementar malware, y potencialmente causar daños graves a su sistema operativo, aplicaciones de servidor, organización y reputación.
 
-Un escenario típico donde se produce una escalada de privilegios es cuando un atacante ya ha conseguido comprometer un sistema y ha obtenido un acceso mediante una cuenta con bajos privilegios. Tras este paso inicial el atacante se encuentra con una situación donde debe obtener mayores privilegios si quiere realmente comprometer todo el sistema u otras partes de la red.
+Un escenario típico donde se produce una escalada de privilegios es cuando un atacante ya ha conseguido comprometer un sistema y ha obtenido un acceso mediante una cuenta con bajos privilegios. Tras este paso inicial, el atacante se encuentra con una situación en la que debe obtener mayores privilegios si quiere realmente comprometer todo el sistema u otras partes de la red.
 
 Así pues, digamos que la escalada de privilegios es el paso siguiente tras obtener un punto de entrada inicial al sistema por parte de un atacante.
 
@@ -23,11 +23,11 @@ Con la **escalada horizontal de privilegios**, los actores malintencionados perm
 
 Por ejemplo, esto puede significar usar un equipo comprometido para obtener acceso a los datos de otros usuarios de la oficina. Para las aplicaciones web, un ejemplo de escalamiento horizontal podría ser el uso de [secuestro de sesión](https://es.wikipedia.org/wiki/Secuestro_de_sesi%C3%B3n) para evitar la autenticación y obtener acceso a la cuenta de otro usuario en una red social, una plataforma de comercio electrónico o un sitio de banca electrónica.
 
-Más peligrosa es la **escalada vertical de privilegios** (también llamada elevación de privilegios ), donde el atacante obtiene los derechos de una cuenta con más privilegios, generalmente el administrador o usuario del sistema en Microsoft Windows o root en sistemas Unix y Linux. Con este elevado nivel de acceso, el atacante puede causar todo tipo de estragos en sus sistemas informáticos y aplicaciones: robar credenciales de acceso y datos confidenciales, descargar y ejecutar ransomware, borrar datos o ejecutar código arbitrario. Los atacantes avanzados utilizarán privilegios elevados para cubrir sus pistas eliminando los registros de acceso y otras pruebas de su actividad, sin que la víctima se dé cuenta de que se ha producido un ataque. De esa forma, los ciberdelincuentes pueden robar información de forma encubierta y colocar puertas traseras u otro malware en los sistemas de la empresa.
+Más peligrosa es la **escalada vertical de privilegios** (también llamada elevación de privilegios), donde el atacante obtiene los derechos de una cuenta con más privilegios, generalmente el administrador o usuario del sistema en Microsoft Windows o root en sistemas Unix y Linux. Con este elevado nivel de acceso, el atacante puede causar todo tipo de estragos en sus sistemas informáticos y aplicaciones: robar credenciales de acceso y datos confidenciales, descargar y ejecutar ransomware, borrar datos o ejecutar código arbitrario. Los atacantes avanzados utilizarán privilegios elevados para cubrir sus pistas eliminando los registros de acceso y otras pruebas de su actividad, sin que la víctima se dé cuenta de que se ha producido un ataque. De esa forma, los ciberdelincuentes pueden robar información de forma encubierta y colocar puertas traseras u otro malware en los sistemas de la empresa.
 
 ![](./img/privesc.webp)
 
-Se suelen utilizar 5 métodos principalmente para llevar a cabo la escalada de privilegios:
+Se suelen utilizar cinco métodos principalmente para llevar a cabo la escalada de privilegios:
 
 * Explotación de credenciales
 + Vulnerabilidades y exploits
@@ -41,33 +41,33 @@ Debido a que los ataques de escalada de privilegios pueden iniciarse y avanzar d
 
 Sin embargo, la implementación de un enfoque centrado en la identidad y en controles para la administración de accesos privilegiados permiten protegerse contra la gama más amplia de ataques, así como reducir la superficie de ataque. Estas son algunas de las mejores prácticas:
 
-* Administrar completamente el ciclo de vida de la autenticación , incluido el aprovisionamiento y desaprovisionamiento de identidades y cuentas para garantizar que no haya cuentas huérfanas que puedan ser secuestradas.
+* Administrar completamente el ciclo de vida de la autenticación, incluido el aprovisionamiento y desaprovisionamiento de identidades y cuentas para garantizar que no haya cuentas huérfanas que puedan ser secuestradas.
 
 * Utilizar un mecanismo de administración de contraseñas para aplicar políticas sólidas de administración de credenciales tanto para humanos como para máquinas. Esto también implica eliminar la credencial predeterminada y "hardcodeada".
 
-* Aplicar el privilegio mínimo: eliminar los derechos de administrador de los usuarios y reducir los privilegios de la aplicación y la máquina al mínimo requerido. También se debe implementar el acceso "just-in-time" para reducir los privilegios permanentes o permanentes.
+* Aplicar el privilegio mínimo: eliminar los derechos de administrador de los usuarios y reducir los privilegios de la aplicación y la máquina al mínimo requerido. También se debe implementar el acceso "just-in-time" para reducir los privilegios permanentes.
 
 * Supervisar y administrar todas las sesiones privilegiadas para detectar y abordar rápidamente cualquier actividad sospechosa que pueda indicar una cuenta secuestrada o un intento ilícito de escalada de privilegios o movimiento lateral.
   
 * Fortalecer los sistemas y las aplicaciones: esto complementa el principio de privilegios mínimos y puede implicar cambios de configuración, eliminación de derechos y accesos innecesarios, cierre de puertos y más. Esto mejora la seguridad del sistema y las aplicaciones y ayuda a prevenir y mitigar los errores potenciales que puedan llevar a una vulnerabilidad de inyección de código malicioso, desbordamientos de búfer u otras puertas traseras que podrían permitir la escalada de privilegios.
 
-* Gestión de vulnerabilidades: identificar y abordar de forma continua las vulnerabilidades, mediante parches, corrección de configuraciones incorrectas, eliminación de credenciales predeterminadas y/o integradas, entre otras.
+* Gestión de vulnerabilidades: identificar y abordar de forma continua las vulnerabilidades, mediante parches, corrección de configuraciones incorrectas, eliminación de credenciales predeterminadas o integradas, entre otras.
 
 * El acceso remoto seguro siempre debe monitorearse y administrarse para cualquier forma de acceso privilegiado, ya que los ataques pueden ocurrir horizontal y verticalmente para explotar los privilegios.
 
 ## Escalada de privilegios en Linux
 
-En Linux nuestro objetivo con la escalada de privilegios va a ser siempre obtener una [shell](https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)) corriendo con privilegios del usuario **root**.
+En Linux nuestro objetivo con la escalada de privilegios será siempre obtener una [shell](https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)) corriendo con privilegios del usuario **root**.
 
-En muchos casos la escalada de privilegios no recaerá simplemente en una simple mala configuración, sino que requererirá combinar varios métodos, debilidades y malas configuraciones para conseguirla.
+En muchos casos la escalada de privilegios no se basará únicamente en una mala configuración, sino que requerirá combinar varios métodos, debilidades y malas configuraciones para conseguirla.
 
-Todas las escaladas de privilegios son ejemplos fehacientes de una violación de los controles de acceso. Puesto que los controles de acceso y los permisos de usuario están estrechamente ligados, es crucial entender como funcionan los permisos en Linux, tal y como ya hemos visto con anterioridad.
+Todas las escaladas de privilegios son ejemplos fehacientes de una violación de los controles de acceso. Puesto que los controles de acceso y los permisos de usuario están estrechamente ligados, es crucial entender cómo funcionan los permisos en Linux, tal y como ya hemos visto con anterioridad.
 
-Pasemos ahora a ver algunas de las técnicas que permiten la escalada de privilegios en sistemas Linux..
+Pasemos ahora a ver algunas de las técnicas que permiten la escalada de privilegios en sistemas Linux.
 
 ### Ejercicios
 
-Cada una de las siguientes escaladas de privilegios la vamos a probar en la sala [Linux PrivEsc](https://tryhackme.com/room/linuxprivesc) de Tryhackme a la que debéis uniros.
+Cada una de las siguientes escaladas de privilegios la vamos a probar en la sala [Linux PrivEsc](https://tryhackme.com/room/linuxprivesc) de TryHackMe a la que debéis uniros.
 
 ### Permisos "débiles" o incorrectos en archivos
 
@@ -101,11 +101,11 @@ $ find / -executable -writable -type d 2> /dev/null
 
 ### Secuencias de escape
 
-En la mayoría de ocasiones tenemos restricciones para ejecutar únicamente ciertos programas a través de sudo. No obstante, puede darse el caso de que pueda "escapar" del programa y generar una shell. 
+En la mayoría de ocasiones tenemos restricciones para ejecutar únicamente ciertos programas a través de sudo. No obstante, puede darse el caso de que podamos "escapar" del programa y generar una shell. 
 
 Cuando un programa se ejecuta con privilegios de root, también lo hace la shell que genera, por lo que puedo intentar conseguir una shell a través de la ejecución de ese programa.
 
-Se puede consultar una lista de programas con sus secuencias de escape correspondientes en [GTFObins](https://gtfobins.github.io/)
+Se puede consultar una lista de programas con sus secuencias de escape correspondientes en [GTFOBins](https://gtfobins.github.io/)
 
 GTFOBins es un proyecto y una base de datos en línea que recopila técnicas de escalación de privilegios y explotación de aplicaciones en sistemas Unix/Linux mediante el uso de binarios legítimos que están preinstalados en muchas distribuciones. 
 
@@ -148,11 +148,11 @@ Procedimiento:
 
 ### Tareas del [cron](https://es.wikipedia.org/wiki/Cron_(Unix)) y permisos de archivos
 
-Las tareas programadas en el cron son programas o scripts cuyos usuarios pueden programar para que se ejecuten en momentos concretos o a intervalos.
+Las tareas de cron son programas o scripts que los usuarios pueden programar para que se ejecuten en momentos concretos o a intervalos.
 
 Las tareas del cron se ejecutan con el nivel de seguridad del usuario propietario de las mismas. Por defecto, las tareas del cron usan el terminal ```/bin/bash``` con determinadas limitaciones.
 
-La configuración de estas tareas se realiza en *crontab*. Los crontab de los usuarios suelen esar localizados en ```/var/spool/cron/``` o ```/var/spool/cron/crontabs```
+La configuración de estas tareas se realiza en *crontab*. Los archivos crontab de los usuarios suelen etsar localizados en ```/var/spool/cron/``` o ```/var/spool/cron/crontabs```
 
 El crontab del sistema está ubicado en ```/etc/crontab```.
 
@@ -167,7 +167,7 @@ El crontab del sistema está ubicado en ```/etc/crontab```.
 
 Los archivos de historial registran los comandos utilizados por los usuarios mientras están usando ciertos programas.
 
-Si un usuario escribe una contraseña como parte de un comando, esta contraseña puede almacenarse en un archivo de historial. Como atacante, siempre es una buena idea intentar cambiar al usuario root con un contraseña que ha sido revelada mediante este método..
+Si un usuario escribe una contraseña como parte de un comando, esta contraseña puede almacenarse en un archivo de historial. Como atacante, siempre es una buena idea intentar cambiar al usuario root con una contraseña que ha sido revelada mediante este método.
 
 !!!Question "Task 16 de THM"
     Consigue una shell de root aprovechándote del historial de comandos.
@@ -177,7 +177,7 @@ Si un usuario escribe una contraseña como parte de un comando, esta contraseña
 
 Muchos servicios y programas utilizan archivos de texto (config) para almacenar la configuración.
 
-Si un servicio necesita autenticarse en algo, puede almacenar las credenciales en un archivo de configuración a pesar de ser una muy mala práctica.
+Si un servicio necesita autenticarse en otro sistema o servicio, puede almacenar las credenciales en un archivo de configuración a pesar de ser una muy mala práctica.
 
 Si se puede acceder a estos archivos de configuración y los usuarios privilegiados reutilizan las contraseñas que almacenan, es posible que podamos usarlos para iniciar sesión como ese usuario en otros servicios o sistemas.
 
@@ -211,15 +211,15 @@ Veamos algunos conceptos básicos a modo de recordatorio.
 
 Las cuentas de usuario se utilizan para iniciar sesión en un sistema Windows.
 
-Pensad en una cuenta de usuario como una colección de configuraciones/preferencias ligado a una identidad única.
+Pensad en una cuenta de usuario como una colección de configuraciones y preferencias ligada a una identidad única.
 
-La cuenta de "Administrador" local se crea de forma predeterminada en instalación. Pueden existir varias otras cuentas de usuario predeterminadas (por ejemplo, Invitado) dependiendo de la versión de Windows. 
+La cuenta de "Administrador" local se crea de forma predeterminada durante la instalación. Pueden existir varias otras cuentas de usuario predeterminadas (por ejemplo, Invitado) dependiendo de la versión de Windows. 
 
 ##### [Cuentas de servicio](https://docs.microsoft.com/es-es/windows/security/identity-protection/access-control/service-accounts)
 
 Las cuentas de servicio se utilizan, obviamente, para ejecutar servicios en Windows.
 
-Las cuentas de servicio **NO** se pueden utilizar para iniciar sesión en un sistema Windows. La cuenta del SYSTEM es una cuenta de servicio predeterminada que tiene unos mayores privilegios que cualquier cuenta local en Windows.
+Las cuentas de servicio **NO** se pueden utilizar para iniciar sesión en un sistema Windows. La cuenta SYSTEM es una cuenta de servicio predeterminada que tiene más privilegios que cualquier cuenta local en Windows.
 
 Otras cuentas de servicio predeterminadas incluyen NETWORK SERVICES y LOCAL SERVICE.
 
@@ -229,7 +229,7 @@ Las cuentas de usuario pueden pertenecer a varios grupos y los grupos pueden ten
 
 Los grupos regulares (por ejemplo, administradores, usuarios) tienen una lista establecida de miembros.
 
-Los pseudogrupos (p. Ej., "Usuarios autenticados") tienen una lista dinámica de miembros que cambia en función de determinadas interacciones. 
+Los pseudogrupos (p. ej., "Usuarios autenticados") tienen una lista dinámica de miembros que cambia en función de determinadas interacciones. 
 
 ##### Recursos
 
@@ -250,23 +250,23 @@ Cada ACL se compone de cero o más entradas de control de acceso (ACE).
 
 Así pues, una ACL es una lista ordenada de ACE que define las protecciones que se aplican a un objeto y sus propiedades. Cada ACE identifica una [entidad de seguridad](https://docs.microsoft.com/es-es/windows/security/identity-protection/access-control/security-principals) y especifica un conjunto de derechos de acceso que están permitidos, denegados o auditados para esa entidad de seguridad.
 
-Cuando un usuario intenta acceder a un archivo, el sistema de Windows ejecuta un AccessCheck y compara el descriptor de seguridad con el token de acceso de los usuarios y evalúa si el usuario tiene acceso y qué tipo de acceso según el conjunto de ACE. 
+Cuando un usuario intenta acceder a un archivo, el sistema de Windows ejecuta un AccessCheck y compara el descriptor de seguridad con el token de acceso del usuario y evalúa si el usuario tiene acceso y qué tipo de acceso según el conjunto de ACE. 
 
-Cada ACE define la relación entre un principal (por ejemplo, un usuario, grupo) y un cierto derecho de acceso 
+Cada ACE define la relación entre una entidad principal (por ejemplo, un usuario, grupo) y un cierto derecho de acceso. 
 
 ### Ejercicios
 
 Cada una de las siguientes escaladas de privilegios la vamos a probar en la sala [Windows PrivEsc](https://tryhackme.com/room/windows10privesc) de Tryhackme a la que debéis uniros.
 
-### Pemisos inseguros de servicios
+### Permisos inseguros de servicios
 
 Cada servicio tiene una ACL que define ciertos permisos específicos para ese servicio.
 
 + Algunos permisos son inocuos (por ejemplo, SERVICE_QUERY_CONFIG, SERVICE_QUERY_STATUS).
 
-+ Algunos pueden resultar útiles (p. Ej., SERVICE_STOP, SERVICE_START).
++ Algunos pueden resultar útiles (p. ej., SERVICE_STOP, SERVICE_START).
 
-+ Algunos son peligrosos (p. Ej., SERVICE_CHANGE_CONFIG, SERVICE_ALL_ACCESS) 
++ Algunos son peligrosos (p. ej., SERVICE_CHANGE_CONFIG, SERVICE_ALL_ACCESS) 
 
 Si nuestro usuario tiene permiso para cambiar la configuración de un servicio que se ejecuta con privilegios de SYSTEM, podemos cambiar el ejecutable que utiliza el servicio por uno de nuestra propia cosecha.
 
@@ -275,16 +275,16 @@ Potencial callejón sin salida: si se puede cambiar la configuración de un serv
 !!!Question "Task 3 de THM"
 
 
-### Rutas de servicios sin entrecomillado
+### Rutas de servicios sin comillado
 
 Los ejecutables en Windows se pueden ejecutar sin usar su extensión (por ejemplo, "whoami.exe" se puede ejecutar con solo escribir "whoami").
-Algunos ejecutables aceptan argumentos separados por espacios, p.Ej.: someprog.exe arg1 arg2 arg3 ...
+Algunos ejecutables aceptan argumentos separados por espacios, p. ej.: someprog.exe arg1 arg2 arg3 ...
 
 Este comportamiento conduce a la ambigüedad cuando se utilizan rutas absolutas que están sin comillas y contienen espacios.
 
 Considerad la siguiente ruta sin comillas:
 
-C:\Program FIles\Algun directorio\SomeProgram.exe
+C:\Program Files\Algun directorio\SomeProgram.exe
 
 Para nosotros, esto obviamente ejecuta SomeProgram.exe. Para Windows, C:\Program podría ser el ejecutable, con dos argumentos: "Files\Algun" y "directorio\SomeProgram.exe"
 
@@ -334,7 +334,7 @@ Estos archivos se bloquean mientras se ejecuta Windows. Sin embargo, podrían ex
 
 Windows se puede configurar para ejecutar tareas en momentos concretos, periódicamente (por ejemplo, cada 5 minutos) o cuando se activa por algún evento (por ejemplo, un inicio de sesión de usuario).
 
-Las tareas generalmente se ejecutan con los privilegios del usuario que las creó, sin embargo los administradores pueden configurar tareas para que se ejecuten con los privilegios de otros usuarios, incluido SYSTEM.
+Las tareas generalmente se ejecutan con los privilegios del usuario que las creó, sin embargo, los administradores pueden configurar tareas para que se ejecuten con los privilegios de otros usuarios, incluido SYSTEM.
 
 !!!Question "Task 13 de THM"
     Obtén una shell de Administrador haciendo uso de esta escalada de privilegios.
