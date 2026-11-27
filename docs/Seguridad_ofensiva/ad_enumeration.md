@@ -13,13 +13,14 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 + Relaciones de confianza entre dominios. 
 + Permisos y configuraciones. 
 + Políticas de seguridad. 
-+ Estos datos se obtienen utilizando protocolos y servicios estándar de Windows (como LDAP, SMB y Kerberos), lo que hace que muchas actividades de enumeración sean difíciles de detectar sin herramientas avanzadas de monitorización.
+
+Estos datos se obtienen utilizando protocolos y servicios estándar de Windows (como LDAP, SMB y Kerberos), lo que hace que muchas actividades de enumeración sean difíciles de detectar sin herramientas avanzadas de monitorización.
 
 ## Objetivos de la enumeración
 
   1. <u>Mapear la estructura del dominio:</u>
       + Identificar controladores de dominio (Domain Controllers, DCs) y su configuración. 
-      + Enumerar relaciones entre dominios (dominios padres e hijos, relaciones de confianza, etc.). 
+      + Enumerar relaciones entre dominios (dominios padre e hijo, relaciones de confianza, etc.). 
   2. <u>Identificar cuentas críticas:</u>
       + Administradores del dominio. 
       + Cuentas de servicio y sus privilegios. 
@@ -50,7 +51,7 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 
      + **Kerberos**: 
   
-         ▪ Permite identificar servicios y cuentas relacionadas con SPNs (Service Principal Names). 
+         ▪ Permite identificar servicios y cuentas asociadas SPNs (Service Principal Names). 
 
         !!!note "Nota"         
             Los SPNs (Service Principal Names) son identificadores únicos que se utilizan en entornos de Active Directory para asociar servicios a cuentas específicas. Son esenciales para que el protocolo Kerberos funcione correctamente, ya que permiten que un cliente encuentre y autentique servicios en una red de manera segura.
@@ -63,7 +64,7 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
             ```
             Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar un ticket de servicio (Service Ticket) al KDC (Key Distribution Center). Esto permite la autenticación mutua entre el cliente y el servicio.
 
- 3. <u>Herramientas Especializadas:</u>
+ 3. <u>Herramientas especializadas:</u>
      + **BloodHound**: 
          
          ▪ Herramienta gráfica que analiza relaciones de confianza, privilegios y rutas de ataque en AD. 
@@ -91,8 +92,8 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 
          ▪ Ejemplo: `cme smb <ip> -u usuario -p contraseña --shares para listar recursos compartidos.`
 
-        !!!nota "Nota"
-            Ya no se encuentra activamente mantenida en su repositorio original. El proyecto fue archivado en diciembre de 2023 debido a conflictos relacionados con un "fork hostil". 
+        !!!note "Nota"
+            Ya no se mantiene en su repositorio original. El proyecto fue archivado en diciembre de 2023 debido a conflictos relacionados con un "fork hostil". 
             
             Sin embargo, su desarrollo continúa bajo un nuevo nombre: **NetExec**, que busca mantener y ampliar las capacidades de CME con actualizaciones regulares y una mayor participación de la comunidad.
 
@@ -100,13 +101,31 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 
             ![](./img/nxc.png)
 
+        - **ARES (Active Directory Recon & Enumeration Suite)**:
+            ▪ Herramienta orientada a la recopilación automatizada de información en entornos Active Directory.
 
+            ▪ Permite identificar usuarios, grupos, equipos, relaciones de confianza, GPOs y otros objetos relevantes del dominio.
 
+            ▪ Facilita la obtención de una visión global del entorno antes de realizar actividades de análisis de seguridad o auditoría.
+
+            ▪ Resulta especialmente útil en entornos formativos para comprender la fase de reconocimiento y correlacionar la información obtenida con herramientas como BloodHound.
+
+            !!! note "Práctica propuesta"
+
+                Utilizar ARES para realizar una enumeración completa de un dominio de laboratorio e identificar:
+    
+                - Usuarios y grupos privilegiados.
+                - Equipos unidos al dominio.
+                - Relaciones de confianza existentes.
+                - GPOs relevantes para la seguridad.
+                - Posibles vectores de escalada de privilegios.
+    
+  
  1. <u>Enumeración Anónima:</u>
      + En configuraciones incorrectas, es posible obtener información sin autenticación. 
      + Herramientas como **rpcclient** o **enum4linux** pueden explotar configuraciones débiles de SMB. 
 
-## Información Crítica a Recopilar
+## Información crítica a recopilar
 
  1. Usuarios y Cuentas
 
@@ -117,14 +136,14 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 2. Grupos y Relaciones
 
     + Grupos del dominio: Identificación de grupos administrativos y sus miembros.
-    + Relaciones de confianza: Enumeración de relaciones entre dominios o bosques, que pueden usarse para ataques de trust exploitation.
+    + Relaciones de confianza: Enumeración de relaciones entre dominios o bosques, que pueden usarse para ataques de trust exploitation (explotación de relaciones de confianza).
     + Políticas de grupos (GPOs): Configuraciones que podrían revelar credenciales, rutas de inicio de sesión o configuraciones inseguras.
 
 3. Equipos y Servidores
 
     + Controladores de dominio (DCs): Identificar servidores críticos que gestionan el directorio.
     + Servidores y estaciones de trabajo: Inventario de máquinas del dominio y sus roles.
-    + Servicios expuestos: Enumerar servicios como SMB, LDAP, y RPC para posibles puntos de entrada.
+    + Servicios expuestos: Enumerar servicios como SMB, LDAP y RPC para posibles puntos de entrada.
 
 4. SPNs (Service Principal Names)
 
@@ -133,7 +152,7 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 5. Políticas y Configuraciones
 
     + Política de contraseñas: Reglas sobre longitud, complejidad y caducidad.
-    + Delegación de cuentas: Detectar cuentas configuradas para delegación, que pueden ser explotadas para ataques como Kerberos delegation abuse.
+    + Delegación de cuentas: Detectar cuentas configuradas para delegación, que pueden ser explotadas para ataques como Kerberos delegation abuse (abuso de delegación Kerberos).
     + Restricciones de inicio de sesión: Determinar si hay restricciones basadas en horarios o estaciones.
 
 6. Credenciales y Secretos
@@ -149,7 +168,7 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 
 8. Relaciones de Red
 
-    + Sesiones activas: Identificar conexiones entre usuarios y máquinas que podrían usarse para ataques de lateral movement.
+    + Sesiones activas: Identificar conexiones entre usuarios y máquinas que podrían usarse para ataques de lateral movement (movimiento lateral).
     + Mapeo de subredes: Conocer las segmentaciones internas del dominio para planificar movimientos.
 
 ## Riesgos Comunes Durante la Enumeración
@@ -164,4 +183,4 @@ La enumeración en AD consiste en recopilar datos estructurados sobre los recurs
 
 ## Conclusión
 
-La fase de enumeración en un pentesting de Active Directory es fundamental para mapear el entorno y descubrir posibles rutas de ataque. Un enfoque metódico, combinado con herramientas potentes como BloodHound y PowerView, permite maximizar la recolección de datos mientras se minimiza el riesgo de detección.
+La fase de enumeración en un pentesting de Active Directory es fundamental para mapear el entorno y descubrir posibles rutas de ataque. Un enfoque metódico, combinado con herramientas potentes como BloodHound y PowerView, permite maximizar la recolección de información mientras se minimiza el riesgo de detección.
