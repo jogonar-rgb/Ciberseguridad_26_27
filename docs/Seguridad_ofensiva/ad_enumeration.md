@@ -101,24 +101,25 @@ Estos datos se obtienen utilizando protocolos y servicios estándar de Windows (
 
             ![](./img/nxc.png)
 
-        - **ARES (Active Directory Recon & Enumeration Suite)**:
-            ▪ Herramienta orientada a la recopilación automatizada de información en entornos Active Directory.
+    - **ARES (Active Directory Recon & Enumeration Suite)**:
 
-            ▪ Permite identificar usuarios, grupos, equipos, relaciones de confianza, GPOs y otros objetos relevantes del dominio.
+        ▪ Herramienta orientada a la recopilación automatizada de información en entornos Active Directory.
 
-            ▪ Facilita la obtención de una visión global del entorno antes de realizar actividades de análisis de seguridad o auditoría.
+        ▪ Permite identificar usuarios, grupos, equipos, relaciones de confianza, GPOs y otros objetos relevantes del dominio.
 
-            ▪ Resulta especialmente útil en entornos formativos para comprender la fase de reconocimiento y correlacionar la información obtenida con herramientas como BloodHound.
+        ▪ Facilita la obtención de una visión global del entorno antes de realizar actividades de análisis de seguridad o auditoría.
 
-            !!! note "Práctica propuesta"
+        ▪ Resulta especialmente útil en entornos formativos para comprender la fase de reconocimiento y correlacionar la información obtenida con herramientas como BloodHound.
 
-                Utilizar ARES para realizar una enumeración completa de un dominio de laboratorio e identificar:
+        !!! note "Práctica propuesta"
+
+            Utilizar ARES para realizar una enumeración completa de un dominio de laboratorio e identificar:
     
-                - Usuarios y grupos privilegiados.
-                - Equipos unidos al dominio.
-                - Relaciones de confianza existentes.
-                - GPOs relevantes para la seguridad.
-                - Posibles vectores de escalada de privilegios.
+            - Usuarios y grupos privilegiados.
+            - Equipos unidos al dominio.
+            - Relaciones de confianza existentes.
+            - GPOs relevantes para la seguridad.
+            - Posibles vectores de escalada de privilegios.
     
   
  1. <u>Enumeración Anónima:</u>
