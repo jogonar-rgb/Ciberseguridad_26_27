@@ -828,13 +828,13 @@
 <li>Relaciones de confianza entre dominios. </li>
 <li>Permisos y configuraciones. </li>
 <li>Políticas de seguridad. </li>
-<li>Estos datos se obtienen utilizando protocolos y servicios estándar de Windows (como LDAP, SMB y Kerberos), lo que hace que muchas actividades de enumeración sean difíciles de detectar sin herramientas avanzadas de monitorización.</li>
 </ul>
+<p>Estos datos se obtienen utilizando protocolos y servicios estándar de Windows (como LDAP, SMB y Kerberos), lo que hace que muchas actividades de enumeración sean difíciles de detectar sin herramientas avanzadas de monitorización.</p>
 <h2 id="objetivos-de-la-enumeracion">Objetivos de la enumeración</h2>
 <ol>
 <li><u>Mapear la estructura del dominio:</u><ul>
 <li>Identificar controladores de dominio (Domain Controllers, DCs) y su configuración. </li>
-<li>Enumerar relaciones entre dominios (dominios padres e hijos, relaciones de confianza, etc.). </li>
+<li>Enumerar relaciones entre dominios (dominios padre e hijo, relaciones de confianza, etc.). </li>
 </ul>
 </li>
 <li><u>Identificar cuentas críticas:</u><ul>
@@ -877,7 +877,7 @@
 </li>
 <li>
 <p><strong>Kerberos</strong>: </p>
-<p>▪ Permite identificar servicios y cuentas relacionadas con SPNs (Service Principal Names). </p>
+<p>▪ Permite identificar servicios y cuentas asociadas SPNs (Service Principal Names). </p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>Los SPNs (Service Principal Names) son identificadores únicos que se utilizan en entornos de Active Directory para asociar servicios a cuentas específicas. Son esenciales para que el protocolo Kerberos funcione correctamente, ya que permiten que un cliente encuentre y autentique servicios en una red de manera segura.</p>
@@ -891,7 +891,7 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 </ul>
 </li>
 <li>
-<p><u>Herramientas Especializadas:</u></p>
+<p><u>Herramientas especializadas:</u></p>
 <ul>
 <li>
 <p><strong>BloodHound</strong>: </p>
@@ -913,13 +913,33 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 <p><strong>CrackMapExec</strong>: </p>
 <p>▪ Herramienta de enumeración y explotación para redes Windows. </p>
 <p>▪ Ejemplo: <code>cme smb &lt;ip&gt; -u usuario -p contraseña --shares para listar recursos compartidos.</code></p>
-<div class="admonition nota">
+<div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Ya no se encuentra activamente mantenida en su repositorio original. El proyecto fue archivado en diciembre de 2023 debido a conflictos relacionados con un "fork hostil". </p>
+<p>Ya no se mantiene en su repositorio original. El proyecto fue archivado en diciembre de 2023 debido a conflictos relacionados con un "fork hostil". </p>
 <p>Sin embargo, su desarrollo continúa bajo un nuevo nombre: <strong>NetExec</strong>, que busca mantener y ampliar las capacidades de CME con actualizaciones regulares y una mayor participación de la comunidad.</p>
 <p>NetExec, liderado por contribuidores como NeffIsBack y Marshall-Hallenbeck, se posiciona como un sucesor gratuito y de código abierto. Este proyecto hereda las funcionalidades principales de CME, corrige problemas previos y está diseñado para satisfacer las necesidades actuales de los pentesters con un enfoque más colaborativo</p>
 <p><img alt="" src="../img/nxc.png" /></p>
 </div>
+<ul>
+<li>
+<p><strong>ARES (Active Directory Recon &amp; Enumeration Suite)</strong>:
+    ▪ Herramienta orientada a la recopilación automatizada de información en entornos Active Directory.</p>
+<p>▪ Permite identificar usuarios, grupos, equipos, relaciones de confianza, GPOs y otros objetos relevantes del dominio.</p>
+<p>▪ Facilita la obtención de una visión global del entorno antes de realizar actividades de análisis de seguridad o auditoría.</p>
+<p>▪ Resulta especialmente útil en entornos formativos para comprender la fase de reconocimiento y correlacionar la información obtenida con herramientas como BloodHound.</p>
+<div class="admonition note">
+<p class="admonition-title">Práctica propuesta</p>
+<p>Utilizar ARES para realizar una enumeración completa de un dominio de laboratorio e identificar:</p>
+<ul>
+<li>Usuarios y grupos privilegiados.</li>
+<li>Equipos unidos al dominio.</li>
+<li>Relaciones de confianza existentes.</li>
+<li>GPOs relevantes para la seguridad.</li>
+<li>Posibles vectores de escalada de privilegios.</li>
+</ul>
+</div>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -931,7 +951,7 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 </ul>
 </li>
 </ol>
-<h2 id="informacion-critica-a-recopilar">Información Crítica a Recopilar</h2>
+<h2 id="informacion-critica-a-recopilar">Información crítica a recopilar</h2>
 <ol>
 <li>
 <p>Usuarios y Cuentas</p>
@@ -945,7 +965,7 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 <p>Grupos y Relaciones</p>
 <ul>
 <li>Grupos del dominio: Identificación de grupos administrativos y sus miembros.</li>
-<li>Relaciones de confianza: Enumeración de relaciones entre dominios o bosques, que pueden usarse para ataques de trust exploitation.</li>
+<li>Relaciones de confianza: Enumeración de relaciones entre dominios o bosques, que pueden usarse para ataques de trust exploitation (explotación de relaciones de confianza).</li>
 <li>Políticas de grupos (GPOs): Configuraciones que podrían revelar credenciales, rutas de inicio de sesión o configuraciones inseguras.</li>
 </ul>
 </li>
@@ -954,7 +974,7 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 <ul>
 <li>Controladores de dominio (DCs): Identificar servidores críticos que gestionan el directorio.</li>
 <li>Servidores y estaciones de trabajo: Inventario de máquinas del dominio y sus roles.</li>
-<li>Servicios expuestos: Enumerar servicios como SMB, LDAP, y RPC para posibles puntos de entrada.</li>
+<li>Servicios expuestos: Enumerar servicios como SMB, LDAP y RPC para posibles puntos de entrada.</li>
 </ul>
 </li>
 <li>
@@ -967,7 +987,7 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 <p>Políticas y Configuraciones</p>
 <ul>
 <li>Política de contraseñas: Reglas sobre longitud, complejidad y caducidad.</li>
-<li>Delegación de cuentas: Detectar cuentas configuradas para delegación, que pueden ser explotadas para ataques como Kerberos delegation abuse.</li>
+<li>Delegación de cuentas: Detectar cuentas configuradas para delegación, que pueden ser explotadas para ataques como Kerberos delegation abuse (abuso de delegación Kerberos).</li>
 <li>Restricciones de inicio de sesión: Determinar si hay restricciones basadas en horarios o estaciones.</li>
 </ul>
 </li>
@@ -989,7 +1009,7 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 <li>
 <p>Relaciones de Red</p>
 <ul>
-<li>Sesiones activas: Identificar conexiones entre usuarios y máquinas que podrían usarse para ataques de lateral movement.</li>
+<li>Sesiones activas: Identificar conexiones entre usuarios y máquinas que podrían usarse para ataques de lateral movement (movimiento lateral).</li>
 <li>Mapeo de subredes: Conocer las segmentaciones internas del dominio para planificar movimientos.</li>
 </ul>
 </li>
@@ -1011,7 +1031,7 @@ Cuando un cliente necesita acceder a un servicio, utiliza el SPN para solicitar 
 </li>
 </ol>
 <h2 id="conclusion">Conclusión</h2>
-<p>La fase de enumeración en un pentesting de Active Directory es fundamental para mapear el entorno y descubrir posibles rutas de ataque. Un enfoque metódico, combinado con herramientas potentes como BloodHound y PowerView, permite maximizar la recolección de datos mientras se minimiza el riesgo de detección.</p>
+<p>La fase de enumeración en un pentesting de Active Directory es fundamental para mapear el entorno y descubrir posibles rutas de ataque. Un enfoque metódico, combinado con herramientas potentes como BloodHound y PowerView, permite maximizar la recolección de información mientras se minimiza el riesgo de detección.</p>
 
 
 
